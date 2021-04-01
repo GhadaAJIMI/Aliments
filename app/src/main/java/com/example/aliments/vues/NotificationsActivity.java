@@ -20,9 +20,6 @@ import java.util.Objects;
 
 public class NotificationsActivity extends AppCompatActivity {
     public static final String CHANNEL_1_ID = "channel LOW";
-    public static final String CHANNEL_2_ID = "channel DEFAULT";
-    public static final String CHANNEL_3_ID = "channel HIGHT";
-    private static NotificationManager notificationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,16 +62,8 @@ public class NotificationsActivity extends AppCompatActivity {
             NotificationChannel channel1 = createNotificationChannel(CHANNEL_1_ID, "Channel 1",
                     NotificationManager.IMPORTANCE_LOW, "low");
 
-            NotificationChannel channel2 = createNotificationChannel(CHANNEL_2_ID, "Channel 2",
-                    NotificationManager.IMPORTANCE_DEFAULT, "default");
-
-            NotificationChannel channel3 = createNotificationChannel(CHANNEL_3_ID, "Channel 3",
-                    NotificationManager.IMPORTANCE_HIGH, "hight");
-
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             Objects.requireNonNull(notificationManager).createNotificationChannel(channel1);
-            Objects.requireNonNull(notificationManager).createNotificationChannel(channel2);
-            Objects.requireNonNull(notificationManager).createNotificationChannel(channel3);
         }
     }
 
