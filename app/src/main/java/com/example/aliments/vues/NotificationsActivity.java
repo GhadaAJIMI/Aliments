@@ -27,7 +27,7 @@ public class NotificationsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_notifications);
         createNotificationChannels();
         findViewById( R.id.buttonNotify1).setOnClickListener(new View.OnClickListener() {
             @Override
