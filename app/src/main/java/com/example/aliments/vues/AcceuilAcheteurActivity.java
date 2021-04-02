@@ -27,7 +27,15 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
         findViewById( R.id.buttonParAliment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AcceuilAcheteurActivity.this, SearchByAlimentActivity.class);
+                Intent intent = new Intent(AcceuilAcheteurActivity.this, SearchAlimentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById( R.id.buttonParVendeur).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AcceuilAcheteurActivity.this, SearchSellerActivity.class);
                 startActivity(intent);
             }
         });

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Aliments">
-        <activity android:name=".vues.AcceuilVendeurActivity"></activity>
+        <activity android:name=".vues.SearchSellerActivity"></activity>
+        <activity android:name=".vues.SearchAlimentActivity" />
+        <activity android:name=".vues.AcceuilVendeurActivity" />
         <activity android:name=".vues.AcceuilAcheteurActivity" />
         <activity android:name=".vues.ReponseNotifActivity" />
         <activity android:name=".vues.NotificationsActivity" />

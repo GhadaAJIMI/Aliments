@@ -6,20 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.aliments.MainActivity;
 import com.example.aliments.R;
 
-public class AcceuilVendeurActivity extends AppCompatActivity {
+public class SearchSellerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_acceuil_vendeur);
+        setContentView(R.layout.activity_search_seller);
 
         findViewById( R.id.buttonBack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AcceuilVendeurActivity.this, MainActivity.class);
+                Intent intent = new Intent(SearchSellerActivity.this, AcceuilAcheteurActivity.class);
                 startActivity(intent);
             }
         });
