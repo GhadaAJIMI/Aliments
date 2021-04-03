@@ -5,6 +5,7 @@ import java.util.List;
 public class Magasin {
     private Seller proprio;
     private List<Aliment> listeAliments;
+    private AlimentFactory alimentFactory;
 
     // getters and setters
     public Seller getProprio() {
@@ -21,8 +22,7 @@ public class Magasin {
     }
 
     // constructeurs
-    public Magasin() {super();
-    }
+    public Magasin() {super();}
 
     public Magasin(Seller proprio, List<Aliment> listeAliments) {
         this.proprio = proprio;
