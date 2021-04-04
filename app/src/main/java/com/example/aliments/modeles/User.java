@@ -4,21 +4,13 @@ import java.util.List;
 
 public class User implements Seller, Buyer{
     private String name;
-    private Basket panier;
-    private List<List<Aliment>> listeCoursesPreferees;
 
     //getters and setters
-    public Basket getPanier() {
-        return panier;
+    public String getName() {
+        return name;
     }
-    public void setPanier(Basket panier) {
-        this.panier = panier;
-    }
-    public List<List<Aliment>> getListeCoursesPreferees() {
-        return listeCoursesPreferees;
-    }
-    public void setListeCoursesPreferees(List<List<Aliment>> listeCoursesPreferees) {
-        this.listeCoursesPreferees = listeCoursesPreferees;
+    public void setName(String name) {
+        this.name = name;
     }
 
     // constructeurs

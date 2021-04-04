@@ -39,5 +39,13 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById( R.id.buttonListesPreferees).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AcceuilAcheteurActivity.this, ListeCourcesPreferees.class);
+                startActivity(intent);
+            }
+        });
     }
 }

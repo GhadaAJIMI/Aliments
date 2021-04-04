@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Magasin {
     private Seller proprio;
-    private List<Aliment> listeAliments;
+    private List<ProduitAlimentaire> listeProduitAlimentaires;
     private AlimentFactory alimentFactory;
 
     // getters and setters
@@ -14,19 +14,19 @@ public class Magasin {
     public void setProprio(Seller proprio) {
         this.proprio = proprio;
     }
-    public List<Aliment> getListeAliments() {
-        return listeAliments;
+    public List<ProduitAlimentaire> getListeProduitAlimentaires() {
+        return listeProduitAlimentaires;
     }
-    public void setListeAliments(List<Aliment> listeAliments) {
-        this.listeAliments = listeAliments;
+    public void setListeProduitAlimentaires(List<ProduitAlimentaire> listeProduitAlimentaires) {
+        this.listeProduitAlimentaires = listeProduitAlimentaires;
     }
 
     // constructeurs
     public Magasin() {super();}
 
-    public Magasin(Seller proprio, List<Aliment> listeAliments) {
+    public Magasin(Seller proprio, List<ProduitAlimentaire> listeProduitAlimentaires) {
         this.proprio = proprio;
-        this.listeAliments = listeAliments;
+        this.listeProduitAlimentaires = listeProduitAlimentaires;
     }
 
 }
