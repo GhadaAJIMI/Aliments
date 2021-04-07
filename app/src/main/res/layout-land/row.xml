@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <ImageView
@@ -11,6 +11,7 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:src="@drawable/bannane"/>
+  
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,6 +35,38 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_margin="5dp"/>
-
     </LinearLayout>
+    
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/pomme"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textview5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="pommes"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/textview4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prix : 5euros/kg"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+    
+   
+
 </LinearLayout>
