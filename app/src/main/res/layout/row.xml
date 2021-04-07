@@ -17,23 +17,23 @@
         android:orientation="vertical"
         >
 
-    <TextView
-        android:id="@+id/textview1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Bannanes"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bananes"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_margin="5dp"/>
 
         <TextView
             android:id="@+id/textview2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Prix : 5euros/kgs"
+            android:text="Prix : 5euros/kg"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_margin="5dp"/>
 
-</LinearLayout>
+    </LinearLayout>
 </LinearLayout>
