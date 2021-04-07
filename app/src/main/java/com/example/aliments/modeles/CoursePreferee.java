@@ -2,15 +2,15 @@ package com.example.aliments.modeles;
 
 import java.util.List;
 
-public class CourcePreferee {
-    private List<Produit> listeProduit;
+public class CoursePreferee {
+    private List<Aliment> listeProduit;
     private String name;
 
     // getters and setters
-    public List<Produit> getListeProduitAlimentaire() {
+    public List<Aliment> getListeProduitAlimentaire() {
         return listeProduit;
     }
-    public void setListeProduitAlimentaire(List<Produit> listeProduit) {
+    public void setListeProduitAlimentaire(List<Aliment> listeProduit) {
         this.listeProduit = listeProduit;
     }
     public String getName() {
@@ -21,10 +21,10 @@ public class CourcePreferee {
     }
 
     // constructeurs
-    public CourcePreferee() {
+    public CoursePreferee() {
     }
 
-    public CourcePreferee(List<Produit> listeProduit, String name) {
+    public CoursePreferee(List<Aliment> listeProduit, String name) {
         this.listeProduit = listeProduit;
         this.name = name;
     }
@@ -34,7 +34,7 @@ public class CourcePreferee {
         listeProduit.add(AlimentFactory.build(type));
     }
 
-    public void supprimerProduit(Produit produit){
-        listeProduit.remove(produit);
+    public void supprimerProduit(Aliment aliment){
+        listeProduit.remove(aliment);
     }
 }

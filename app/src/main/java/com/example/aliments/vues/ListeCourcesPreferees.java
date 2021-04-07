@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.aliments.R;
-import com.example.aliments.modeles.CourcePreferee;
+import com.example.aliments.modeles.CoursePreferee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class ListeCourcesPreferees extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_cources_preferees);
 
-        List<CourcePreferee> listCourcesPreferees = new ArrayList<>();
+        List<CoursePreferee> listCourcesPreferees = new ArrayList<>();
     }
 
     // Ajouter une nouvelle liste de cources preferees

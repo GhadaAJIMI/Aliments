@@ -1,6 +1,6 @@
 package com.example.aliments.modeles;
 
-public class Produit {
+public class Aliment {
     private String name;
     private double prix;
     private String imageMemic;
@@ -26,10 +26,10 @@ public class Produit {
     }
 
     // constructeur
-    public Produit() {
+    public Aliment() {
     }
 
-    public Produit(String name, double prix, String imageMemic) {
+    public Aliment(String name, double prix, String imageMemic) {
         this.name = name;
         this.prix = prix;
         this.imageMemic = imageMemic;

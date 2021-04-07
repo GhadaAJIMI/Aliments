@@ -1,11 +1,10 @@
 package com.example.aliments.modeles;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class Magasin {
     private Seller proprio;
-    private HashMap<Produit, Double> listeProduits;
+    private HashMap<Aliment, Double> listeProduits;
 
     // getters and setters
     public Seller getProprio() {
@@ -14,37 +13,37 @@ public class Magasin {
     public void setProprio(Seller proprio) {
         this.proprio = proprio;
     }
-    public HashMap<Produit, Double> getListeProduits() {
+    public HashMap<Aliment, Double> getListeProduits() {
         return listeProduits;
     }
-    public void setListeProduits(HashMap<Produit, Double> listeProduits) {
+    public void setListeProduits(HashMap<Aliment, Double> listeProduits) {
         this.listeProduits = listeProduits;
     }
 
     // constructeurs
     public Magasin() {super();}
 
-    public Magasin(Seller proprio, HashMap<Produit, Double> listeProduits) {
+    public Magasin(Seller proprio, HashMap<Aliment, Double> listeProduits) {
         this.proprio = proprio;
         this.listeProduits = listeProduits;
     }
 
     // méthodes
     public void ajouterAliment(String name, double price, String imageMemic, double quantite, int type) throws Throwable{
-        Produit produit = AlimentFactory.build(type);
-        produit.setPrix(price);
-        produit.setName(name);
-        produit.setImageMemic(imageMemic);
+        Aliment aliment = AlimentFactory.build(type);
+        aliment.setPrix(price);
+        aliment.setName(name);
+        aliment.setImageMemic(imageMemic);
 
-        listeProduits.put(produit, quantite);
+        listeProduits.put(aliment, quantite);
     }
 
     public void ajouterAliment(String name, double price, double quantite, int type) throws Throwable{
-        Produit produit = AlimentFactory.build(type);
-        produit.setPrix(price);
-        produit.setName(name);
+        Aliment aliment = AlimentFactory.build(type);
+        aliment.setPrix(price);
+        aliment.setName(name);
 
-        listeProduits.put(produit, quantite);
+        listeProduits.put(aliment, quantite);
     }
 
 }

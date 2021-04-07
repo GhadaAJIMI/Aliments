@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface Buyer {
-    List<CourcePreferee> listeCourcesPreferees = new ArrayList<>();
+    List<CoursePreferee> listeCourcesPreferees = new ArrayList<>();
     Basket panier = new Basket();
 
     // Ajouter au panier

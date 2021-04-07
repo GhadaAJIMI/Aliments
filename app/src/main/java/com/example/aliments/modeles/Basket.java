@@ -3,14 +3,14 @@ package com.example.aliments.modeles;
 import java.util.List;
 
 public class Basket {
-    private List<Produit> listeProduit;
+    private List<Aliment> listeProduit;
     private double prixTotal;
 
     // getters and setters
-    public List<Produit> getListeProduit() {
+    public List<Aliment> getListeProduit() {
         return listeProduit;
     }
-    public void setListeProduit(List<Produit> listeProduit) {
+    public void setListeProduit(List<Aliment> listeProduit) {
         this.listeProduit = listeProduit;
     }
     public double getPrixTotal() {
@@ -24,7 +24,7 @@ public class Basket {
     public Basket() {
     }
 
-    public Basket(List<Produit> listeProduit, double prixTotal) {
+    public Basket(List<Aliment> listeProduit, double prixTotal) {
         this.listeProduit = listeProduit;
         this.prixTotal = prixTotal;
     }
