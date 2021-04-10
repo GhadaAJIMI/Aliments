@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.example.aliments.MainActivity;
 import com.example.aliments.R;
+import com.example.aliments.modeles.Aliment;
 
 public class AcceuilVendeurActivity extends AppCompatActivity {
 
@@ -20,6 +21,14 @@ public class AcceuilVendeurActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AcceuilVendeurActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById( R.id.buttonListeDesArticle).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AcceuilVendeurActivity.this, ListeAlimentVendeurActivity.class);
                 startActivity(intent);
             }
         });
