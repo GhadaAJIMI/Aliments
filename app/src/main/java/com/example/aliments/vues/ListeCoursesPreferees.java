@@ -10,14 +10,14 @@ import com.example.aliments.modeles.CoursePreferee;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListeCourcesPreferees extends AppCompatActivity {
+public class ListeCoursesPreferees extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_liste_cources_preferees);
+        setContentView(R.layout.activity_liste_courses_preferees);
 
-        List<CoursePreferee> listCourcesPreferees = new ArrayList<>();
+        List<CoursePreferee> listCoursesPreferees = new ArrayList<>();
     }
 
     // Ajouter une nouvelle liste de cources preferees

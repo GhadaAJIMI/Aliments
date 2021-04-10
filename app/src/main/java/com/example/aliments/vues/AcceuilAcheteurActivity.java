@@ -43,7 +43,7 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
         findViewById( R.id.buttonListesPreferees).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AcceuilAcheteurActivity.this, ListeCourcesPreferees.class);
+                Intent intent = new Intent(AcceuilAcheteurActivity.this, ListeCoursesPreferees.class);
                 startActivity(intent);
             }
         });

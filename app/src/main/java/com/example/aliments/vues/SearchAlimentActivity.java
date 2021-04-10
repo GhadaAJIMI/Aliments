@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +23,7 @@ public class SearchAlimentActivity extends AppCompatActivity {
     ListView ls;
     String mName[] = {"Banane" , "Pomme" , "Kiwi"};
     String mDescription[] = {"5 euros/kg" , "4 euros/kg" , "3 euros/kg" };
-    int images[] = {R.drawable.bannane , R.drawable.pomme , R.drawable.kiwi};
+    int images[] = {R.drawable.banane, R.drawable.pomme , R.drawable.kiwi};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
