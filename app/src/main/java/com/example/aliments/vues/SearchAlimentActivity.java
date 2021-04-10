@@ -21,9 +21,9 @@ import com.example.aliments.R;
 
 public class SearchAlimentActivity extends AppCompatActivity {
     ListView ls;
-    String mName[] = {"Banane" , "Pomme" , "Kiwi"};
-    String mDescription[] = {"5 euros/kg" , "4 euros/kg" , "3 euros/kg" };
-    int images[] = {R.drawable.banane, R.drawable.pomme , R.drawable.kiwi};
+    String mName[] = {"Banane" , "Pomme" , "Kiwi","Orange","Fraise"};
+    String mDescription[] = {"5 euros/kg" , "4 euros/kg" , "3 euros/kg", "2 euros/kg", "1 euros/kg" };
+    int images[] = {R.drawable.banane, R.drawable.pomme , R.drawable.kiwi, R.drawable.orange, R.drawable.orange, R.drawable.fraise};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,10 @@ public class SearchAlimentActivity extends AppCompatActivity {
                     Toast.makeText(SearchAlimentActivity.this, "4 euros/kg", Toast.LENGTH_SHORT).show();
                 }if(position == 2){
                     Toast.makeText(SearchAlimentActivity.this, "3 euros/kg", Toast.LENGTH_SHORT).show();
+                } if(position == 3){
+                    Toast.makeText(SearchAlimentActivity.this, "2 euros/kg", Toast.LENGTH_SHORT).show();
+                }if(position == 4){
+                    Toast.makeText(SearchAlimentActivity.this, "1 euros/kg", Toast.LENGTH_SHORT).show();
                 }
             }
         });
