@@ -1,0 +1,480 @@
+Index: app/src/main/java/com/example/aliments/modeles/AlimentFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/AlimentFactory.java	(revision 944abdebd9eb477c5a17ea1353757c04107346cf)
++++ app/src/main/java/com/example/aliments/modeles/AlimentFactory.java	(date 1617549483060)
+@@ -1,4 +1,20 @@
+ package com.example.aliments.modeles;
+ 
+ public class AlimentFactory {
++    public static final int PRODUIT_ALIMENTAIRE = 1;
++    public static final int PRODUIT_HYGENIQUE = 2;
++    public static final int PRODUIT_BRICOLAGE = 3;
++    public static final int PRODUIT_JARDINAGE = 4;
++    public static final int PRODUIT_VESTIMENTAIRE = 5;
++
++    static Produit build(int type) throws Throwable{
++        switch (type){
++            case PRODUIT_ALIMENTAIRE : return new ProduitAlimentaire();
++            case PRODUIT_HYGENIQUE : return new ProduitHygenique();
++            case PRODUIT_BRICOLAGE : return new ProduitBricolage();
++            case PRODUIT_JARDINAGE : return new ProduitJardinage();
++            case PRODUIT_VESTIMENTAIRE : return new ProduitVestimentaire();
++            default: throw new Throwable("unknown product");
++        }
++    }
+ }
+Index: app/src/main/res/layout/activity_liste_cources_preferees.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_liste_cources_preferees.xml	(date 1617548889192)
++++ app/src/main/res/layout/activity_liste_cources_preferees.xml	(date 1617548889192)
+@@ -0,0 +1,24 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".vues.ListeCourcesPreferees"
++    android:orientation="horizontal">
++
++    <ListView
++        android:id="@+id/listeCource"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content">
++    </ListView>
++
++    <Button
++        android:id="@+id/boutonRetouner"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginBottom="50dp"
++        android:layout_marginLeft="50dp"
++        android:text="Back"></Button>
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 944abdebd9eb477c5a17ea1353757c04107346cf)
++++ app/src/main/AndroidManifest.xml	(date 1617538078076)
+@@ -9,7 +9,8 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/Theme.Aliments">
+-        <activity android:name=".vues.SearchSellerActivity"></activity>
++        <activity android:name=".vues.ListeCourcesPreferees"></activity>
++        <activity android:name=".vues.SearchSellerActivity" />
+         <activity android:name=".vues.SearchAlimentActivity" />
+         <activity android:name=".vues.AcceuilVendeurActivity" />
+         <activity android:name=".vues.AcceuilAcheteurActivity" />
+Index: app/src/main/java/com/example/aliments/vues/ListeCourcesPreferees.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/vues/ListeCourcesPreferees.java	(date 1617543451740)
++++ app/src/main/java/com/example/aliments/vues/ListeCourcesPreferees.java	(date 1617543451740)
+@@ -0,0 +1,28 @@
++package com.example.aliments.vues;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.example.aliments.R;
++import com.example.aliments.modeles.CourcePreferee;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class ListeCourcesPreferees extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_liste_cources_preferees);
++
++        List<CourcePreferee> listCourcesPreferees = new ArrayList<>();
++    }
++
++    // Ajouter une nouvelle liste de cources preferees
++
++    // supprimer une liste de cources preferees
++
++    // afficher la liste des cources preferees
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/aliments/modeles/Buyer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/Buyer.java	(revision 944abdebd9eb477c5a17ea1353757c04107346cf)
++++ app/src/main/java/com/example/aliments/modeles/Buyer.java	(date 1617553315935)
+@@ -1,6 +1,11 @@
+ package com.example.aliments.modeles;
+ 
++import java.util.ArrayList;
++import java.util.List;
++
+ public interface Buyer {
++    List<CourcePreferee> listeCourcesPreferees = new ArrayList<>();
++    Basket panier = new Basket();
+ 
+     // Ajouter au panier
+ 
+Index: app/src/main/java/com/example/aliments/modeles/ProduitJardinage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/ProduitJardinage.java	(date 1617549515777)
++++ app/src/main/java/com/example/aliments/modeles/ProduitJardinage.java	(date 1617549515777)
+@@ -0,0 +1,4 @@
++package com.example.aliments.modeles;
++
++public class ProduitJardinage extends Produit{
++}
+Index: app/src/main/java/com/example/aliments/modeles/ProduitHygenique.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/ProduitHygenique.java	(date 1617549515805)
++++ app/src/main/java/com/example/aliments/modeles/ProduitHygenique.java	(date 1617549515805)
+@@ -0,0 +1,4 @@
++package com.example.aliments.modeles;
++
++public class ProduitHygenique extends Produit{
++}
+Index: app/src/main/res/layout/adapter_liste_cources_preferees.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/adapter_liste_cources_preferees.xml	(date 1617541529329)
++++ app/src/main/res/layout/adapter_liste_cources_preferees.xml	(date 1617541529329)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:orientation="vertical" android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <Button
++        android:id="@+id/boutonAjout"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginRight="50dp"
++        android:text="+"></Button>
++
++    <Button
++        android:id="@+id/boutonSupprime"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginRight="100dp"
++        android:text="-"></Button>
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/aliments/modeles/CourcePreferee.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/CourcePreferee.java	(date 1617552266371)
++++ app/src/main/java/com/example/aliments/modeles/CourcePreferee.java	(date 1617552266371)
+@@ -0,0 +1,40 @@
++package com.example.aliments.modeles;
++
++import java.util.List;
++
++public class CourcePreferee {
++    private List<Produit> listeProduit;
++    private String name;
++
++    // getters and setters
++    public List<Produit> getListeProduitAlimentaire() {
++        return listeProduit;
++    }
++    public void setListeProduitAlimentaire(List<Produit> listeProduit) {
++        this.listeProduit = listeProduit;
++    }
++    public String getName() {
++        return name;
++    }
++    public void setName(String name) {
++        this.name = name;
++    }
++
++    // constructeurs
++    public CourcePreferee() {
++    }
++
++    public CourcePreferee(List<Produit> listeProduit, String name) {
++        this.listeProduit = listeProduit;
++        this.name = name;
++    }
++
++    // méthodes
++    public void ajouterProduit(int type) throws Throwable{
++        listeProduit.add(AlimentFactory.build(type));
++    }
++
++    public void supprimerProduit(Produit produit){
++        listeProduit.remove(produit);
++    }
++}
+Index: app/src/main/java/com/example/aliments/vues/AcceuilAcheteurActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/vues/AcceuilAcheteurActivity.java	(revision 944abdebd9eb477c5a17ea1353757c04107346cf)
++++ app/src/main/java/com/example/aliments/vues/AcceuilAcheteurActivity.java	(date 1617538223938)
+@@ -39,5 +39,13 @@
+                 startActivity(intent);
+             }
+         });
++
++        findViewById( R.id.buttonListesPreferees).setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                Intent intent = new Intent(AcceuilAcheteurActivity.this, ListeCourcesPreferees.class);
++                startActivity(intent);
++            }
++        });
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/aliments/modeles/Aliment.java
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/Aliment.java	(revision 944abdebd9eb477c5a17ea1353757c04107346cf)
++++ app/src/main/java/com/example/aliments/modeles/ProduitAlimentaire.java	(date 1617548867736)
+@@ -1,4 +1,4 @@
+ package com.example.aliments.modeles;
+ 
+-public class Aliment {
++public class ProduitAlimentaire extends Produit{
+ }
+Index: app/src/main/java/com/example/aliments/modeles/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/User.java	(revision 944abdebd9eb477c5a17ea1353757c04107346cf)
++++ app/src/main/java/com/example/aliments/modeles/User.java	(date 1617553315952)
+@@ -4,21 +4,13 @@
+ 
+ public class User implements Seller, Buyer{
+     private String name;
+-    private Basket panier;
+-    private List<List<Aliment>> listeCoursesPreferees;
+ 
+     //getters and setters
+-    public Basket getPanier() {
+-        return panier;
+-    }
+-    public void setPanier(Basket panier) {
+-        this.panier = panier;
++    public String getName() {
++        return name;
+     }
+-    public List<List<Aliment>> getListeCoursesPreferees() {
+-        return listeCoursesPreferees;
+-    }
+-    public void setListeCoursesPreferees(List<List<Aliment>> listeCoursesPreferees) {
+-        this.listeCoursesPreferees = listeCoursesPreferees;
++    public void setName(String name) {
++        this.name = name;
+     }
+ 
+     // constructeurs
+Index: app/src/main/java/com/example/aliments/modeles/Magasin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/Magasin.java	(revision 944abdebd9eb477c5a17ea1353757c04107346cf)
++++ app/src/main/java/com/example/aliments/modeles/Magasin.java	(date 1617548867761)
+@@ -4,7 +4,7 @@
+ 
+ public class Magasin {
+     private Seller proprio;
+-    private List<Aliment> listeAliments;
++    private List<ProduitAlimentaire> listeProduitAlimentaires;
+     private AlimentFactory alimentFactory;
+ 
+     // getters and setters
+@@ -14,19 +14,19 @@
+     public void setProprio(Seller proprio) {
+         this.proprio = proprio;
+     }
+-    public List<Aliment> getListeAliments() {
+-        return listeAliments;
++    public List<ProduitAlimentaire> getListeProduitAlimentaires() {
++        return listeProduitAlimentaires;
+     }
+-    public void setListeAliments(List<Aliment> listeAliments) {
+-        this.listeAliments = listeAliments;
++    public void setListeProduitAlimentaires(List<ProduitAlimentaire> listeProduitAlimentaires) {
++        this.listeProduitAlimentaires = listeProduitAlimentaires;
+     }
+ 
+     // constructeurs
+     public Magasin() {super();}
+ 
+-    public Magasin(Seller proprio, List<Aliment> listeAliments) {
++    public Magasin(Seller proprio, List<ProduitAlimentaire> listeProduitAlimentaires) {
+         this.proprio = proprio;
+-        this.listeAliments = listeAliments;
++        this.listeProduitAlimentaires = listeProduitAlimentaires;
+     }
+ 
+ }
+Index: app/src/main/java/com/example/aliments/adapters/ListeCourcesPrefereesAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/adapters/ListeCourcesPrefereesAdapter.java	(date 1617543137651)
++++ app/src/main/java/com/example/aliments/adapters/ListeCourcesPrefereesAdapter.java	(date 1617543137651)
+@@ -0,0 +1,4 @@
++package com.example.aliments.adapters;
++
++public class ListeCourcesPrefereesAdapter {
++}
+Index: app/src/main/java/com/example/aliments/modeles/ProduitVestimentaire.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/ProduitVestimentaire.java	(date 1617549528142)
++++ app/src/main/java/com/example/aliments/modeles/ProduitVestimentaire.java	(date 1617549528142)
+@@ -0,0 +1,4 @@
++package com.example.aliments.modeles;
++
++public class ProduitVestimentaire extends Produit{
++}
+Index: app/src/main/res/layout/activity_acceuil_acheteur.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_acceuil_acheteur.xml	(revision 944abdebd9eb477c5a17ea1353757c04107346cf)
++++ app/src/main/res/layout/activity_acceuil_acheteur.xml	(date 1617538045878)
+@@ -37,7 +37,7 @@
+         android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="350dp"
+-        android:text="Mes listes preferees" />
++        android:text="Mes listes de cources preferées" />
+ 
+     <Button
+         android:id="@+id/buttonPanier"
+Index: app/src/main/java/com/example/aliments/modeles/Produit.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/Produit.java	(date 1617551806912)
++++ app/src/main/java/com/example/aliments/modeles/Produit.java	(date 1617551806912)
+@@ -0,0 +1,40 @@
++package com.example.aliments.modeles;
++
++public class Produit {
++    private String name;
++    private double prix;
++    private String imageMemic;
++
++    // getters and setters
++    public String getName() {
++        return name;
++    }
++    public void setName(String name) {
++        this.name = name;
++    }
++    public double getPrix() {
++        return prix;
++    }
++    public void setPrix(double prix) {
++        this.prix = prix;
++    }
++    public String getImageMemic() {
++        return imageMemic;
++    }
++    public void setImageMemic(String imageMemic) {
++        this.imageMemic = imageMemic;
++    }
++
++    // constructeur
++    public Produit() {
++    }
++
++    public Produit(String name, double prix, String imageMemic) {
++        this.name = name;
++        this.prix = prix;
++        this.imageMemic = imageMemic;
++    }
++
++    // méthodes
++
++}
+Index: app/src/main/java/com/example/aliments/modeles/Basket.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/Basket.java	(revision 944abdebd9eb477c5a17ea1353757c04107346cf)
++++ app/src/main/java/com/example/aliments/modeles/Basket.java	(date 1617553315944)
+@@ -3,7 +3,29 @@
+ import java.util.List;
+ 
+ public class Basket {
+-    private List<Aliment> listeAliments;
++    private List<Produit> listeProduit;
++    private double prixTotal;
+ 
++    // getters and setters
++    public List<Produit> getListeProduit() {
++        return listeProduit;
++    }
++    public void setListeProduit(List<Produit> listeProduit) {
++        this.listeProduit = listeProduit;
++    }
++    public double getPrixTotal() {
++        return prixTotal;
++    }
++    public void setPrixTotal(double prixTotal) {
++        this.prixTotal = prixTotal;
++    }
+ 
++    // constructeur
++    public Basket() {
++    }
++
++    public Basket(List<Produit> listeProduit, double prixTotal) {
++        this.listeProduit = listeProduit;
++        this.prixTotal = prixTotal;
++    }
+ }
+Index: app/src/main/java/com/example/aliments/modeles/ProduitBricolage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/aliments/modeles/ProduitBricolage.java	(date 1617549521894)
++++ app/src/main/java/com/example/aliments/modeles/ProduitBricolage.java	(date 1617549521894)
+@@ -0,0 +1,4 @@
++package com.example.aliments.modeles;
++
++public class ProduitBricolage extends Produit{
++}

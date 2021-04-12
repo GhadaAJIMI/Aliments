@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginFragment">10dp</dimen>
+    <dimen name="marginbouton">5dp</dimen>
+    <dimen name="textSize">50dp</dimen>
+    <dimen name="tailleImage">100dp</dimen>
+    <dimen name="textSize2">25dp</dimen>
+    <dimen name="tailleBouton">50dp</dimen>
+</resources>
