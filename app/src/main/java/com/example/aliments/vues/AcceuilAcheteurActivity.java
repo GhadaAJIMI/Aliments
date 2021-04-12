@@ -16,7 +16,7 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceuil_acheteur);
 
-        findViewById( R.id.buttonBack1).setOnClickListener(new View.OnClickListener() {
+        findViewById( R.id.buttonBack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AcceuilAcheteurActivity.this, MainActivity.class);
@@ -43,7 +43,7 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
         findViewById( R.id.buttonListesPreferees).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AcceuilAcheteurActivity.this, ListeCoursesPreferees.class);
+                Intent intent = new Intent(AcceuilAcheteurActivity.this, ListeCoursesPrefereesActivity.class);
                 startActivity(intent);
             }
         });

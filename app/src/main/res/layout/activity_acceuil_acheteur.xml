@@ -48,7 +48,7 @@
         android:text="Mon panier" />
 
     <Button
-        android:id="@+id/buttonBack1"
+        android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

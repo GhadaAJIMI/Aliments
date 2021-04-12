@@ -1,9 +1,12 @@
 package com.example.aliments.modeles;
 
-public class Aliment {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Aliment implements Parcelable {
     private String name;
     private double prix;
-    private String imageMemic;
+    private int rsc;
 
     // getters and setters
     public String getName() {
@@ -18,23 +21,56 @@ public class Aliment {
     public void setPrix(double prix) {
         this.prix = prix;
     }
-    public String getImageMemic() {
-        return imageMemic;
+    public int getRsc() {
+        return rsc;
     }
-    public void setImageMemic(String imageMemic) {
-        this.imageMemic = imageMemic;
+    public void setRsc(int rsc) {
+        this.rsc = rsc;
     }
 
     // constructeur
     public Aliment() {
     }
 
-    public Aliment(String name, double prix, String imageMemic) {
+    public Aliment(String name, double prix) {
         this.name = name;
         this.prix = prix;
-        this.imageMemic = imageMemic;
+        this.rsc = 0;
     }
 
-    // méthodes
+    public Aliment(String name, double prix, int rsc) {
+        this.name = name;
+        this.prix = prix;
+        this.rsc = rsc;
+    }
 
+    protected Aliment(Parcel in) {
+        name = in.readString();
+        prix = in.readDouble();
+        rsc = in.readInt();
+    }
+
+    public static final Creator<Aliment> CREATOR = new Creator<Aliment>() {
+        @Override
+        public Aliment createFromParcel(Parcel in) {
+            return new Aliment(in);
+        }
+
+        @Override
+        public Aliment[] newArray(int size) {
+            return new Aliment[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeDouble(prix);
+        dest.writeInt(rsc);
+    }
 }

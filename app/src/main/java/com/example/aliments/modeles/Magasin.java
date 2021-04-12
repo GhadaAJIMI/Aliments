@@ -33,7 +33,6 @@ public class Magasin {
         Aliment aliment = AlimentFactory.build(type);
         aliment.setPrix(price);
         aliment.setName(name);
-        aliment.setImageMemic(imageMemic);
 
         listeProduits.put(aliment, quantite);
     }

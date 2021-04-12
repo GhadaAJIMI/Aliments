@@ -10,11 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.aliments.R;
 
-
-
 public class FragmentContainer extends Fragment {
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
