@@ -34,7 +34,7 @@ public class ListeCoursesPrefereesActivity extends AppCompatActivity {
 
         ListView listCourse = findViewById(R.id.listeCourse);
         listCourse.setAdapter(new ListeCoursesPrefereesAdapter(this, listCourcesPreferees));
-
+        
         findViewById( R.id.boutonRetouner).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
