@@ -15,6 +15,7 @@ import com.example.aliments.adapters.FragmentContainer;
 import com.example.aliments.adapters.MenuFragment;
 import com.example.aliments.vues.AcceuilAcheteurActivity;
 import com.example.aliments.vues.AcceuilVendeurActivity;
+import com.example.aliments.vues.ListeCoursesPrefereesActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,5 +58,8 @@ public class MainActivity extends AppCompatActivity {
              }
             }
         });
+
+
+
     }
 }
