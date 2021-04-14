@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/shop_icon"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/shop1"></ImageView>
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/design_default_color_primary"
+            android:text="@string/shop_default_name"></TextView>
+        <TextView
+            android:id="@+id/shop_numTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/magasin_default_numTel"
+            android:layout_below="@+id/shop_name">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/appeler"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_below="@id/shop_numTel"
+            android:layout_marginTop="15dp"
+            android:text="Appeler" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -3,4 +3,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="aliment_default_name">nameAliment</string>
     <string name="aliment_default_price">priceAliment</string>
+    <string name="shop_default_name">Nom du magasin</string>
+    <string name="magasin_default_numTelE">0678890</string>
+    <string name="magasin_default_numTel">0600000000</string>
 </resources>

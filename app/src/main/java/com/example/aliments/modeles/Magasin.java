@@ -9,7 +9,9 @@ import java.util.HashMap;
 public class Magasin {
     private Seller proprio;
     private HashMap<Aliment, Double> listeProduits;
+    private String name;
     private int numeroTelephone;
+    private String mnemonic;
 
     public Magasin(Parcel in) {
         //listeProduits = in.readHashMap();
@@ -30,15 +32,21 @@ public class Magasin {
         this.listeProduits = listeProduits;
     }
     public int getNumeroTelephone() { return numeroTelephone; }
-    public void setNumeroTelephone(int numeroTelephone) {this.numeroTelephone = numeroTelephone; }
+    public String getName() { return name; }
+    public String getMnemonic() { return mnemonic; }
 
     // constructeurs
     public Magasin() {super();}
 
-    public Magasin(Seller proprio, HashMap<Aliment, Double> listeProduits, int numeroTelephone) {
+    public Magasin(Seller proprio, HashMap<Aliment, Double> listeProduits) {
         this.proprio = proprio;
         this.listeProduits = listeProduits;
-        this.numeroTelephone = getNumeroTelephone();
+    }
+
+    public Magasin(String name, String mnemonic, int numeroTelephone ){
+        this.name = name;
+        this.numeroTelephone = numeroTelephone;
+        this.mnemonic = mnemonic;
     }
 
     // méthodes
