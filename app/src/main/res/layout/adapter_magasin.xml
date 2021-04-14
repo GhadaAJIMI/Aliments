@@ -9,7 +9,7 @@
         android:id="@+id/shop_icon"
         android:layout_width="206dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/shop1"></ImageView>
+        android:src="@drawable/shop_1_icon"></ImageView>
 
     <RelativeLayout
         android:layout_margin="10dp"

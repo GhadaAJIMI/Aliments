@@ -54,10 +54,10 @@ public class ListeMagasinsAdapter extends BaseAdapter {
         String mnemonic = currentMagasin.getMnemonic();
         int numTel = currentMagasin.getNumeroTelephone();
 
-        //ImageView shopIconView = convertView.findViewById(R.id.shop_icon);
-        //String resourceName = "shop_"+ mnemonic + "_icon";
-        //int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
-        ///shopIconView.setImageResource(resId);
+        ImageView shopIconView = convertView.findViewById(R.id.shop_icon);
+        String resourceName = "shop_"+mnemonic+"_icon";
+        int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
+        shopIconView.setImageResource(resId);
 
         TextView shopNameView = convertView.findViewById(R.id.shop_name);
         shopNameView.setText(nameMagasin);

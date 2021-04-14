@@ -33,9 +33,9 @@ public class SearchSellerActivity extends AppCompatActivity {
 
         //list of shops
         List<Magasin> listeMagasins = new ArrayList<>();
-        listeMagasins.add(new Magasin("SHOP1", "shop1", 0600000000));
-        listeMagasins.add(new Magasin("SHOP2", "shop2", 0611111111));
-        listeMagasins.add(new Magasin("SHOP3", "shop3", 0622222222));
+        listeMagasins.add(new Magasin("SHOP1", "1", 0600000000));
+        listeMagasins.add(new Magasin("SHOP2", "2", 0611111111));
+        listeMagasins.add(new Magasin("SHOP3", "3", 0622222222));
 
         ListView shopListView = findViewById(R.id.shop_list_view);
         shopListView.setAdapter(new ListeMagasinsAdapter(this, listeMagasins));
