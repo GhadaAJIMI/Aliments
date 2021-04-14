@@ -1,6 +1,8 @@
 package com.example.aliments.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,14 +57,20 @@ public class ListeMagasinsAdapter extends BaseAdapter {
         //ImageView shopIconView = convertView.findViewById(R.id.shop_icon);
         //String resourceName = "shop_"+ mnemonic + "_icon";
         //int resId = context.getResources().getIdentifier(resourceName, "drawable", context.getPackageName());
-        //shopIconView.setImageResource(resId);
+        ///shopIconView.setImageResource(resId);
 
-        //TextView shopNameView = convertView.findViewById(R.id.shop_name);
-        //shopNameView.setText(nameMagasin);
+        TextView shopNameView = convertView.findViewById(R.id.shop_name);
+        shopNameView.setText(nameMagasin);
 
         Button appeler =(Button) convertView.findViewById(R.id.appeler);
 
-
+        appeler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent appel = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + currentMagasin.getNumeroTelephone()));
+                context.startActivity(appel);
+            }
+        });
 
         //TextView shopNumTel = convertView.findViewById(R.id.shop_numTel);
         //shopNumTel.setText(numTel + '.');
