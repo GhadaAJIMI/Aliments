@@ -3,8 +3,15 @@ package com.example.aliments.vues;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
 import com.example.aliments.R;
+import com.example.aliments.adapters.AlimentAdapter;
+import com.example.aliments.modeles.Aliment;
+import com.example.aliments.modeles.AlimentFrais;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListeAlimentVendeurActivity extends AppCompatActivity {
 
@@ -12,5 +19,16 @@ public class ListeAlimentVendeurActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_aliment_vendeur);
+
+        List<Aliment> mesAliments = new ArrayList<>();
+        mesAliments.add(new Aliment("Orange", 2));
+        mesAliments.add(new Aliment("Banane", 4));
+        mesAliments.add(new Aliment("Fraise", 10));
+
+        //get listview
+
+        ListView vendeurListView = findViewById(R.id.vendeur_list_view);
+        vendeurListView.setAdapter(new AlimentAdapter(this, mesAliments));
+
     }
 }
