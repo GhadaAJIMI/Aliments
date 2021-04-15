@@ -62,6 +62,9 @@ public class ListeMagasinsAdapter extends BaseAdapter {
         TextView shopNameView = convertView.findViewById(R.id.shop_name);
         shopNameView.setText(nameMagasin);
 
+        TextView shopNumView = convertView.findViewById(R.id.shop_numTel);
+        shopNumView.setText(numTel+"");
+
         Button appeler =(Button) convertView.findViewById(R.id.appeler);
 
         appeler.setOnClickListener(new View.OnClickListener() {
