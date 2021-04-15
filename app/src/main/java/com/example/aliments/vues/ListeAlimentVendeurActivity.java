@@ -21,9 +21,9 @@ public class ListeAlimentVendeurActivity extends AppCompatActivity {
         setContentView(R.layout.activity_liste_aliment_vendeur);
 
         List<Aliment> mesAliments = new ArrayList<>();
-        mesAliments.add(new Aliment("Orange", 2));
-        mesAliments.add(new Aliment("Banane", 4));
-        mesAliments.add(new Aliment("Fraise", 10));
+        mesAliments.add(new Aliment("Orange", "orange", 2));
+        mesAliments.add(new Aliment("Banane","banane", 4));
+        mesAliments.add(new Aliment("Fraise","fraise", 10));
 
         //get listview
 

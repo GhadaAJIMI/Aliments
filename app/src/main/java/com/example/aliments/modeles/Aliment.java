@@ -4,9 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Aliment implements Parcelable {
-    private String name;
-    private double prix;
-    private int rsc;
+    private String name = "Banane";
+    private double prix = 0;
+    private int rsc =0;
+    private String mnemonic = "banane";
 
     // getters and setters
     public String getName() {
@@ -24,6 +25,9 @@ public class Aliment implements Parcelable {
     public int getRsc() {
         return rsc;
     }
+    public String getMnemonic() {
+        return mnemonic;
+    }
     public void setRsc(int rsc) {
         this.rsc = rsc;
     }
@@ -36,6 +40,13 @@ public class Aliment implements Parcelable {
         this.name = name;
         this.prix = prix;
         this.rsc = 0;
+    }
+
+    public Aliment(String name, String mnemonic, double prix) {
+        this.name = name;
+        this.prix = prix;
+        this.rsc = 0;
+        this.mnemonic = mnemonic;
     }
 
     public Aliment(String name, double prix, int rsc) {
