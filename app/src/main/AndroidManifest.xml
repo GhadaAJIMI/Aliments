@@ -18,6 +18,7 @@
         <activity android:name=".vues.AcceuilAcheteurActivity" />
         <activity android:name=".vues.ReponseNotifActivity" />
         <activity android:name=".vues.NotificationsActivity" />
+        <activity android:name=".vues.ListeAlimentVendeurActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
