@@ -11,12 +11,12 @@
     <ListView
         android:id="@+id/listeCourse"
         android:layout_width="match_parent"
-        android:layout_height="555dp"></ListView>
+        android:layout_height="555dp" />
 
     <Button
         android:id="@+id/boutonRetouner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"></Button>
+        android:text="Back" />
 
 </LinearLayout>

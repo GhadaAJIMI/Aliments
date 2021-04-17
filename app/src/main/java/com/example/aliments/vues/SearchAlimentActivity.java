@@ -12,27 +12,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.aliments.R;
+import com.example.aliments.adapters.MyAlimentAdapter;
 
 public class SearchAlimentActivity extends AppCompatActivity {
-    ListView ls;
-    String mName[] = {"Banane" , "Pomme" , "Kiwi","Orange","Fraise"};
-    String mDescription[] = {"5 euros/kg" , "4 euros/kg" , "3 euros/kg", "2 euros/kg", "1 euros/kg" };
-    int images[] = {R.drawable.banane, R.drawable.pomme , R.drawable.kiwi, R.drawable.orange, R.drawable.orange, R.drawable.fraise};
+    GridView gv;
+    String[] name = {"Banane" , "Pomme" , "Kiwi","Orange","Fraise","Mango","Citron", "cerise" , "raison rouge","raisin jaune","grenade","pastèque"};
+    int [] imgs = {R.drawable.banane, R.drawable.pomme , R.drawable.kiwi,R.drawable.orange, R.drawable.fraise, R.drawable.mango, R.drawable.lemon,
+            R.drawable.cherry , R.drawable.grape,R.drawable.grape1, R.drawable.grenade, R.drawable.pasteque};
+    String mDescription[] = {"5 euros/kg" , "4 euros/kg" , "3 euros/kg", "2 euros/kg", "1 euros/kg" ,"1 euros/kg","1 euros/kg",
+            "3 euros/kg", "2 euros/kg", "1 euros/kg" ,"1 euros/kg","1 euros/kg"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_aliment);
-        ls = findViewById(R.id.listview);
-        MyAdapter adapter = new MyAdapter(this , mName , mDescription , images );
-        ls.setAdapter(adapter);
-        ls.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        gv = findViewById(R.id.gridview);
+        MyAlimentAdapter adapter = new MyAlimentAdapter(SearchAlimentActivity.this , name , imgs, mDescription);
+        gv.setAdapter(adapter);
+       gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0){
@@ -49,43 +54,22 @@ public class SearchAlimentActivity extends AppCompatActivity {
             }
         });
 
-        findViewById( R.id.buttonBack).setOnClickListener(new View.OnClickListener() {
+
+
+
+     /*  findViewById( R.id.buttonBack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SearchAlimentActivity.this, AcceuilAcheteurActivity.class);
                 startActivity(intent);
             }
         });
+        
+      */
     }
 
-    class MyAdapter extends ArrayAdapter<String>{
-        Context context;
-        String rName[];
-        String rDescription[];
-        int rImgs[];
 
-        MyAdapter(Context c , String name[] , String description[] , int img[]){
-            super(c , R.layout.row , R.id.textview1 , name );
-            this.context = c;
-            this.rName = name;
-            this.rDescription = description;
-            this.rImgs = img;
-        }
 
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.row , parent , false);
-            ImageView images = row.findViewById(R.id.image);
-            TextView name = row.findViewById(R.id.textview1);
-            TextView description = row.findViewById(R.id.textview2);
 
-            images.setImageResource(rImgs[position]);
-            name.setText(rName[position]);
-            description.setText(rDescription[position]);
 
-            return row;
-        }
-    }
 }
