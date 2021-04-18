@@ -31,5 +31,13 @@ public class AcceuilVendeurActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById( R.id.buttonAjouterLocalisation).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AcceuilVendeurActivity.this, MapActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
