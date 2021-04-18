@@ -70,7 +70,7 @@ public class ListeMagasinsAdapter extends BaseAdapter {
         appeler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent appel = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + currentMagasin.getNumeroTelephone()));
+                Intent appel = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + ( currentMagasin.getNumeroTelephone())));
                 context.startActivity(appel);
             }
         });
