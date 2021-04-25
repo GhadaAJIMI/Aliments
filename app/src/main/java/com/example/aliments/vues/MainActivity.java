@@ -1,7 +1,6 @@
-package com.example.aliments;
+package com.example.aliments.vues;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
@@ -11,11 +10,11 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
+import com.example.aliments.R;
 import com.example.aliments.adapters.FragmentContainer;
 import com.example.aliments.adapters.MenuFragment;
-import com.example.aliments.vues.AcceuilAcheteurActivity;
-import com.example.aliments.vues.AcceuilVendeurActivity;
-import com.example.aliments.vues.ListeCoursesPrefereesActivity;
+import com.example.aliments.controleurs.UserControler;
+import com.example.aliments.modeles.User;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,8 +57,5 @@ public class MainActivity extends AppCompatActivity {
              }
             }
         });
-
-
-
     }
 }

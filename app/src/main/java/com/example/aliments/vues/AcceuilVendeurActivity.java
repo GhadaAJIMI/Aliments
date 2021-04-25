@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.aliments.MainActivity;
 import com.example.aliments.R;
 
 public class AcceuilVendeurActivity extends AppCompatActivity {
