@@ -4,9 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="2dp"
-
-    >
+    android:padding="2dp">
 
     <ImageView
         android:id="@+id/imageView"
@@ -35,10 +33,19 @@
         android:layout_marginTop="5dp"/>
 
     <Button
-        android:id="@+id/ajout"
+        android:id="@+id/ajoutPanier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/priceview"
+        android:layout_centerHorizontal="true"
+        android:text="Ajouter au panier"/>
+
+    <Button
+        android:id="@+id/ajout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ajoutPanier"
+        android:layout_centerHorizontal="true"
         android:text="Ajouter aux courses préférées"/>
 
 </RelativeLayout>

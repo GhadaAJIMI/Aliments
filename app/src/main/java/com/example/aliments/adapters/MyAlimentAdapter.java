@@ -14,10 +14,12 @@ import androidx.annotation.Nullable;
 
 import com.example.aliments.R;
 import com.example.aliments.controleurs.AlimentControler;
+import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.vues.AcceuilAcheteurActivity;
 import com.example.aliments.vues.DetailCoursePreferee;
 import com.example.aliments.vues.ListeCoursesPrefereesActivity;
 import com.example.aliments.vues.MainActivity;
+import com.example.aliments.vues.PanierActivity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -74,6 +76,15 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
             public void onClick(View v) {
                 AlimentControler.aliment = AlimentControler.get(name[position]);
                 Intent intent = new Intent(context, ListeCoursesPrefereesActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
+        convertView.findViewById( R.id.ajoutPanier).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserControler.get(0).getBasket().add(AlimentControler.get(name[position]));
+                Intent intent = new Intent(context, PanierActivity.class);
                 context.startActivity(intent);
             }
         });
