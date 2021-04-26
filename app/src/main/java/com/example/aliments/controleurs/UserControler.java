@@ -34,4 +34,8 @@ public class UserControler {
     public static User get(int i){
         return listeUsers.get(i);
     }
+
+    public static void notifier(){
+
+    }
 }
