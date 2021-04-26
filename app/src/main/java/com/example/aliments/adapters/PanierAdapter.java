@@ -1,6 +1,7 @@
 package com.example.aliments.adapters;
 
 import android.content.Context;
+import android.os.TestLooperManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +9,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.example.aliments.R;
 import com.example.aliments.modeles.Aliment;
+import com.example.aliments.modeles.Basket;
 import com.example.aliments.modeles.CoursePreferee;
+import com.example.aliments.vues.PanierActivity;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -75,12 +79,16 @@ public class PanierAdapter extends BaseAdapter {
         Aliment currectAliment = (Aliment)getItem(position);
         String name = currectAliment.getName();
         Double quantite = getItemQuantity(position);
+        Double prix = currectAliment.getPrix();
 
         TextView listNameView = convertView.findViewById(R.id.coursePanier);
         listNameView.setText(name);
 
         TextView quantiteAliment = convertView.findViewById(R.id.coursePanierQuantite);
         quantiteAliment.setText("Q: "+quantite+" kg");
+
+        TextView prixAliment = convertView.findViewById(R.id.coursePanierPrix);
+        prixAliment.setText("Prix = " + prix + " €");
 
         return convertView;
     }

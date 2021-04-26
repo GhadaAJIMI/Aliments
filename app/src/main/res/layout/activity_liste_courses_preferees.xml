@@ -20,6 +20,12 @@
         android:text="Ajouter une nouvelle liste"></Button>
 
     <Button
+        android:id="@+id/boutonPanier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter au panier"></Button>
+
+    <Button
         android:id="@+id/boutonRetouner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

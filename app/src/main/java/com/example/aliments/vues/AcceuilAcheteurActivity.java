@@ -46,5 +46,13 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById( R.id.buttonPanier).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AcceuilAcheteurActivity.this, PanierActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

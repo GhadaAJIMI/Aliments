@@ -6,27 +6,15 @@
     android:gravity="center"
     tools:context=".vues.PanierActivity">
 
-    <EditText
-        android:id="@+id/paniernomaliment"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:hint="Entrez le nom de votre aliment"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="24dp" />
-    <EditText
-        android:id="@+id/paniernommagasin"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_below="@+id/paniernomaliment"
-        android:hint="Entrez le nom de votre aliment"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="24dp" />
-    <EditText
-        android:id="@+id/panieprixaliment"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_below="@+id/paniernommagasin"
-        android:hint="Entrez le prix de votre aliment"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="24dp" />
+    <ListView
+        android:id="@+id/p_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="470dp"/>
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Back" />
 </RelativeLayout>

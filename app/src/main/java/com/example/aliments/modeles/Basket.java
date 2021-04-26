@@ -1,12 +1,39 @@
 package com.example.aliments.modeles;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Basket {
-    private HashMap<Aliment, Double> listeProduit;
+public class Basket implements Parcelable {
+    private HashMap<Aliment, Double> listeProduit = new HashMap<Aliment, Double>();
     private double prixTotal;
+
+    public Basket(Parcel in) {
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
+    @Override
+    public int describeContents() { return 0;}
+
+    public static final Creator<Basket> CREATOR = new Creator<Basket>() {
+        @Override
+        public Basket createFromParcel(Parcel in) {
+            return new Basket(in);
+        }
+
+        @Override
+        public Basket[] newArray(int size) {
+            return new Basket[size];
+        }
+    };
+
+
 
     // getters and setters
     public HashMap<Aliment, Double> getListeProduit() {
@@ -53,4 +80,7 @@ public class Basket {
     public void put(Aliment aliment, Double i){
         listeProduit.put(aliment, i);
     }
+
+
+
 }

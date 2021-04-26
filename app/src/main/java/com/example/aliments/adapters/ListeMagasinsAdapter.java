@@ -75,10 +75,6 @@ public class ListeMagasinsAdapter extends BaseAdapter {
             }
         });
 
-        //TextView shopNumTel = convertView.findViewById(R.id.shop_numTel);
-        //shopNumTel.setText(numTel + '.');
-
-
         return convertView;
     }
 }
