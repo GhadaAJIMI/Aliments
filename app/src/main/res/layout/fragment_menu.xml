@@ -4,30 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:background="#f9d423"
     android:orientation="vertical"
     tools:context=".adapters.MenuFragment">
 
     <Button
+        android:id="@+id/menudujour"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Menu du jour"
+        android:layout_width="wrap_content" />
+
+    <Button
         android:id="@+id/Coursespref"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Liste des courses préférées" />
+        android:layout_marginTop="25dp"
+        android:text="Mes courses préférées" />
 
     <ListView
         android:id="@+id/ListeCoursesPref"
+        android:layout_marginTop="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     </ListView>
-   <Button
-      android:id="@+id/menudujour"
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="Menu du jour"
-      android:layout_width="wrap_content" />
+        android:text="Le panier contient : "
+        android:layout_marginTop="25dp"/>
 
-
-
+    <ListView
+        android:id="@+id/ListeCoursesPanier"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
 
 </LinearLayout>

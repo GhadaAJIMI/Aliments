@@ -28,6 +28,9 @@ public class MenuFragment extends Fragment {
         ListView listCourse = v.findViewById(R.id.ListeCoursesPref);
         listCourse.setAdapter(new ListeCoursesPrefEnMenuPrincipalAdapter(v.getContext(), UserControler.get(0).getListeCoursesPreferees()));
 
+        ListView listCoursePanier = v.findViewById(R.id.ListeCoursesPanier);
+        listCoursePanier.setAdapter(new PanierAdapter(v.getContext(), UserControler.get(0).getBasket().getListeProduit()));
+
         cousesPrefs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +38,7 @@ public class MenuFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
        menuJour = v.findViewById(R.id.menudujour);
        menuJour.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -44,7 +48,6 @@ public class MenuFragment extends Fragment {
 
            }
        });
-
 
         return v;
     }

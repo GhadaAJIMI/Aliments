@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     android:background="@drawable/background"
     tools:context=".vues.AcceuilAcheteurActivity">
 
@@ -12,49 +13,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Acceuil Acheteur"
+        android:layout_marginTop="50dp"
         android:textColor="@color/black"
         android:background="@color/white"
-        android:layout_centerHorizontal="true"
-        android:textSize="25sp"
-        android:layout_marginTop="25dp"/>
+        android:padding="5dp"
+        android:textSize="25sp"/>
 
     <Button
         android:id="@+id/buttonParAliment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:text="Recherche Aliment" />
 
     <Button
         android:id="@+id/buttonParVendeur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="50dp"
         android:text="Recherche Vendeur" />
 
     <Button
         android:id="@+id/buttonListesPreferees"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
-        android:text="Mes listes de courses preferées" />
+        android:layout_marginTop="50dp"
+        android:text="Mes courses preferées" />
 
     <Button
         android:id="@+id/buttonPanier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="50dp"
         android:text="Mon panier" />
 
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="50dp"
         android:text="Back" />
 
-</RelativeLayout>
+</LinearLayout>

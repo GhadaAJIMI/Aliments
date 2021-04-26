@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ListeCoursesPrefEnMenuPrincipalAdapter  extends BaseAdapter {
+public class ListeCoursesPrefEnMenuPrincipalAdapter extends BaseAdapter {
     private Context context;
     static private HashMap<String, CoursePreferee> listeCoursesPreferees;
     private LayoutInflater layoutInflater;

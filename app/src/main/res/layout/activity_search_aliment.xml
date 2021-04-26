@@ -7,15 +7,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".vues.SearchAlimentActivity"
+    android:gravity="center"
     android:background="#FFFF00">
 
     <GridView
         android:id="@+id/gridview"
         android:layout_width="wrap_content"
-        android:layout_height="592dp"
+        android:gravity="center"
+        android:layout_height="500dp"
         android:layout_marginTop="10dp"
         android:numColumns="2" />
 
-
+    <Button
+        android:id="@+id/buttonBack"
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
