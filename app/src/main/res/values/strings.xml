@@ -6,4 +6,13 @@
     <string name="shop_default_name">Nom du magasin</string>
     <string name="magasin_default_numTelE">0678890</string>
     <string name="magasin_default_numTel">0600000000</string>
+
+    <string name="modern">1</string>
+    <string name="classic">2</string>
+    <string name="electric">101</string>
+    <string name="essence">102</string>
+    <string name="fuel">103</string>
+    <string name="conserve">102</string>
+    <string name="frais">101</string>
+
 </resources>

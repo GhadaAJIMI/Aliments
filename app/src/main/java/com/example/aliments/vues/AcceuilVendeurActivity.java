@@ -38,5 +38,9 @@ public class AcceuilVendeurActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
+
+
 }

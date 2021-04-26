@@ -1,7 +1,8 @@
-package com.example.aliments.vues;
+ package com.example.aliments.vues;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
+
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import com.example.aliments.R;
 
 import org.osmdroid.api.IMapController;
+
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
@@ -20,7 +22,7 @@ import org.osmdroid.views.overlay.OverlayItem;
 import java.util.ArrayList;
 
 public class MapActivity extends AppCompatActivity {
-    private MapView map;
+    private MapView  map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,3 +73,4 @@ public class MapActivity extends AppCompatActivity {
         map.onResume();
     }
 }
+
