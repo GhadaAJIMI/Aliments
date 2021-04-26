@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".vues.DetailAliment">
+
+    <ImageView
+        android:id="@+id/aliment_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="@dimen/marginFragment"
+        android:src="@drawable/orange"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/aliment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginFragment"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="Nom de l'aliment : "></TextView>
+
+        <EditText
+            android:id="@+id/aliment_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginFragment"
+            android:text="@string/aliment_default_price"></EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/aliment_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginFragment"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="Prix de l'aliment en euro : "></TextView>
+
+        <EditText
+            android:id="@+id/aliment_price2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginFragment"
+            android:text="@string/aliment_default_price"></EditText>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/valider"
+        android:text="Valider"
+        android:layout_margin="@dimen/marginFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginFragment"
+        android:text="Back" />
+
+</LinearLayout>

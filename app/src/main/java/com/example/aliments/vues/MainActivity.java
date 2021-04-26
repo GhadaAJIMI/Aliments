@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         @SuppressLint("UseSwitchCompatOrMaterialCode") Switch sw = findViewById(R.id.switch1);
 
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

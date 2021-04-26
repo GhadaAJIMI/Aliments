@@ -15,6 +15,14 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceuil_acheteur);
 
+        findViewById( R.id.buttonPanier).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AcceuilAcheteurActivity.this, PanierActivity.class);
+                startActivity(intent);
+            }
+        });
+
         findViewById( R.id.buttonBack).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
