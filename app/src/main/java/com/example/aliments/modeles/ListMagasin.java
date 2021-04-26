@@ -9,7 +9,7 @@ import java.util.List;
 public class ListMagasin implements Parcelable {
     private List<Magasin> listeMagasins;
 
-    protected ListMagasin(Parcel in) {
+    public ListMagasin(Parcel in) {
         listeMagasins = in.createTypedArrayList(Magasin.CREATOR);
     }
 

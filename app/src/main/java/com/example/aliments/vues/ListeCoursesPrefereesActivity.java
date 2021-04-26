@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import com.example.aliments.R;
 import com.example.aliments.adapters.ListeCoursesPrefereesAdapter;
+import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.Aliment;
 import com.example.aliments.modeles.CoursePreferee;
 import com.example.aliments.modeles.ListAliment;
@@ -22,18 +23,8 @@ public class ListeCoursesPrefereesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_courses_preferees);
 
-        HashMap<String, CoursePreferee> listCourcesPreferees = new HashMap<String, CoursePreferee>();
-
-        ListAliment listeAliment1 = new ListAliment();
-        listeAliment1.add(new Aliment("pomme", 500));
-        listeAliment1.add(new Aliment("banane", 500));
-
-        listCourcesPreferees.put("Liste1", new CoursePreferee(listeAliment1, "Liste1"));
-        listCourcesPreferees.put("Liste2", new CoursePreferee(listeAliment1, "Liste2"));
-        listCourcesPreferees.put("Liste3", new CoursePreferee(listeAliment1, "Liste3"));
-
         ListView listCourse = findViewById(R.id.listeCourse);
-        listCourse.setAdapter(new ListeCoursesPrefereesAdapter(this, listCourcesPreferees));
+        listCourse.setAdapter(new ListeCoursesPrefereesAdapter(this, UserControler.get(0).getListeCoursesPreferees()));
         
         findViewById( R.id.boutonRetouner).setOnClickListener(new View.OnClickListener() {
             @Override

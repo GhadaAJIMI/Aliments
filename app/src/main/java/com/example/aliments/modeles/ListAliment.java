@@ -10,7 +10,7 @@ public class ListAliment implements Parcelable {
     private List<Aliment> listeAliments;
     private double prixTotal;
 
-    protected ListAliment(Parcel in) {
+    public ListAliment(Parcel in) {
         listeAliments = in.createTypedArrayList(Aliment.CREATOR);
         prixTotal = in.readDouble();
     }

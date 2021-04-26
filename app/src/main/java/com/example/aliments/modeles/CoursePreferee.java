@@ -73,4 +73,9 @@ public class CoursePreferee implements Parcelable {
             return new CoursePreferee[size];
         }
     };
+
+    public void add(Aliment aliment){
+        this.listeAliment.add(aliment);
+        this.prixTotal += aliment.getPrix();
+    }
 }

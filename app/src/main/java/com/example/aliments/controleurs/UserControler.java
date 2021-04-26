@@ -10,6 +10,7 @@ import java.util.List;
 public class UserControler {
     public static ListUser listeUsers;
 
+    // getters and setters
     public static ListUser getListeUsers() {
         return listeUsers;
     }
@@ -17,14 +18,15 @@ public class UserControler {
         UserControler.listeUsers = listeUsers;
     }
 
+    // constructeurs
     public UserControler(){
         listeUsers = new ListUser();
     }
-
     public UserControler(ListUser listeUsers) {
         this.listeUsers = listeUsers;
     }
 
+    // méthodes
     public static void add(User utilisateur){
         listeUsers.add(utilisateur);
     }
@@ -33,7 +35,7 @@ public class UserControler {
         listeUsers.remove(utilisateur);
     }
 
-    public static void get(int i){
-        listeUsers.get(i);
+    public static User get(int i){
+        return listeUsers.get(i);
     }
 }
