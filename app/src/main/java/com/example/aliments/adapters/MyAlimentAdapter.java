@@ -1,6 +1,7 @@
 package com.example.aliments.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.aliments.R;
+import com.example.aliments.controleurs.AlimentControler;
+import com.example.aliments.vues.AcceuilAcheteurActivity;
+import com.example.aliments.vues.DetailCoursePreferee;
+import com.example.aliments.vues.ListeCoursesPrefereesActivity;
+import com.example.aliments.vues.MainActivity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -53,7 +59,6 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         if(convertView == null){
             convertView = mLayoutInflater.inflate(R.layout.row , parent , false);
         }
@@ -62,7 +67,17 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
         TextView textView1 = convertView.findViewById(R.id.priceview);
         imageView.setImageResource(imgs[position]);
         textView.setText(name[position]);
-        textView1.setText(prix[position]);
+        textView1.setText("Prix = " + prix[position]);
+
+        convertView.findViewById( R.id.ajout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlimentControler.aliment = AlimentControler.get(name[position]);
+                Intent intent = new Intent(context, ListeCoursesPrefereesActivity.class);
+                context.startActivity(intent);
+            }
+        });
+
         return convertView;
     }
 }

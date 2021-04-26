@@ -1,11 +1,7 @@
 package com.example.aliments.controleurs;
 
-import com.example.aliments.modeles.CoursePreferee;
 import com.example.aliments.modeles.ListUser;
-import com.example.aliments.modeles.Magasin;
 import com.example.aliments.modeles.User;
-
-import java.util.List;
 
 public class UserControler {
     public static ListUser listeUsers;

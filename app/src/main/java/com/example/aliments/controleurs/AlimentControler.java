@@ -5,6 +5,7 @@ import com.example.aliments.modeles.ListAliment;
 
 public class AlimentControler {
     public static ListAliment listeAliment;
+    public static Aliment aliment;
 
     // getters and setters
     public static ListAliment getListeAliment() {
@@ -30,6 +31,10 @@ public class AlimentControler {
 
     public static Aliment get(int i){
         return listeAliment.get(i);
+    }
+
+    public static Aliment get(String name){
+        return listeAliment.get(name);
     }
 
     public static int listLenght(){

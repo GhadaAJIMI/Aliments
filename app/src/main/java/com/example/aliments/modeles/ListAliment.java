@@ -85,4 +85,26 @@ public class ListAliment implements Parcelable {
         return this.listeAliments.size();
     }
 
+    public Aliment get(String name){
+        for (int i = 0; i < listeAliments.size(); i++){
+            if(listeAliments.get(i).getName().equals(name)){
+                return listeAliments.get(i);
+            }
+        }
+
+        return null;
+    }
+
+    public boolean contains(Aliment aliment){
+        return this.listeAliments.contains(aliment);
+    }
+
+    public boolean contains(String name){
+        for (int i = 0; i < listeAliments.size(); i++){
+            if(listeAliments.get(i).getName().equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

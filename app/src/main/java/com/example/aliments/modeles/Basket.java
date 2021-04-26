@@ -49,4 +49,8 @@ public class Basket {
     public Boolean contains(Aliment aliment){
         return listeProduit.containsKey(aliment);
     }
+
+    public void put(Aliment aliment, Double i){
+        listeProduit.put(aliment, i);
+    }
 }

@@ -2,7 +2,6 @@ package com.example.aliments.modeles;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import java.util.HashMap;
 
 public class User implements Seller, Buyer, Parcelable {

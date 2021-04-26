@@ -8,6 +8,8 @@ import android.widget.GridView;
 import android.widget.TextView;
 import com.example.aliments.R;
 import com.example.aliments.adapters.ListeAlimentsAdapter;
+import com.example.aliments.controleurs.AlimentControler;
+import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.CoursePreferee;
 
 public class DetailCoursePreferee extends AppCompatActivity {
@@ -19,6 +21,15 @@ public class DetailCoursePreferee extends AppCompatActivity {
 
         Intent intent = getIntent();
         CoursePreferee currectList = intent.getParcelableExtra("currectList");
+
+        if(AlimentControler.aliment != null && !currectList.getListeAliment().contains(AlimentControler.aliment.getName())){
+            currectList.getListeAliment().add(AlimentControler.aliment);
+            UserControler.get(0).getListeCoursesPreferees().get(currectList.getName()).add(AlimentControler.aliment);
+            AlimentControler.aliment = null;
+        }
+        else{
+            AlimentControler.aliment = null;
+        }
 
         TextView nomListe = findViewById(R.id.nameListe);
         nomListe.setText(currectList.getName());

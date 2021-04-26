@@ -100,6 +100,9 @@ public class Lancement extends AppCompatActivity {
         MagasinControler.add(new Magasin("SHOP3", "3", 0622222222));
         MagasinControler.add(magasin);
 
+        acheteurA.getBasket().put(AlimentControler.get(6), 5.0);
+        acheteurA.getBasket().put(AlimentControler.get(11), 4.0);
+
         // initialiser les valeurs du contrôleur UserControler
         UserControler.listeUsers.add(acheteurA);
         UserControler.listeUsers.add(vendeurB);

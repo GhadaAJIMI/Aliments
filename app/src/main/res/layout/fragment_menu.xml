@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="#f9d423"
+    android:background="#CD92C8"
     android:orientation="vertical"
     tools:context=".adapters.MenuFragment">
 
@@ -23,6 +23,12 @@
         android:layout_marginTop="25dp"
         android:text="Mes courses préférées" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mes courses preférées sont : "
+        android:layout_marginTop="25dp"/>
+
     <ListView
         android:id="@+id/ListeCoursesPref"
         android:layout_marginTop="25dp"
@@ -33,7 +39,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Le panier contient : "
+        android:text="Mon panier contient : "
         android:layout_marginTop="25dp"/>
 
     <ListView

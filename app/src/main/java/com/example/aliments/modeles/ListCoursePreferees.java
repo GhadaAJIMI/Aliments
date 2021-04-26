@@ -2,7 +2,6 @@ package com.example.aliments.modeles;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import java.util.HashMap;
 
 public class ListCoursePreferees implements Parcelable {
@@ -56,5 +55,13 @@ public class ListCoursePreferees implements Parcelable {
 
     public void add(Aliment aliment, String name){
         listCoursesPreferees.get(name).add(aliment);
+    }
+
+    public void add(String name){
+        listCoursesPreferees.put(name, new CoursePreferee(name));
+    }
+
+    public void add(CoursePreferee coursePref){
+        listCoursesPreferees.put(coursePref.getName(), coursePref);
     }
 }

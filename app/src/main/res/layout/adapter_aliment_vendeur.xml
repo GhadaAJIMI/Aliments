@@ -16,20 +16,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/aliment_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:text="@string/aliment_default_name"></TextView>
+        <TextView
+            android:id="@+id/aliment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="@string/aliment_default_name"></TextView>
 
-    <TextView
-        android:id="@+id/aliment_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/aliment_default_price"
-        android:layout_below="@+id/aliment_name"></TextView>
+        <TextView
+            android:id="@+id/aliment_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aliment_default_price"
+            android:layout_below="@+id/aliment_name"></TextView>
 
     </RelativeLayout>
 </LinearLayout>

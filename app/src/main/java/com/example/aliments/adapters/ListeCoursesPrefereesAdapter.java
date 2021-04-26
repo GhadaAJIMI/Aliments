@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 import com.example.aliments.R;
+import com.example.aliments.controleurs.AlimentControler;
 import com.example.aliments.modeles.CoursePreferee;
 import com.example.aliments.vues.DetailCoursePreferee;
 
@@ -115,6 +117,23 @@ public class ListeCoursesPrefereesAdapter extends BaseAdapter {
                 context.startActivity(intent);
             }
         });
+
+        Button boutonAjout = convertView.findViewById( R.id.boutonAjoute);
+        if(AlimentControler.aliment != null){
+            boutonAjout.setVisibility(View.VISIBLE);
+            boutonAjout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // ajouter l'aliment dans la liste
+                    Intent intent = new Intent(context, DetailCoursePreferee.class);
+                    intent.putExtra("currectList", currectList);
+                    context.startActivity(intent);
+                }
+            });
+        }
+        else{
+            boutonAjout.setVisibility(View.INVISIBLE);
+        }
 
         return convertView;
     }

@@ -25,6 +25,5 @@ public class ListeAlimentVendeurActivity extends AppCompatActivity {
 
         ListView vendeurListView = findViewById(R.id.vendeur_list_view);
         vendeurListView.setAdapter(new AlimentAdapter(this, mesAliments));
-
     }
 }

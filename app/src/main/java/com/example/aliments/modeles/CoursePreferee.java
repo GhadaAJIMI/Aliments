@@ -36,6 +36,12 @@ public class CoursePreferee implements Parcelable {
         prixTotal = 0;
     }
 
+    public CoursePreferee(String name) {
+        listeAliment = new ListAliment();
+        this.name = name;
+        prixTotal = 0;
+    }
+
     public CoursePreferee(ListAliment listeAliment, String name) {
         this.listeAliment = listeAliment;
         this.name = name;
@@ -77,5 +83,13 @@ public class CoursePreferee implements Parcelable {
     public void add(Aliment aliment){
         this.listeAliment.add(aliment);
         this.prixTotal += aliment.getPrix();
+    }
+
+    public boolean contains(Aliment aliment){
+        return this.listeAliment.contains(aliment);
+    }
+
+    public boolean contains(String name){
+        return this.listeAliment.contains(name);
     }
 }

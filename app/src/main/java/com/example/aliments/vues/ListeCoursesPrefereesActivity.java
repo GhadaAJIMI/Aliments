@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import com.example.aliments.R;
 import com.example.aliments.adapters.ListeCoursesPrefereesAdapter;
+import com.example.aliments.controleurs.AlimentControler;
 import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.Aliment;
 import com.example.aliments.modeles.CoursePreferee;
@@ -30,6 +31,14 @@ public class ListeCoursesPrefereesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ListeCoursesPrefereesActivity.this, AcceuilAcheteurActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById( R.id.boutonAjoute).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListeCoursesPrefereesActivity.this, CreerUneListeCoursePreferee.class);
                 startActivity(intent);
             }
         });

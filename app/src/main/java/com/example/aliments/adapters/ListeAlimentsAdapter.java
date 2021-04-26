@@ -84,7 +84,6 @@ public class ListeAlimentsAdapter extends BaseAdapter {
         prixAliment.setText("Prix = " + priceAliment + " €");
 
         ImageView itemIconView = convertView.findViewById(R.id.imageAliment);
-        // int resId = context.getResources().getIdentifier(memicAliment, "drawable", context.getPackageName());
         itemIconView.setImageResource(srcAliment);
 
         return convertView;
