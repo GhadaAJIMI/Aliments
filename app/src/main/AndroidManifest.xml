@@ -32,8 +32,6 @@
         <activity android:name=".vues.SearchAlimentActivity" />
         <activity android:name=".vues.AcceuilVendeurActivity" />
         <activity android:name=".vues.AcceuilAcheteurActivity" />
-        <activity android:name=".vues.ReponseNotifActivity" />
-        <activity android:name=".vues.NotificationsActivity" />
         <activity android:name=".vues.ListeAlimentVendeurActivity" />
         <activity android:name=".vues.MainActivity" />
     </application>
