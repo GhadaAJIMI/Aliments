@@ -1,4 +1,4 @@
-package com.example.aliments;
+package com.example.aliments.modeles;
 
 
 import com.example.aliments.modeles.Aliment;

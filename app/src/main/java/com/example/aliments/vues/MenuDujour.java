@@ -8,11 +8,10 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.example.aliments.AbstractFactoryConserves;
-import com.example.aliments.AbstractFactoryFrais;
-import com.example.aliments.AlimentAbstractFactory;
+import com.example.aliments.modeles.AbstractFactoryConserves;
+import com.example.aliments.modeles.AbstractFactoryFrais;
+import com.example.aliments.modeles.AlimentAbstractFactory;
 import com.example.aliments.R;
-import com.example.aliments.modeles.Aliment;
 import com.example.aliments.modeles.Aliments;
 import com.example.aliments.modeles.Shop;
 

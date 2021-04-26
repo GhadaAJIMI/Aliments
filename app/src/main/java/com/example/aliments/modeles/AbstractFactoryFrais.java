@@ -1,11 +1,4 @@
-package com.example.aliments;
-
-import com.example.aliments.modeles.Aliment;
-import com.example.aliments.modeles.AlimentFrais;
-import com.example.aliments.modeles.Aliments;
-import com.example.aliments.modeles.AlimentsFrais;
-import com.example.aliments.modeles.Shop;
-import com.example.aliments.modeles.ShopFrais;
+package com.example.aliments.modeles;
 
 public class AbstractFactoryFrais extends AlimentAbstractFactory {
 

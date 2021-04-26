@@ -1,11 +1,5 @@
-package com.example.aliments;
+package com.example.aliments.modeles;
 
-
-
-import com.example.aliments.modeles.AlimentConserve;
-import com.example.aliments.modeles.Aliments;
-import com.example.aliments.modeles.Shop;
-import com.example.aliments.modeles.ShopConserve;
 
 public class AbstractFactoryConserves extends AlimentAbstractFactory {
 
