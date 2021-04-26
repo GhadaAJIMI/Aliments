@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.example.aliments.R;
 import com.example.aliments.adapters.ListeMagasinsAdapter;
+import com.example.aliments.controleurs.MagasinControler;
 import com.example.aliments.modeles.Magasin;
 
 import java.util.ArrayList;
@@ -30,14 +31,7 @@ public class SearchSellerActivity extends AppCompatActivity {
             }
         });
 
-
-        //list of shops
-        List<Magasin> listeMagasins = new ArrayList<>();
-        listeMagasins.add(new Magasin("SHOP1", "1", 0600000000));
-        listeMagasins.add(new Magasin("SHOP2", "2", 0611111111));
-        listeMagasins.add(new Magasin("SHOP3", "3", 0622222222));
-
         ListView shopListView = findViewById(R.id.shop_list_view);
-        shopListView.setAdapter(new ListeMagasinsAdapter(this, listeMagasins));
+        shopListView.setAdapter(new ListeMagasinsAdapter(this, MagasinControler.getListeMagasins()));
     }
 }

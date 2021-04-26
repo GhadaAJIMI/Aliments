@@ -4,10 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Aliment implements Parcelable {
-    private String name = "Banane";
-    private double prix = 0;
-    private int rsc =0;
-    private String mnemonic = "banane";
+    private String name;
+    private double prix;
+    private int rsc;
+    private String mnemonic;
 
     // getters and setters
     public String getName() {
@@ -34,6 +34,10 @@ public class Aliment implements Parcelable {
 
     // constructeur
     public Aliment() {
+        name = "Banane";
+        prix = 0;
+        rsc = 0;
+        mnemonic = "banane";
     }
 
     public Aliment(String name, double prix) {

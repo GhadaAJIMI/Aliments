@@ -3,7 +3,9 @@ package com.example.aliments.modeles;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class Magasin {
@@ -76,4 +78,9 @@ public class Magasin {
             return new Magasin[size];
         }
     };
+
+    public Aliment getAliment(int i){
+        List<Aliment> listeTmp = new ArrayList<>(listeProduits.keySet());
+        return listeTmp.get(i);
+    }
 }

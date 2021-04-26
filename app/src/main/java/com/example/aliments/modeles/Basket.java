@@ -1,5 +1,6 @@
 package com.example.aliments.modeles;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Basket {
@@ -22,6 +23,7 @@ public class Basket {
 
     // constructeur
     public Basket() {
+        listeProduit = new ArrayList<>();
     }
 
     public Basket(List<Aliment> listeProduit, double prixTotal) {

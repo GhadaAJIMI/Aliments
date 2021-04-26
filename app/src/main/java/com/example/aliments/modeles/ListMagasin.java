@@ -60,4 +60,12 @@ public class ListMagasin implements Parcelable {
     public void remove(Magasin magasin){
         listeMagasins.remove(magasin);
     }
+
+    public Magasin get(int i){
+        return listeMagasins.get(i);
+    }
+
+    public int listLenght(){
+        return this.listeMagasins.size();
+    }
 }

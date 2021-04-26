@@ -30,7 +30,7 @@ public class User implements Seller, Buyer{
     public ListCoursePreferees getListeCoursesPreferees2() {
         return listeCoursesPreferees;
     }
-    public void setListeCoursesPreferees(ListCoursePreferees listeCoursesPreferees) {
+    public void setListeCoursesPreferees2(ListCoursePreferees listeCoursesPreferees) {
         this.listeCoursesPreferees = listeCoursesPreferees;
     }
 
@@ -58,5 +58,9 @@ public class User implements Seller, Buyer{
 
     public HashMap<String, CoursePreferee> getListeCoursesPreferees(){
         return listeCoursesPreferees.getListCoursesPreferees();
+    }
+
+    public void setListeCoursesPreferees(HashMap<String, CoursePreferee> listeCoursesPreferees){
+        this.listeCoursesPreferees.setListCoursesPreferees(listeCoursesPreferees);
     }
 }

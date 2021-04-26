@@ -15,8 +15,6 @@ public class CreerUneListeCoursePreferee extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creer_une_liste_course_preferee);
 
-
-
         findViewById( R.id.boutonRetouner).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

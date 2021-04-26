@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 import com.example.aliments.R;
 import com.example.aliments.adapters.AlimentAdapter;
+import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.Aliment;
 import com.example.aliments.modeles.AlimentFrais;
 
@@ -20,10 +21,7 @@ public class ListeAlimentVendeurActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_aliment_vendeur);
 
-        List<Aliment> mesAliments = new ArrayList<>();
-        mesAliments.add(new Aliment("Orange", "orange", 2));
-        mesAliments.add(new Aliment("Banane","banane", 4));
-        mesAliments.add(new Aliment("Fraise","fraise", 10));
+        List<Aliment> mesAliments = new ArrayList<>(UserControler.get(1).getMagasin().getListeProduits().keySet());
 
         //get listview
 

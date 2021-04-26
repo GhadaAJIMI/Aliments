@@ -15,6 +15,7 @@ public class ListCoursePreferees {
 
     // constructeurs
     public ListCoursePreferees() {
+        listCoursesPreferees = new HashMap<String, CoursePreferee>();
     }
 
     public ListCoursePreferees(HashMap<String, CoursePreferee> listCoursesPreferees) {
