@@ -22,7 +22,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MyAlimentAdapter extends ArrayAdapter<String> {
-
     private Context context;
     private LayoutInflater mLayoutInflater;
     private String[] name;

@@ -4,10 +4,20 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Aliment implements Parcelable {
+
     private String name;
     private double prix;
     private int rsc;
     private String mnemonic;
+
+  /*  private String name = "Banane";
+    private double prix = 0;
+    private int rsc =0;
+    private String mnemonic = "banane";
+    private int numImage;
+
+   */
+
 
     // getters and setters
     public String getName() {
@@ -64,6 +74,9 @@ public class Aliment implements Parcelable {
         prix = in.readDouble();
         rsc = in.readInt();
     }
+
+
+
 
     public static final Creator<Aliment> CREATOR = new Creator<Aliment>() {
         @Override

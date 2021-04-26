@@ -14,9 +14,11 @@ import android.widget.ListView;
 import com.example.aliments.R;
 import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.vues.ListeCoursesPrefereesActivity;
+import com.example.aliments.vues.MenuDujour;
 
 public class MenuFragment extends Fragment {
     private Button cousesPrefs;
+    private Button menuJour;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +35,16 @@ public class MenuFragment extends Fragment {
                 startActivity(intent);
             }
         });
+       menuJour = v.findViewById(R.id.menudujour);
+       menuJour.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(getActivity(), MenuDujour.class);
+               startActivity(intent);
+
+           }
+       });
+
 
         return v;
     }

@@ -23,11 +23,11 @@ import com.example.aliments.adapters.MyAlimentAdapter;
 
 public class SearchAlimentActivity extends AppCompatActivity {
     GridView gv;
-    String[] name = {"Banane" , "Pomme" , "Kiwi","Orange","Fraise","Mango","Citron", "cerise" , "raison rouge","raisin jaune","grenade","pastèque"};
+    String[] name = {"Banane" , "Pomme" , "Kiwi","Orange","Fraise","Mango","Citron", "cerise" , "raison rouge","raisin jaune","grenade","pastèque", "cerise" , "raison rouge","raisin jaune","grenade","pastèque"};
     int [] imgs = {R.drawable.banane, R.drawable.pomme , R.drawable.kiwi,R.drawable.orange, R.drawable.fraise, R.drawable.mango, R.drawable.lemon,
-            R.drawable.cherry , R.drawable.grape,R.drawable.grape1, R.drawable.grenade, R.drawable.pasteque};
+            R.drawable.cherry , R.drawable.grape,R.drawable.grape1, R.drawable.grenade, R.drawable.pasteque,R.drawable.cherry , R.drawable.grape,R.drawable.grape1, R.drawable.grenade, R.drawable.pasteque};
     String mDescription[] = {"5 euros/kg" , "4 euros/kg" , "3 euros/kg", "2 euros/kg", "1 euros/kg" ,"1 euros/kg","1 euros/kg",
-            "3 euros/kg", "2 euros/kg", "1 euros/kg" ,"1 euros/kg","1 euros/kg"};
+            "3 euros/kg", "2 euros/kg", "1 euros/kg" ,"1 euros/kg","1 euros/kg","3 euros/kg", "2 euros/kg", "1 euros/kg" ,"1 euros/kg","1 euros/kg"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
