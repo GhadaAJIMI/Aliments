@@ -73,22 +73,19 @@ public class ListeAlimentsAdapter extends BaseAdapter {
 
         Aliment currectList = getItem(position);
         String nameAliment = currectList.getName();
+        String memicAliment = currectList.getMnemonic();
         double priceAliment = currectList.getPrix();
-        int resourceImage = 0;
-        resourceImage = currectList.getRsc();
+        int srcAliment = currectList.getRsc();
 
         TextView nomAliment = convertView.findViewById(R.id.nomAliment);
         nomAliment.setText(nameAliment);
 
         TextView prixAliment = convertView.findViewById(R.id.prixAliment);
-        prixAliment.setText("Prix = "+priceAliment + " €");
+        prixAliment.setText("Prix = " + priceAliment + " €");
 
-        ImageView imageAliment = convertView.findViewById(R.id.imageAliment);
-        int rsc = context.getResources().getIdentifier(nameAliment, "drawable", context.getPackageName());
-        if(resourceImage == 0)
-            imageAliment.setImageResource(rsc);
-        else
-            imageAliment.setImageResource(resourceImage);
+        ImageView itemIconView = convertView.findViewById(R.id.imageAliment);
+        // int resId = context.getResources().getIdentifier(memicAliment, "drawable", context.getPackageName());
+        itemIconView.setImageResource(srcAliment);
 
         return convertView;
     }

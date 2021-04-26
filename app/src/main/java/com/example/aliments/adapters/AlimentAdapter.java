@@ -51,22 +51,21 @@ public class AlimentAdapter extends BaseAdapter {
         Aliment currentAliment = getItem(position);
         String name = currentAliment.getName();
         double prix = currentAliment.getPrix();
-        String mnemonic = currentAliment.getMnemonic();
+        int rsc = currentAliment.getRsc();
 
         TextView itemNameView = view.findViewById(R.id.aliment_name);
         itemNameView.setText(name);
 
         TextView itemPrixView = view.findViewById(R.id.aliment_price);
-        itemPrixView.setText(prix+"€");
+        itemPrixView.setText(prix+" €");
 
         ImageView itemIconView = view.findViewById(R.id.aliment_icon);
-        int resId = context.getResources().getIdentifier(mnemonic, "drawable", context.getPackageName());
-        itemIconView.setImageResource(resId);
+        itemIconView.setImageResource(rsc);
 
         view.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Toast.makeText(context, "Vous avez proposé à la la vente un "+name+" pour "+prix+"€", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Vous avez proposé à la la vente un "+name+" pour "+prix+" €", Toast.LENGTH_LONG).show();
             }
         });
 

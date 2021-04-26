@@ -23,8 +23,6 @@ public class ListeAlimentVendeurActivity extends AppCompatActivity {
 
         List<Aliment> mesAliments = new ArrayList<>(UserControler.get(1).getMagasin().getListeProduits().keySet());
 
-        //get listview
-
         ListView vendeurListView = findViewById(R.id.vendeur_list_view);
         vendeurListView.setAdapter(new AlimentAdapter(this, mesAliments));
 

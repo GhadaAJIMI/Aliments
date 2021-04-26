@@ -77,4 +77,12 @@ public class ListAliment implements Parcelable {
         listeAliments.remove(aliment);
         this.prixTotal -= aliment.getPrix();
     }
+
+    public Aliment get(int i){
+        return this.listeAliments.get(i);
+    }
+    public int listLenght(){
+        return this.listeAliments.size();
+    }
+
 }

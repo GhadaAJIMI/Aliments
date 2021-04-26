@@ -1,12 +1,45 @@
 package com.example.aliments.modeles;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.HashMap;
 
-public class User implements Seller, Buyer{
+public class User implements Seller, Buyer, Parcelable {
     private String name;
     private Magasin magasin;
     private Basket basket;
     private ListCoursePreferees listeCoursesPreferees;
+
+    protected User(Parcel in) {
+        name = in.readString();
+        magasin = in.readParcelable(Magasin.class.getClassLoader());
+        listeCoursesPreferees = in.readParcelable(ListCoursePreferees.class.getClassLoader());
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeParcelable(magasin, flags);
+        dest.writeParcelable(listeCoursesPreferees, flags);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
 
     //getters and setters
     public String getName() {

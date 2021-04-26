@@ -1,5 +1,6 @@
 package com.example.aliments.controleurs;
 
+import com.example.aliments.modeles.Aliment;
 import com.example.aliments.modeles.ListAliment;
 
 public class AlimentControler {
@@ -23,6 +24,15 @@ public class AlimentControler {
     }
 
     // méthodes
+    public static void add(Aliment aliment){
+        listeAliment.add(aliment);
+    }
 
+    public static Aliment get(int i){
+        return listeAliment.get(i);
+    }
 
+    public static int listLenght(){
+        return listeAliment.listLenght();
+    }
 }

@@ -1,9 +1,36 @@
 package com.example.aliments.modeles;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.HashMap;
 
-public class ListCoursePreferees {
+public class ListCoursePreferees implements Parcelable {
     private HashMap<String, CoursePreferee> listCoursesPreferees = new HashMap<String, CoursePreferee>();
+
+    protected ListCoursePreferees(Parcel in) {
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<ListCoursePreferees> CREATOR = new Creator<ListCoursePreferees>() {
+        @Override
+        public ListCoursePreferees createFromParcel(Parcel in) {
+            return new ListCoursePreferees(in);
+        }
+
+        @Override
+        public ListCoursePreferees[] newArray(int size) {
+            return new ListCoursePreferees[size];
+        }
+    };
 
     // getters and setters
     public HashMap<String, CoursePreferee> getListCoursesPreferees() {

@@ -39,29 +39,60 @@ public class Lancement extends AppCompatActivity {
         User vendeurB = new User();
         vendeurB.setName("Floriane");
 
+        // La liste des aliments
+        String[] name = {"Banane" , "Pomme" , "Kiwi", "Orange", "Fraise", "Mango", "Citron", "Cerise" , "Raison rouge","raisin jaune","grenade","pastèque"};
+        String [] imgs = {"banane", "pomme" , "kiwi", "orange", "fraise", "mango", "lemon", "cherry" , "grape", "grape1", "grenade", "pasteque"};
+        Double prix[] = {5.0, 4.0, 3.0, 2.0, 1.0, 1.0, 1.0, 3.0, 2.0, 3.0, 3.0, 3.0};
+
+        for(int i = 0; i < name.length; i++){
+            AlimentControler.getListeAliment().add(new Aliment(name[i], imgs[i], this.getResources().getIdentifier(imgs[i], "drawable", this.getPackageName()), prix[i]));
+        }
+
         // Remplir la liste des courses preferees de l'acheteurA
         HashMap<String, CoursePreferee> listCoursesPreferees = new HashMap<String, CoursePreferee>();
 
         ListAliment listeAliment1 = new ListAliment();
-        listeAliment1.add(new Aliment("pomme", 3));
-        listeAliment1.add(new Aliment("banane", 4));
+        listeAliment1.add(AlimentControler.get(1));
+        listeAliment1.add(AlimentControler.get(0));
+        listeAliment1.add(AlimentControler.get(8));
+        listeAliment1.add(AlimentControler.get(9));
+        listeAliment1.add(AlimentControler.get(10));
 
-        listCoursesPreferees.put("Liste1", new CoursePreferee(listeAliment1, "Liste1"));
-        listCoursesPreferees.put("Liste2", new CoursePreferee(listeAliment1, "Liste2"));
-        listCoursesPreferees.put("Liste3", new CoursePreferee(listeAliment1, "Liste3"));
+        ListAliment listeAliment2 = new ListAliment();
+        listeAliment2.add(AlimentControler.get(1));
+        listeAliment2.add(AlimentControler.get(2));
+        listeAliment2.add(AlimentControler.get(6));
+        listeAliment2.add(AlimentControler.get(7));
+
+        ListAliment listeAliment3 = new ListAliment();
+        listeAliment3.add(AlimentControler.get(0));
+        listeAliment3.add(AlimentControler.get(1));
+        listeAliment3.add(AlimentControler.get(2));
+        listeAliment3.add(AlimentControler.get(3));
+        listeAliment3.add(AlimentControler.get(4));
+        listeAliment3.add(AlimentControler.get(5));
+
+        listCoursesPreferees.put("Liste quotidienne", new CoursePreferee(listeAliment1, "Liste quotidienne"));
+        listCoursesPreferees.put("Weekly list", new CoursePreferee(listeAliment2, "Weekly list"));
+        listCoursesPreferees.put("Liste de Noel", new CoursePreferee(listeAliment3, "Liste de Noel"));
 
         // ajouter la liste de courses preférées au utilisateurA
         acheteurA.setListeCoursesPreferees(listCoursesPreferees);
 
         // initialiser le magasin du vendeurB
         HashMap<Aliment, Double> listeProduits = new HashMap<>();
-        listeProduits.put(new Aliment("Orange", "orange", 2), 300.0);
-        listeProduits.put(new Aliment("Banane","banane", 4), 100.0);
-        listeProduits.put(new Aliment("Fraise","fraise", 10), 50.0);
+        listeProduits.put(AlimentControler.get(0), 300.0);
+        listeProduits.put(AlimentControler.get(1), 100.0);
+        listeProduits.put(AlimentControler.get(2), 50.0);
+        listeProduits.put(AlimentControler.get(3), 50.0);
+        listeProduits.put(AlimentControler.get(4), 50.0);
+        listeProduits.put(AlimentControler.get(5), 50.0);
+        listeProduits.put(AlimentControler.get(6), 50.0);
 
         Magasin magasin = new Magasin();
         magasin.setListeProduits(listeProduits);
         magasin.setProprio(vendeurB);
+        vendeurB.setMagasin(magasin);
 
         // initialiser les valeurs du contrôleur MagasinControler
         MagasinControler.add(new Magasin("SHOP1", "1", 0600000000));

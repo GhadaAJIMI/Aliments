@@ -8,23 +8,37 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class Magasin {
-    private Seller proprio;
+public class Magasin implements Parcelable {
+    private User proprio;
     private HashMap<Aliment, Double> listeProduits;
     private String name;
     private int numeroTelephone;
     private String mnemonic;
 
-    public Magasin(Parcel in) {
-        //listeProduits = in.readHashMap();
+    protected Magasin(Parcel in) {
+        proprio = in.readParcelable(User.class.getClassLoader());
+        name = in.readString();
         numeroTelephone = in.readInt();
+        mnemonic = in.readString();
     }
 
+    public static final Creator<Magasin> CREATOR = new Creator<Magasin>() {
+        @Override
+        public Magasin createFromParcel(Parcel in) {
+            return new Magasin(in);
+        }
+
+        @Override
+        public Magasin[] newArray(int size) {
+            return new Magasin[size];
+        }
+    };
+
     // getters and setters
-    public Seller getProprio() {
+    public User getProprio() {
         return proprio;
     }
-    public void setProprio(Seller proprio) {
+    public void setProprio(User proprio) {
         this.proprio = proprio;
     }
     public HashMap<Aliment, Double> getListeProduits() {
@@ -38,11 +52,20 @@ public class Magasin {
     public String getMnemonic() { return mnemonic; }
 
     // constructeurs
-    public Magasin() {super();}
+    public Magasin() {
+        proprio = null;
+        listeProduits = new HashMap<Aliment, Double>();
+        name = "";
+        numeroTelephone = 0;
+        mnemonic = "";
+    }
 
-    public Magasin(Seller proprio, HashMap<Aliment, Double> listeProduits) {
+    public Magasin(User proprio, HashMap<Aliment, Double> listeProduits) {
         this.proprio = proprio;
         this.listeProduits = listeProduits;
+        name = this.proprio.getName();
+        numeroTelephone = 0;
+        mnemonic = "";
     }
 
     public Magasin(String name, String mnemonic, int numeroTelephone ){
@@ -67,20 +90,21 @@ public class Magasin {
 
         listeProduits.put(aliment, quantite);
     }
-    public static final Parcelable.Creator<Magasin> CREATOR = new Parcelable.Creator<Magasin>() {
-        @Override
-        public Magasin createFromParcel(Parcel in) {
-            return new Magasin(in);
-        }
-
-        @Override
-        public Magasin[] newArray(int size) {
-            return new Magasin[size];
-        }
-    };
 
     public Aliment getAliment(int i){
         List<Aliment> listeTmp = new ArrayList<>(listeProduits.keySet());
         return listeTmp.get(i);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeInt(numeroTelephone);
+        dest.writeString(mnemonic);
     }
 }
