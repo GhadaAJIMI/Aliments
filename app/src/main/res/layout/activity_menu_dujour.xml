@@ -11,7 +11,7 @@
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to my ABSTRACT FACTORY"
+        android:text="Bienvenue dans mon ABSTRACT FACTORY"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:textSize="20sp"
@@ -51,7 +51,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Type of Aliment"
+                android:text="Type de  l'Aliment"
                 android:textColor="#000000"
                 android:gravity="center"
                 android:textSize="14sp" />
@@ -86,7 +86,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Type of Shop"
+                android:text="Type du Shop"
                 android:textColor="#000000"
                 android:gravity="center"
                 android:textSize="14sp" />
@@ -101,13 +101,14 @@
                     android:checked="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="SHOP FRAIS" />
+                    android:text="SHOP 1" />
+
                 <RadioButton
                     android:id="@+id/radioButtonSHOPCONSERVES"
-                    android:tag="@string/conserve"
-                    android:layout_width="wrap_content"
+                    android:layout_width="92dp"
                     android:layout_height="wrap_content"
-                    android:text=" SHOP CONSERVES" />
+                    android:tag="@string/conserve"
+                    android:text=" SHOP 2" />
                 <!--    <RadioButton
                         android:id="@+id/radioButtonFuel"
                         android:tag="@string/fuel"
@@ -133,14 +134,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
-            android:text="Factory1 (Conserves)" />
+            android:text="Factory1 (avec remise)" />
 
         <Button
             android:id="@+id/buttonFactory2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:text="factory2 (frais)" />
+            android:text="factory2 (Qualité)" />
     </LinearLayout>
 
     <LinearLayout
