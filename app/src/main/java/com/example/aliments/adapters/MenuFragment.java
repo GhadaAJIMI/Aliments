@@ -13,12 +13,15 @@ import android.widget.ListView;
 
 import com.example.aliments.R;
 import com.example.aliments.controleurs.UserControler;
+import com.example.aliments.modeles.Basket;
 import com.example.aliments.vues.ListeCoursesPrefereesActivity;
 import com.example.aliments.vues.MenuDujour;
+import com.example.aliments.vues.PanierActivity;
 
 public class MenuFragment extends Fragment {
     private Button cousesPrefs;
     private Button menuJour;
+    private Button monPanier;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,6 +51,15 @@ public class MenuFragment extends Fragment {
 
            }
        });
+       monPanier = v.findViewById(R.id.CoursesPanier);
+       monPanier.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(getActivity(), PanierActivity.class);
+               startActivity(intent);
+           }
+       });
+
 
         return v;
     }
