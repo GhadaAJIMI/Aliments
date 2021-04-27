@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.aliments.R;
 import com.example.aliments.modeles.Aliment;
@@ -80,15 +81,19 @@ public class PanierAdapter extends BaseAdapter {
         String name = currectAliment.getName();
         Double quantite = getItemQuantity(position);
         Double prix = currectAliment.getPrix();
+        int srcAliment = currectAliment.getRsc();
 
         TextView listNameView = convertView.findViewById(R.id.coursePanier);
         listNameView.setText(name);
 
         TextView quantiteAliment = convertView.findViewById(R.id.coursePanierQuantite);
-        quantiteAliment.setText("Q: "+quantite+" kg");
+        quantiteAliment.setText("Quantité: "+quantite+" kg");
 
         TextView prixAliment = convertView.findViewById(R.id.coursePanierPrix);
         prixAliment.setText("Prix = " + prix + " €");
+
+        ImageView itemIconView = convertView.findViewById(R.id.imageAlimentPanier);
+        itemIconView.setImageResource(srcAliment);
 
         return convertView;
     }
