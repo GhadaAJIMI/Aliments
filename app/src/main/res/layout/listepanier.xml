@@ -19,28 +19,37 @@
         android:orientation="vertical"
         android:layout_margin="@dimen/marginFragment">
 
-    <TextView
-        android:id="@+id/coursePanier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/marginFragment"
-        android:textSize="20dp"></TextView>
 
-    <TextView
-        android:id="@+id/coursePanierQuantite"
-        android:layout_marginLeft="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/marginFragment"
-        android:textSize="20dp"></TextView>
+        <TextView
+            android:id="@+id/coursePanier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginFragment"
+            android:textSize="20dp"></TextView>
 
-    <TextView
-        android:id="@+id/coursePanierPrix"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/marginFragment"
-        android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/coursePanierQuantite"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginFragment"
+            android:textSize="20dp"></TextView>
+
+        <TextView
+            android:id="@+id/coursePanierPrix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginFragment"
+            android:textSize="20dp"/>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/boutonSupprimePanier"
+        android:layout_width="@dimen/tailleBouton"
+        android:layout_height="@dimen/tailleBouton"
+        android:layout_marginRight="@dimen/marginFragment"
+        android:text="-"
+        android:textSize="20dp"></Button>
 
 </LinearLayout>

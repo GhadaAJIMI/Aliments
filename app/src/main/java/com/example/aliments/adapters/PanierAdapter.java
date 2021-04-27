@@ -1,6 +1,7 @@
 package com.example.aliments.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.TestLooperManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +20,15 @@ import java.util.HashMap;
 import java.util.List;
 
 public class PanierAdapter extends BaseAdapter {
+    private double prixTotal = 0;
     private Context context;
     static private HashMap<Aliment, Double> listeCoursesPanier;
     private LayoutInflater layoutInflater;
+
+    public PanierAdapter(Context context, double prixTotal) {
+        this.context = context;
+        this.prixTotal = prixTotal;
+    }
 
     // getters and setters
     public LayoutInflater getLayoutInflater() {
@@ -52,6 +59,11 @@ public class PanierAdapter extends BaseAdapter {
         this.layoutInflater = LayoutInflater.from(context);
     }
 
+    // méthodes
+    static public void remove(String nameCoursesPanier){
+        if(nameCoursesPanier != "") listeCoursesPanier.remove(nameCoursesPanier);
+    }
+
     @Override
     public int getCount() {
         return listeCoursesPanier.size();
@@ -68,6 +80,7 @@ public class PanierAdapter extends BaseAdapter {
         return liste.get(position);
     }
 
+
     @Override
     public long getItemId(int position) {
         return 0;
@@ -82,6 +95,16 @@ public class PanierAdapter extends BaseAdapter {
         Double quantite = getItemQuantity(position);
         Double prix = currectAliment.getPrix();
         int srcAliment = currectAliment.getRsc();
+
+        convertView.findViewById(R.id.boutonSupprimePanier);
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // supprimer la liste
+                PanierAdapter.remove(name);
+                notifyDataSetChanged();
+            }
+        });
 
         TextView listNameView = convertView.findViewById(R.id.coursePanier);
         listNameView.setText(name);

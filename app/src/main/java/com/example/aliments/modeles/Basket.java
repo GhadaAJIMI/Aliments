@@ -56,7 +56,7 @@ public class Basket implements Parcelable {
 
     public Basket(HashMap<Aliment, Double> listeProduit, double prixTotal) {
         this.listeProduit = listeProduit;
-        this.prixTotal = prixTotal;
+        this.prixTotal = prixTotal ;
     }
 
     // méthodes
