@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.aliments.R;
 import com.example.aliments.adapters.ListeMagasinsAdapter;
+import com.example.aliments.adapters.MyPanierAdapter;
 import com.example.aliments.adapters.PanierAdapter;
 import com.example.aliments.controleurs.AlimentControler;
 import com.example.aliments.controleurs.MagasinControler;
@@ -41,10 +42,10 @@ public class PanierActivity extends AppCompatActivity {
         });
 
         ListView panierListView = findViewById(R.id.p_list_view);
-        panierListView.setAdapter(new PanierAdapter(this, UserControler.get(0).getBasket().getListeProduit()));
+        panierListView.setAdapter(new MyPanierAdapter(this, UserControler.get(0).getBasket().getListeProduit()));
 
         //TextView prixTotal = findViewById(R.id.prixTotal);
-        //prixTotal.setText(new PanierAdapter(this, UserControler.get(0).getBasket().getPrixTotal()));
+        //prixTotal.setText(new MyPanierAdapter(this, UserControler.get(0).getBasket().getPrixTotal()));
         monPanier = findViewById(R.id.panierList);
 
         addEvent = findViewById(R.id.agenda);
