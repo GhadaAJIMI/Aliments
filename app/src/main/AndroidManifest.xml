@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Aliments">
-        <activity android:name=".vues.DetailAliment"></activity>
+        <activity android:name=".vues.AjoutAlimentActivity"></activity>
+        <activity android:name=".vues.DetailAliment" />
         <activity android:name=".Lancement">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
