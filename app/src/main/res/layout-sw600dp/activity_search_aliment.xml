@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".vues.SearchAlimentActivity"
-    android:background="#FFFF00">
+    tools:context=".vues.SearchAlimentActivity">
 
     <GridView
         android:id="@+id/gridview"

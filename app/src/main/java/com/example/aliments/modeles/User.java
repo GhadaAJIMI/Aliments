@@ -2,13 +2,17 @@ package com.example.aliments.modeles;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class User implements Seller, Buyer, Parcelable {
     private String name;
     private Magasin magasin;
     private Basket basket;
     private ListCoursePreferees listeCoursesPreferees;
+    private ListAliment tousLesAliments;
 
     protected User(Parcel in) {
         name = in.readString();
@@ -65,6 +69,18 @@ public class User implements Seller, Buyer, Parcelable {
     public void setListeCoursesPreferees2(ListCoursePreferees listeCoursesPreferees) {
         this.listeCoursesPreferees = listeCoursesPreferees;
     }
+    public void setListeCoursesPreferees(ListCoursePreferees listeCoursesPreferees) {
+        this.listeCoursesPreferees = listeCoursesPreferees;
+    }
+    public List<Aliment> getTousLesAliments() {
+        return tousLesAliments.getListeAliments();
+    }
+    public ListAliment getTousLesAliments2() {
+        return tousLesAliments;
+    }
+    public void setTousLesAliments(ListAliment tousLesAliments) {
+        this.tousLesAliments = tousLesAliments;
+    }
 
     // constructeurs
     public User() {
@@ -73,6 +89,7 @@ public class User implements Seller, Buyer, Parcelable {
         this.magasin.setProprio(this);
         this.basket = new Basket();
         listeCoursesPreferees = new ListCoursePreferees();
+        tousLesAliments = new ListAliment();
     }
 
     public User(String name, Magasin magasin, Basket basket, ListCoursePreferees listeCoursesPreferees) {
@@ -81,6 +98,8 @@ public class User implements Seller, Buyer, Parcelable {
         this.magasin.setProprio(this);
         this.basket = basket;
         this.listeCoursesPreferees = listeCoursesPreferees;
+        this.tousLesAliments = new ListAliment();
+        remplirListeTotaleDAliment();
     }
 
     // méthodes
@@ -92,7 +111,28 @@ public class User implements Seller, Buyer, Parcelable {
         return listeCoursesPreferees.getListCoursesPreferees();
     }
 
+    public List<CoursePreferee> getListeCoursesPreferees3(){
+        return listeCoursesPreferees.getListCoursesPreferees3();
+    }
+
     public void setListeCoursesPreferees(HashMap<String, CoursePreferee> listeCoursesPreferees){
         this.listeCoursesPreferees.setListCoursesPreferees(listeCoursesPreferees);
+    }
+
+    // a revoir (contains(aliment.getName()))
+    public void remplirListeTotaleDAliment(){
+        for(CoursePreferee coursePref: getListeCoursesPreferees3()){
+            for(Aliment aliment: coursePref.getListeAliment()){
+                if(!this.tousLesAliments.contains(aliment.getName())){
+                    this.tousLesAliments.add(new Aliment(aliment));
+                }
+            }
+        }
+
+        for(Aliment aliment: this.basket.getListeProduit()){
+            if(!this.tousLesAliments.contains(aliment.getName())){
+                this.tousLesAliments.add(aliment);
+            }
+        }
     }
 }

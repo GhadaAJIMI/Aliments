@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.aliments.R;
 
@@ -60,6 +62,14 @@ public class MapActivity extends AppCompatActivity {
         });
         mOverlay.setFocusItemsOnTap(true);
         map.getOverlays().add(mOverlay);
+
+        findViewById(R.id.buttonBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MapActivity.this, AcceuilVendeurActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

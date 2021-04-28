@@ -15,9 +15,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.aliments.R;
 import com.example.aliments.controleurs.AlimentControler;
+import com.example.aliments.modeles.Aliment;
+import com.example.aliments.modeles.Notification;
 
 import java.util.Objects;
 
@@ -29,9 +33,7 @@ public class DetailAliment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_aliment);
 
-        createNotificationChannels();
-
-        EditText editName = findViewById(R.id.aliment_name2);
+        TextView editName = findViewById(R.id.aliment_name2);
         editName.setText(AlimentControler.aliment.getName());
 
         EditText editPrix = findViewById(R.id.aliment_price2);
@@ -46,13 +48,15 @@ public class DetailAliment extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(DetailAliment.this, ListeAlimentVendeurActivity.class);
                 String name = editName.getText().toString();
-                AlimentControler.getListeAliment().get(AlimentControler.aliment.getName()).setName(name);
-                AlimentControler.getListeAliment().get(name).setPrix(Double.valueOf(editPrix.getText().toString()).doubleValue());
+
+                // tester si le prix a changé
+                double prix = Double.valueOf(editPrix.getText().toString()).doubleValue();
+                if(AlimentControler.getListeAliment().get(name).getPrix() != prix){
+                    AlimentControler.getListeAliment().get(name).setPrix(prix);
+                    AlimentControler.addListeAlimentModifies(new Aliment(AlimentControler.aliment));
+                }
+
                 AlimentControler.aliment = null;
-
-                // notifier l'utilisateur d'un changement dans le prix
-                sendNotificationOnChannel( "title", "message", CHANNEL_1_ID, NotificationCompat.PRIORITY_HIGH);
-
                 startActivity(intent);
             }
         });
@@ -65,36 +69,5 @@ public class DetailAliment extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private void sendNotificationOnChannel(String title, String message, String channelId, int priority) {
-        NotificationCompat.Builder notification =
-                new NotificationCompat.Builder( getApplicationContext(), channelId)
-                        .setSmallIcon( R.drawable.shopping_cart )
-                        .setContentTitle(title)
-                        .setContentText(message)
-                        .setPriority(priority)
-                        .setAutoCancel(true);
-        NotificationManagerCompat.from(this).notify( 0 , notification.build() );
-    }
-
-    private NotificationChannel createNotificationChannel (String channelID, CharSequence name, int importance, String channelDescription){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(channelID, name, importance);
-            channel.setDescription(channelDescription);
-            return channel;
-        }
-
-        return null;
-    }
-
-    private void createNotificationChannels (){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel1 = createNotificationChannel(CHANNEL_1_ID, "Channel 1",
-                    NotificationManager.IMPORTANCE_LOW, "low");
-
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            Objects.requireNonNull(notificationManager).createNotificationChannel(channel1);
-        }
     }
 }

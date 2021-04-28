@@ -33,10 +33,11 @@ public class Basket implements Parcelable {
         }
     };
 
-
-
     // getters and setters
-    public HashMap<Aliment, Double> getListeProduit() {
+    public List<Aliment> getListeProduit() {
+        return new ArrayList<>(listeProduit.keySet());
+    }
+    public HashMap<Aliment, Double> getListeProduit2() {
         return listeProduit;
     }
     public void setListeProduit(HashMap<Aliment, Double> listeProduit) {
@@ -77,10 +78,19 @@ public class Basket implements Parcelable {
         return listeProduit.containsKey(aliment);
     }
 
+    public Aliment find(String name){
+        for(Aliment aliment: listeProduit.keySet()){
+            if(aliment.getName().equals(name))
+                return aliment;
+        }
+        return null;
+    }
+
     public void put(Aliment aliment, Double i){
         listeProduit.put(aliment, i);
     }
 
-
-
+    public void remove(String alimentName){
+        listeProduit.remove(find(alimentName));
+    }
 }

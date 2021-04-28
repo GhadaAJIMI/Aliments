@@ -67,6 +67,13 @@ public class Aliment implements Parcelable {
         this.mnemonic = mnemonic;
     }
 
+    public Aliment(Aliment aliment){
+        this.name = aliment.getName();
+        this.prix = aliment.getPrix();
+        this.rsc = aliment.getRsc();
+        this.mnemonic = aliment.getMnemonic();
+    }
+
     protected Aliment(Parcel in) {
         name = in.readString();
         prix = in.readDouble();

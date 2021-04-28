@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Acceuil Acheteur"
         android:textColor="@color/black"
-        android:background="@color/white"
+        android:background="@color/teal_200"
         android:layout_centerHorizontal="true"
         android:textSize="75sp"
         android:layout_marginTop="150dp"/>

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.aliments.R;
+import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.Aliment;
 
 import java.util.ArrayList;
@@ -85,7 +86,7 @@ public class MyPanierAdapter  extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = this.layoutInflater.inflate(R.layout.listepanier , null);
+        convertView = this.layoutInflater.inflate(R.layout.listepanier2 , null);
 
         Aliment currectAliment = (Aliment)getItem(position);
         String name = currectAliment.getName();
@@ -93,26 +94,26 @@ public class MyPanierAdapter  extends BaseAdapter {
         Double prix = currectAliment.getPrix();
         int srcAliment = currectAliment.getRsc();
 
-        convertView.findViewById(R.id.boutonSupprimePanier);
+        convertView.findViewById(R.id.boutonSupprimePanier2);
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // supprimer la liste
-                PanierAdapter.remove(name);
+                UserControler.get(0).getBasket().remove(currectAliment.getName());
+                MyPanierAdapter.remove(name);
                 notifyDataSetChanged();
             }
         });
 
-        TextView listNameView = convertView.findViewById(R.id.coursePanier);
+        TextView listNameView = convertView.findViewById(R.id.coursePanier2);
         listNameView.setText(name);
 
-        TextView quantiteAliment = convertView.findViewById(R.id.coursePanierQuantite);
+        TextView quantiteAliment = convertView.findViewById(R.id.coursePanierQuantite2);
         quantiteAliment.setText("Quantité: "+quantite+" kg");
 
-        TextView prixAliment = convertView.findViewById(R.id.coursePanierPrix);
+        TextView prixAliment = convertView.findViewById(R.id.coursePanierPrix2);
         prixAliment.setText("Prix = " + prix + " €");
 
-        ImageView itemIconView = convertView.findViewById(R.id.imageAlimentPanier);
+        ImageView itemIconView = convertView.findViewById(R.id.imageAlimentPanier2);
         itemIconView.setImageResource(srcAliment);
 
         return convertView;

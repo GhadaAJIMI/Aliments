@@ -89,16 +89,19 @@ public class Lancement extends AppCompatActivity {
         listeProduits.put(AlimentControler.get(5), 50.0);
         listeProduits.put(AlimentControler.get(6), 50.0);
 
-        Magasin magasin = new Magasin();
+        Magasin magasin = new Magasin("FlorianeMagasin", "2", 0600500060);
         magasin.setListeProduits(listeProduits);
         magasin.setProprio(vendeurB);
         vendeurB.setMagasin(magasin);
 
         // initialiser les valeurs du contrôleur MagasinControler
+        MagasinControler.add(magasin);
         MagasinControler.add(new Magasin("SHOP1", "1", 0600000000));
         MagasinControler.add(new Magasin("SHOP2", "2", 0611111111));
         MagasinControler.add(new Magasin("SHOP3", "3", 0622222222));
-        MagasinControler.add(magasin);
+        MagasinControler.add(new Magasin("SHOP4", "1", 0600000000));
+        MagasinControler.add(new Magasin("SHOP5", "2", 0611111111));
+        MagasinControler.add(new Magasin("SHOP6", "3", 0622222222));
 
         acheteurA.getBasket().put(AlimentControler.get(6), 5.0);
         acheteurA.getBasket().put(AlimentControler.get(11), 4.0);
@@ -106,6 +109,8 @@ public class Lancement extends AppCompatActivity {
         // initialiser les valeurs du contrôleur UserControler
         UserControler.listeUsers.add(acheteurA);
         UserControler.listeUsers.add(vendeurB);
+
+        UserControler.get(0).remplirListeTotaleDAliment();
 
         // Lancer l'activité principale
         Intent intent = new Intent(this, MainActivity.class);

@@ -14,6 +14,7 @@
         android:src="@drawable/orange"/>
 
     <RelativeLayout
+        android:layout_margin="@dimen/marginFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -37,8 +38,9 @@
 
     <Button
         android:id="@+id/modifier"
-        android:text="Modifier"
-        android:layout_margin="@dimen/marginFragment"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:text="Modifier" />
 </LinearLayout>

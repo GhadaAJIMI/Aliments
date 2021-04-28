@@ -2,7 +2,10 @@ package com.example.aliments.modeles;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class ListCoursePreferees implements Parcelable {
     private HashMap<String, CoursePreferee> listCoursesPreferees = new HashMap<String, CoursePreferee>();
@@ -34,6 +37,9 @@ public class ListCoursePreferees implements Parcelable {
     // getters and setters
     public HashMap<String, CoursePreferee> getListCoursesPreferees() {
         return listCoursesPreferees;
+    }
+    public List<CoursePreferee> getListCoursesPreferees3() {
+        return new ArrayList<>(listCoursesPreferees.values());
     }
     public void setListCoursesPreferees(HashMap<String, CoursePreferee> listCoursesPreferees) {
         this.listCoursesPreferees = listCoursesPreferees;

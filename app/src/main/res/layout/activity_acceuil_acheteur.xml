@@ -15,7 +15,7 @@
         android:text="Acceuil Acheteur"
         android:layout_marginTop="50dp"
         android:textColor="@color/black"
-        android:background="@color/white"
+        android:background="@color/teal_200"
         android:padding="5dp"
         android:textSize="25sp"/>
 

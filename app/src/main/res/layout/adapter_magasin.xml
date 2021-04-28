@@ -3,17 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:layout_gravity="center"
     android:layout_margin="10dp"
-    android:background="#FFFF00">
+    android:background="@color/teal_200">
 
     <ImageView
         android:id="@+id/shop_icon"
-        android:layout_width="206dp"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
         android:src="@drawable/shop_1_icon"></ImageView>
 
     <RelativeLayout
         android:layout_margin="10dp"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -23,15 +25,13 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:textColor="@color/design_default_color_primary"
-            android:text="@string/shop_default_name"></TextView>
+            android:text="@string/shop_default_name"/>
         <TextView
             android:id="@+id/shop_numTel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/magasin_default_numTel"
-            android:layout_below="@+id/shop_name">
-
-        </TextView>
+            android:layout_below="@+id/shop_name"/>
 
         <Button
             android:id="@+id/appeler"
@@ -39,8 +39,6 @@
             android:layout_height="35dp"
             android:layout_below="@id/shop_numTel"
             android:layout_marginTop="15dp"
-            android:text="Appeler" />
-
+            android:text="Appeler"/>
     </RelativeLayout>
-
 </LinearLayout>

@@ -3,6 +3,8 @@ package com.example.aliments.modeles;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.List;
+
 public class CoursePreferee implements Parcelable {
     private ListAliment listeAliment;
     private String name;
@@ -15,7 +17,10 @@ public class CoursePreferee implements Parcelable {
     public void setName(String name) {
         this.name = name;
     }
-    public ListAliment getListeAliment() {
+    public List<Aliment> getListeAliment() {
+        return listeAliment.getListeAliments();
+    }
+    public ListAliment getListeAliment2() {
         return listeAliment;
     }
     public void setListeAliment(ListAliment listeAliment) {

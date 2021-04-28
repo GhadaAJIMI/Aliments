@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:gravity="center"
     android:layout_width="match_parent"
@@ -9,47 +8,31 @@
 
     <ImageView
         android:id="@+id/imageAlimentPanier"
-        android:layout_width="@dimen/tailleImage"
-        android:layout_height="@dimen/tailleImage"
-        android:src="@drawable/banane"></ImageView>
+        android:layout_width="@dimen/tailleImage2"
+        android:layout_height="@dimen/tailleImage2"
+        android:src="@drawable/banane"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="@dimen/marginFragment">
+        android:layout_marginLeft="@dimen/marginFragment">
 
+    <TextView
+        android:id="@+id/coursePanier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/coursePanier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/marginFragment"
-            android:textSize="20dp"></TextView>
+    <TextView
+        android:id="@+id/coursePanierQuantite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/coursePanierQuantite"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/marginFragment"
-            android:textSize="20dp"></TextView>
-
-        <TextView
-            android:id="@+id/coursePanierPrix"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/marginFragment"
-            android:textSize="20dp"/>
+    <TextView
+        android:id="@+id/coursePanierPrix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/boutonSupprimePanier"
-        android:layout_width="@dimen/tailleBouton"
-        android:layout_height="@dimen/tailleBouton"
-        android:layout_marginRight="@dimen/marginFragment"
-        android:text="-"
-        android:textSize="20dp"></Button>
 
 </LinearLayout>

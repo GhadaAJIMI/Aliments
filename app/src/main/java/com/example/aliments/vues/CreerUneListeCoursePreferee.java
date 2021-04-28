@@ -1,6 +1,8 @@
 package com.example.aliments.vues;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,7 @@ import com.example.aliments.R;
 import com.example.aliments.controleurs.AlimentControler;
 import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.CoursePreferee;
+import com.example.aliments.modeles.Notification;
 
 public class CreerUneListeCoursePreferee extends AppCompatActivity {
 
@@ -27,6 +30,11 @@ public class CreerUneListeCoursePreferee extends AppCompatActivity {
                 String nameListe = name.getText().toString();
                 if(!nameListe.trim().equals("") && !UserControler.get(0).getListeCoursesPreferees().containsKey(nameListe)){
                     UserControler.get(0).getListeCoursesPreferees2().add(new CoursePreferee(nameListe));
+
+                    String titre = "Nouvelle liste de course préféré";
+                    String msg = "Vous avez créé la liste " + nameListe;
+                    new Notification(titre, msg, R.drawable.shopping_cart, CreerUneListeCoursePreferee.this, Notification.SIMPLE);
+                    Toast.makeText(CreerUneListeCoursePreferee.this, "Vous avez créé la liste " + nameListe, Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(CreerUneListeCoursePreferee.this, ListeCoursesPrefereesActivity.class);
                     startActivity(intent);

@@ -96,21 +96,11 @@ public class PanierAdapter extends BaseAdapter {
         Double prix = currectAliment.getPrix();
         int srcAliment = currectAliment.getRsc();
 
-        convertView.findViewById(R.id.boutonSupprimePanier);
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // supprimer la liste
-                PanierAdapter.remove(name);
-                notifyDataSetChanged();
-            }
-        });
-
         TextView listNameView = convertView.findViewById(R.id.coursePanier);
         listNameView.setText(name);
 
         TextView quantiteAliment = convertView.findViewById(R.id.coursePanierQuantite);
-        quantiteAliment.setText("Quantité: "+quantite+" kg");
+        quantiteAliment.setText("Q: "+quantite+" kg");
 
         TextView prixAliment = convertView.findViewById(R.id.coursePanierPrix);
         prixAliment.setText("Prix = " + prix + " €");

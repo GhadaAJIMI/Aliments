@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".vues.DetailAliment">
+    tools:context=".vues.ConsulterAlimentActivity">
 
     <ImageView
         android:id="@+id/aliment_icon"
@@ -27,7 +27,7 @@
             android:layout_margin="@dimen/marginFragment"
             android:textSize="20dp"
             android:textColor="@color/black"
-            android:text="Nom de l'aliment : "></TextView>
+            android:text="Nom de l'aliment :"></TextView>
 
         <TextView
             android:id="@+id/aliment_name2"
@@ -36,7 +36,7 @@
             android:textSize="20dp"
             android:textColor="@color/black"
             android:layout_margin="@dimen/marginFragment"
-            android:text="banane"></TextView>
+            android:text="Banane"></TextView>
     </LinearLayout>
 
     <LinearLayout
@@ -51,24 +51,17 @@
             android:layout_margin="@dimen/marginFragment"
             android:textSize="20dp"
             android:textColor="@color/black"
-            android:text="Prix de l'aliment en euro : "></TextView>
+            android:text="Prix :"></TextView>
 
-        <EditText
+        <TextView
             android:id="@+id/aliment_price2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginFragment"
             android:textSize="20dp"
             android:textColor="@color/black"
-            android:layout_margin="@dimen/marginFragment"
-            android:text="prix"></EditText>
+            android:text="5 euro"></TextView>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/valider"
-        android:text="Valider"
-        android:layout_margin="@dimen/marginFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/buttonBack"

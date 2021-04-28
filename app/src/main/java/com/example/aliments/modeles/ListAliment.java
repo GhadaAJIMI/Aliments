@@ -65,6 +65,7 @@ public class ListAliment implements Parcelable {
         for(Aliment aliment: listeAliments){
             prixTotal += aliment.getPrix();
         }
+        this.prixTotal = prixTotal;
         return prixTotal;
     }
 
@@ -88,6 +89,16 @@ public class ListAliment implements Parcelable {
     public Aliment get(String name){
         for (int i = 0; i < listeAliments.size(); i++){
             if(listeAliments.get(i).getName().equals(name)){
+                return listeAliments.get(i);
+            }
+        }
+
+        return null;
+    }
+
+    public Aliment get(Aliment aliment){
+        for (int i = 0; i < listeAliments.size(); i++){
+            if(listeAliments.get(i).getName().equals(aliment.getName())){
                 return listeAliments.get(i);
             }
         }

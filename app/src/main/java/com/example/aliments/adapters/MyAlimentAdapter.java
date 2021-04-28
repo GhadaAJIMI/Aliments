@@ -16,6 +16,8 @@ import com.example.aliments.R;
 import com.example.aliments.controleurs.AlimentControler;
 import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.vues.AcceuilAcheteurActivity;
+import com.example.aliments.vues.ConsulterAlimentActivity;
+import com.example.aliments.vues.CreerUneListeCoursePreferee;
 import com.example.aliments.vues.DetailCoursePreferee;
 import com.example.aliments.vues.ListeCoursesPrefereesActivity;
 import com.example.aliments.vues.MainActivity;
@@ -28,6 +30,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MyAlimentAdapter extends ArrayAdapter<String> {
     private Context context;
@@ -69,7 +72,7 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
         TextView textView1 = convertView.findViewById(R.id.priceview);
         imageView.setImageResource(imgs[position]);
         textView.setText(name[position]);
-        textView1.setText("Prix = " + prix[position]);
+        textView1.setText("Prix = " + prix[position]+"");
 
         convertView.findViewById( R.id.ajout).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +87,16 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
             @Override
             public void onClick(View v) {
                 UserControler.get(0).getBasket().add(AlimentControler.get(name[position]));
-                Intent intent = new Intent(context, PanierActivity.class);
+                UserControler.get(0).getTousLesAliments().add(AlimentControler.get(name[position]));
+                Toast.makeText(context, "Vous avez ajouter 1kg de " + name[position] + " dans le panier", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlimentControler.aliment = AlimentControler.get(name[position]);
+                Intent intent = new Intent(context, ConsulterAlimentActivity.class);
                 context.startActivity(intent);
             }
         });
