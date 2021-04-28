@@ -39,6 +39,14 @@ public class AcceuilVendeurActivity extends AppCompatActivity {
             }
         });
 
+        findViewById( R.id.buttonAjouterArticle).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AcceuilVendeurActivity.this, AjoutAlimentActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
