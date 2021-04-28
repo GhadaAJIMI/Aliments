@@ -94,12 +94,11 @@ public class MyPanierAdapter  extends BaseAdapter {
         Double prix = currectAliment.getPrix();
         int srcAliment = currectAliment.getRsc();
 
-        convertView.findViewById(R.id.boutonSupprimePanier2);
-        convertView.setOnClickListener(new View.OnClickListener() {
+        convertView.findViewById(R.id.boutonSupprimePanier2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 UserControler.get(0).getBasket().remove(currectAliment.getName());
-                MyPanierAdapter.remove(name);
+                MyPanierAdapter.remove(currectAliment.getName());
                 notifyDataSetChanged();
             }
         });
