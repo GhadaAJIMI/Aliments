@@ -38,7 +38,7 @@ public class AjoutAlimentActivity extends AppCompatActivity implements IPictureA
         if(storageFragment == null){
             storageFragment = new StorageFragment(this);
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.fragmentPicture, storageFragment);
+            transaction.replace(R.id.fragmentStorage, storageFragment);
             transaction.addToBackStack(null);
             transaction.commit();
         }
