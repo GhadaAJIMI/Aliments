@@ -12,13 +12,13 @@ public class Magasin implements Parcelable {
     private User proprio;
     private HashMap<Aliment, Double> listeProduits;
     private String name;
-    private int numeroTelephone;
+    private String numeroTelephone;
     private String mnemonic;
 
     protected Magasin(Parcel in) {
         proprio = in.readParcelable(User.class.getClassLoader());
         name = in.readString();
-        numeroTelephone = in.readInt();
+        numeroTelephone = in.readString();
         mnemonic = in.readString();
     }
 
@@ -47,7 +47,7 @@ public class Magasin implements Parcelable {
     public void setListeProduits(HashMap<Aliment, Double> listeProduits) {
         this.listeProduits = listeProduits;
     }
-    public int getNumeroTelephone() { return numeroTelephone; }
+    public String getNumeroTelephone() { return numeroTelephone; }
     public String getName() { return name; }
     public String getMnemonic() { return mnemonic; }
 
@@ -56,7 +56,7 @@ public class Magasin implements Parcelable {
         proprio = null;
         listeProduits = new HashMap<Aliment, Double>();
         name = "";
-        numeroTelephone = 0;
+        numeroTelephone = "";
         mnemonic = "";
     }
 
@@ -64,11 +64,11 @@ public class Magasin implements Parcelable {
         this.proprio = proprio;
         this.listeProduits = listeProduits;
         name = this.proprio.getName();
-        numeroTelephone = 0;
+        numeroTelephone = "";
         mnemonic = "";
     }
 
-    public Magasin(String name, String mnemonic, int numeroTelephone ){
+    public Magasin(String name, String mnemonic, String numeroTelephone ){
         this.name = name;
         this.numeroTelephone = numeroTelephone;
         this.mnemonic = mnemonic;
@@ -104,7 +104,7 @@ public class Magasin implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
-        dest.writeInt(numeroTelephone);
+        dest.writeString(numeroTelephone);
         dest.writeString(mnemonic);
     }
 }

@@ -52,7 +52,7 @@ public class ListeMagasinsAdapter extends BaseAdapter {
         Magasin currentMagasin = getItem(position);
         String nameMagasin = currentMagasin.getName();
         String mnemonic = currentMagasin.getMnemonic();
-        int numTel = currentMagasin.getNumeroTelephone();
+        String numTel = currentMagasin.getNumeroTelephone();
 
         ImageView shopIconView = convertView.findViewById(R.id.shop_icon);
         String resourceName = "shop_"+mnemonic+"_icon";
@@ -63,7 +63,7 @@ public class ListeMagasinsAdapter extends BaseAdapter {
         shopNameView.setText(nameMagasin);
 
         TextView shopNumView = convertView.findViewById(R.id.shop_numTel);
-        shopNumView.setText(numTel+"");
+        shopNumView.setText("N° de tél: "+numTel+"");
 
         Button appeler =(Button) convertView.findViewById(R.id.appeler);
 

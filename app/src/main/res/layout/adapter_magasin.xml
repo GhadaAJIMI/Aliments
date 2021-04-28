@@ -31,7 +31,6 @@
             android:id="@+id/shop_numTel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/magasin_default_numTel"
             android:layout_below="@+id/shop_name"/>
 
         <Button

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".vues.SearchSellerActivity"
-    android:background="@color/teal_200">
+    android:background="@color/white">
 
     <ListView
         android:id="@+id/shop_list_view"
