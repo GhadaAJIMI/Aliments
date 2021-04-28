@@ -20,23 +20,26 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="400dp"
-        android:text="Vendeur" />
+        android:text="Vendeur"/>
 
     <fragment
         android:name="com.example.aliments.adapters.FragmentContainer"
         android:id="@+id/fragment"
-        android:layout_width="147dp"
-        android:layout_height="600dp"
-        android:layout_marginTop="30dp"
-        />
+        android:layout_width="300dp"
+        android:layout_height="match_parent"/>
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Menu"
-        android:textSize="25sp"
-        android:layout_marginTop = "5dp"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+    <ImageView
+        android:id="@+id/image1"
+        android:src="@drawable/ic_icon_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+    <ImageView
+        android:id="@+id/image2"
+        android:src="@drawable/ic_icon_menu"
+        android:visibility="invisible"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="300dp"/>
 
 </RelativeLayout>

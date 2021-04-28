@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById( R.id.buttonAcheteur).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(MainActivity.this, AcceuilAcheteurActivity.class);
                 startActivity(intent);
             }
@@ -35,27 +36,37 @@ public class MainActivity extends AppCompatActivity {
         findViewById( R.id.buttonVendeur).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(MainActivity.this, AcceuilVendeurActivity.class);
                 startActivity(intent);
             }
         });
 
-        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch sw = findViewById(R.id.switch1);
-
-        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        findViewById( R.id.image1).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-             if(isChecked){
-                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                 MenuFragment mF = new MenuFragment();
-                 fragmentTransaction.replace(R.id.fragment , mF);
-                 fragmentTransaction.commit();
-             }else{
-                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                 FragmentContainer mF = new FragmentContainer();
-                 fragmentTransaction.replace(R.id.fragment , mF);
-                 fragmentTransaction.commit();
-             }
+            public void onClick(View v) {
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                MenuFragment mF = new MenuFragment();
+                fragmentTransaction.replace(R.id.fragment , mF);
+                fragmentTransaction.commit();
+                findViewById( R.id.buttonAcheteur).setVisibility(View.INVISIBLE);
+                findViewById( R.id.buttonVendeur).setVisibility(View.INVISIBLE);
+                findViewById( R.id.image1).setVisibility(View.INVISIBLE);
+                findViewById( R.id.image2).setVisibility(View.VISIBLE);
+            }
+        });
+
+        findViewById( R.id.image2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                FragmentContainer mF = new FragmentContainer();
+                fragmentTransaction.replace(R.id.fragment , mF);
+                fragmentTransaction.commit();
+                findViewById( R.id.buttonAcheteur).setVisibility(View.VISIBLE);
+                findViewById( R.id.buttonVendeur).setVisibility(View.VISIBLE);
+                findViewById( R.id.image1).setVisibility(View.VISIBLE);
+                findViewById( R.id.image2).setVisibility(View.INVISIBLE);
             }
         });
     }

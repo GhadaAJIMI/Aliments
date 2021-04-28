@@ -17,7 +17,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MyPanierAdapter  extends BaseAdapter {
-
     private double prixTotal = 0;
     private Context context;
     static private HashMap<Aliment, Double> listeCoursesPanier;
@@ -77,7 +76,6 @@ public class MyPanierAdapter  extends BaseAdapter {
         List<Double> liste = new ArrayList(listeCoursesPanier.values());
         return liste.get(position);
     }
-
 
     @Override
     public long getItemId(int position) {

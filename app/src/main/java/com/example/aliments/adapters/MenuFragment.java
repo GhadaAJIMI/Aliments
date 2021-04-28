@@ -51,15 +51,6 @@ public class MenuFragment extends Fragment {
 
            }
        });
-       monPanier = v.findViewById(R.id.CoursesPanier);
-       monPanier.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent intent = new Intent(getActivity(), PanierActivity.class);
-               startActivity(intent);
-           }
-       });
-
 
         return v;
     }
