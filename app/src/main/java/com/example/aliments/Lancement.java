@@ -89,7 +89,9 @@ public class Lancement extends AppCompatActivity {
         listeProduits.put(AlimentControler.get(5), 50.0);
         listeProduits.put(AlimentControler.get(6), 50.0);
 
-        Magasin magasin = new Magasin("FlorianeMagasin", "1", "0600500060");
+
+        Magasin magasin = new Magasin("FlorianeShop", "2", "0600500060");
+
         magasin.setListeProduits(listeProduits);
         magasin.setProprio(vendeurB);
         vendeurB.setMagasin(magasin);

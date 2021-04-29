@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/teal_200"
+    android:orientation="vertical"
+    tools:context=".adapters.MenuFragment">
+
+    <Button
+        android:id="@+id/menudujour"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:textSize="50sp"
+        android:text="Menu du jour"
+        android:layout_width="wrap_content" />
+
+    <Button
+        android:id="@+id/Coursespref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:layout_marginTop="25dp"
+        android:text="Mes courses préférées" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mes courses preférées sont : "
+        android:textSize="40sp"
+        android:layout_marginTop="25dp"/>
+
+    <ListView
+        android:id="@+id/ListeCoursesPref"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:textSize="50sp"
+        android:layout_height="wrap_content">
+    </ListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mon panier contient : "
+        android:textSize="50sp"
+        android:layout_marginTop="25dp"/>
+
+    <ListView
+        android:id="@+id/ListeCoursesPanier"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
+
+</LinearLayout>

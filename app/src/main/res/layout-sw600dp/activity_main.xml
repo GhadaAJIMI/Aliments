@@ -11,34 +11,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
-        android:textSize="100sp"
-        android:text="Acheteur" />
+        android:layout_marginTop="200dp"
+        android:text="Acheteur"
+        android:textSize="100sp"/>
 
     <Button
         android:id="@+id/buttonVendeur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:layout_below="@+id/buttonAcheteur"
         android:layout_centerHorizontal="true"
-        android:textSize="100sp"
-        android:text="Vendeur" />
+        android:layout_below="@+id/buttonAcheteur"
+        android:layout_marginTop="400dp"
+        android:text="Vendeur"
+        android:textSize="100sp"/>
 
     <fragment
         android:name="com.example.aliments.adapters.FragmentContainer"
         android:id="@+id/fragment"
-        android:layout_width="200dp"
-        android:layout_height="1500dp"
-        android:layout_marginTop="30dp" />
+        android:layout_width="600dp"
+        android:layout_height="match_parent"/>
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Menu"
-        android:textSize="25sp"
-        android:layout_marginTop="5dp"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+    <ImageView
+        android:id="@+id/image1"
+        android:src="@drawable/ic_icon_menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="600dp"
+        android:src="@drawable/ic_icon_menu"
+        android:visibility="invisible" />
 
 </RelativeLayout>

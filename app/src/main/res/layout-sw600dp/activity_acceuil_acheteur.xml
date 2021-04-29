@@ -17,7 +17,7 @@
         android:background="@color/teal_200"
         android:layout_centerHorizontal="true"
         android:textSize="75sp"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="80dp"/>
 
     <Button
         android:id="@+id/buttonParAliment"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/acceuilAchteur"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="110dp"
         android:text="Recherche Aliment"
         android:textSize="50sp"/>
 
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="110dp"
         android:layout_below="@+id/buttonParAliment"
         android:text="Recherche Vendeur"
         android:textSize="50sp"/>
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="110dp"
         android:layout_below="@+id/buttonParVendeur"
         android:text="Mes listes de courses preferées"
         android:textSize="40sp"/>
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonListesPreferees"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="110dp"
         android:text="Mon panier"
         android:textSize="50sp" />
 
@@ -63,7 +63,7 @@
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:text="Back"
         android:textSize="50sp"
         android:layout_centerHorizontal="true"

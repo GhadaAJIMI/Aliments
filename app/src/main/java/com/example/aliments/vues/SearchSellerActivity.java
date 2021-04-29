@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.example.aliments.R;
@@ -31,7 +32,7 @@ public class SearchSellerActivity extends AppCompatActivity {
             }
         });
 
-        ListView shopListView = findViewById(R.id.shop_list_view);
+        GridView shopListView = findViewById(R.id.shop_list_view);
         shopListView.setAdapter(new ListeMagasinsAdapter(this, MagasinControler.getListeMagasins()));
     }
 }
