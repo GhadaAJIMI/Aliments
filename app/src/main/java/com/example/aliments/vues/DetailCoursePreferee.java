@@ -12,6 +12,7 @@ import com.example.aliments.R;
 import com.example.aliments.adapters.ListeAlimentsAdapter;
 import com.example.aliments.controleurs.AlimentControler;
 import com.example.aliments.controleurs.UserControler;
+import com.example.aliments.modeles.Aliment;
 import com.example.aliments.modeles.CoursePreferee;
 
 public class DetailCoursePreferee extends AppCompatActivity {
@@ -50,6 +51,20 @@ public class DetailCoursePreferee extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DetailCoursePreferee.this, ListeCoursesPrefereesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById( R.id.boutonAjoutPanier).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // ajouter tous les aliments dans le panier
+                for(Aliment aliment: currectList.getListeAliment()){
+                    UserControler.get(0).getBasket().add(aliment, 1.0);
+                }
+
+
+                Intent intent = new Intent(DetailCoursePreferee.this, PanierActivity.class);
                 startActivity(intent);
             }
         });

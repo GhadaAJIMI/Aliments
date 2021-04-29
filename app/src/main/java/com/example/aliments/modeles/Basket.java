@@ -66,8 +66,8 @@ public class Basket implements Parcelable {
     }
 
     public void add(Aliment aliment, Double i){
-        if(listeProduit.get(aliment) != null)
-            listeProduit.put(aliment, listeProduit.get(aliment) + i);
+        if(find(aliment.getName()) != null)
+            listeProduit.put(find(aliment.getName()), listeProduit.get(find(aliment.getName())) + i);
         else
             listeProduit.put(aliment, 1.0);
     }
@@ -79,6 +79,15 @@ public class Basket implements Parcelable {
 
     public Boolean contains(Aliment aliment){
         return listeProduit.containsKey(aliment);
+    }
+
+    public Boolean contains(String name){
+        for(Aliment aliment: listeProduit.keySet()){
+            if(aliment.getName().equals(name)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public Aliment find(String name){
