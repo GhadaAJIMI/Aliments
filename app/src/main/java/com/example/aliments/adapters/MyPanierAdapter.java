@@ -95,8 +95,14 @@ public class MyPanierAdapter  extends BaseAdapter {
         convertView.findViewById(R.id.boutonSupprimePanier2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserControler.get(0).getBasket().remove(currectAliment.getName());
-                MyPanierAdapter.remove(currectAliment.getName());
+                if(UserControler.get(0).getBasket().getListeProduit2().get(currectAliment) > 1.0)
+                {
+                    UserControler.get(0).getBasket().getListeProduit2().put(currectAliment, UserControler.get(0).getBasket().getListeProduit2().get(currectAliment) - 1.0);
+                }
+                else {
+                    UserControler.get(0).getBasket().remove(currectAliment.getName());
+                    MyPanierAdapter.remove(currectAliment.getName());
+                }
                 notifyDataSetChanged();
             }
         });

@@ -66,7 +66,10 @@ public class Basket implements Parcelable {
     }
 
     public void add(Aliment aliment, Double i){
-        listeProduit.put(aliment, listeProduit.get(aliment) + i);
+        if(listeProduit.get(aliment) != null)
+            listeProduit.put(aliment, listeProduit.get(aliment) + i);
+        else
+            listeProduit.put(aliment, 1.0);
     }
 
     public Aliment get(int i){

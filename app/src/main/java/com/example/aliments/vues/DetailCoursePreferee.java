@@ -24,14 +24,14 @@ public class DetailCoursePreferee extends AppCompatActivity {
         Intent intent = getIntent();
         CoursePreferee currectList = intent.getParcelableExtra("currectList");
 
-        if(AlimentControler.aliment != null && !currectList.getListeAliment().contains(AlimentControler.aliment.getName())){
+        if(AlimentControler.aliment != null && !currectList.contains(AlimentControler.aliment.getName())){
             currectList.getListeAliment().add(AlimentControler.aliment);
             UserControler.get(0).getListeCoursesPreferees().get(currectList.getName()).add(AlimentControler.aliment);
             UserControler.get(0).getTousLesAliments().add(AlimentControler.aliment);
             Toast.makeText(DetailCoursePreferee.this, "Vous avez ajouter le " + AlimentControler.aliment.getName() + " dans la liste '"+currectList.getName()+"'", Toast.LENGTH_SHORT).show();
             AlimentControler.aliment = null;
         }
-        else if(AlimentControler.aliment != null && currectList.getListeAliment().contains(AlimentControler.aliment.getName())){
+        else if(AlimentControler.aliment != null && currectList.contains(AlimentControler.aliment.getName())){
             Toast.makeText(DetailCoursePreferee.this, "Cet aliment existe déjà dans la liste", Toast.LENGTH_SHORT).show();
             AlimentControler.aliment = null;
         }

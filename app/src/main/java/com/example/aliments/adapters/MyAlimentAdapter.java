@@ -86,7 +86,7 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
         convertView.findViewById( R.id.ajoutPanier).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserControler.get(0).getBasket().add(AlimentControler.get(name[position]));
+                UserControler.get(0).getBasket().add(AlimentControler.get(name[position]), 1.0);
                 UserControler.get(0).getTousLesAliments().add(AlimentControler.get(name[position]));
                 Toast.makeText(context, "Vous avez ajouter 1kg de " + name[position] + " dans le panier", Toast.LENGTH_SHORT).show();
             }
