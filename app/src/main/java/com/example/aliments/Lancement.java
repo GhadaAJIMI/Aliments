@@ -105,6 +105,10 @@ public class Lancement extends AppCompatActivity {
         MagasinControler.add(new Magasin("OLIVIERS&CO", "6", "0611111111"));
         MagasinControler.add(new Magasin("Natural House", "7", "0622222222"));
 
+        for(int i = 1; i < 6; i++){
+            MagasinControler.getListeMagasins().get(i).setListeProduits(listeProduits);
+        }
+
         acheteurA.getBasket().put(AlimentControler.get(6), 5.0);
         acheteurA.getBasket().put(AlimentControler.get(11), 4.0);
 
