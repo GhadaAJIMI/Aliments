@@ -40,7 +40,7 @@ public class Lancement extends AppCompatActivity {
         vendeurB.setName("Floriane");
 
         // La liste des aliments
-        String[] name = {"Banane" , "Pomme" , "Kiwi", "Orange", "Fraise", "Mango", "Citron", "Cerise" , "Raison rouge","raisin jaune","grenade","pastèque"};
+        String[] name = {"Banane" , "Pomme" , "Kiwi", "Orange", "Fraise", "Mango", "Citron", "Cerise" , "raisin rouge","raisin jaune","grenade","pastèque"};
         String [] imgs = {"banane", "pomme" , "kiwi", "orange", "fraise", "mango", "lemon", "cherry" , "grape", "grape1", "grenade", "pasteque"};
         Double prix[] = {5.0, 4.0, 3.0, 2.0, 1.0, 1.0, 1.0, 3.0, 2.0, 3.0, 3.0, 3.0};
 

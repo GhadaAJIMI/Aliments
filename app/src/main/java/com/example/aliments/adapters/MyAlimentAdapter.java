@@ -39,6 +39,7 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
     private String[] prix;
     private int[] imgs;
 
+
     public MyAlimentAdapter(Context c , String[] name , int[] imgs, String[] prix) {
         super(c , R.layout.row , R.id.nameview , name );
         context = c;
@@ -66,6 +67,7 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView == null){
             convertView = mLayoutInflater.inflate(R.layout.row , parent , false);
+
         }
         ImageView imageView = convertView.findViewById(R.id.imageView);
         TextView textView = convertView.findViewById(R.id.nameview);
@@ -74,7 +76,7 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
         textView.setText(name[position]);
         textView1.setText("Prix = " + prix[position]+"");
 
-        convertView.findViewById( R.id.ajout).setOnClickListener(new View.OnClickListener() {
+   /*     convertView.findViewById( R.id.ajout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlimentControler.aliment = AlimentControler.get(name[position]);
@@ -82,6 +84,8 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
                 context.startActivity(intent);
             }
         });
+
+
 
         convertView.findViewById( R.id.ajoutPanier).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +96,9 @@ public class MyAlimentAdapter extends ArrayAdapter<String> {
             }
         });
 
-        imageView.setOnClickListener(new View.OnClickListener() {
+    */
+
+        convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlimentControler.aliment = AlimentControler.get(name[position]);

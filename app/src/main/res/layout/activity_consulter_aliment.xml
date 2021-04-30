@@ -62,6 +62,31 @@
             android:textColor="@color/black"
             android:text="5 euro"></TextView>
     </LinearLayout>
+       <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/ajoutPanier1"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Ajouter au panier"/>
+
+            <Button
+                android:id="@+id/ajout1"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Ajouter aux courses préf"/>
+
+        </LinearLayout>
 
     <Button
         android:id="@+id/buttonBack"
