@@ -5,36 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    tools:context=".vues.PanierActivity">
+    tools:context=".vues.PanierDetailActivity">
 
 
     <TextView
-        android:id="@+id/panierList"
+        android:id="@+id/End"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/textSize"
-        android:text="Mon Panier"
-        android:gravity="center"></TextView>
-
-    <ListView
-        android:id="@+id/p_list_view"
-        android:layout_width="wrap_content"
-        android:layout_height="393dp"
-        android:layout_margin="10dp" />
+        android:textSize="20dp"
+        android:text="Merci pour votre achat! Votre commande sera livrée dans 2 jours."
+        android:gravity="center"
+        android:layout_marginBottom="100dp"
+        android:textStyle="bold|italic" ></TextView>
 
 
     <Button
-        android:id="@+id/valider"
+        android:id="@+id/agenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/panierList"
-        android:text="Valider"
+        android:layout_marginBottom="200dp"
+        android:text="Ajouter à l'agenda"
         android:textSize="20dp"></Button>
 
     <Button
-        android:id="@+id/buttonBack"
+        android:id="@+id/buttonBack2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/valider"
+        android:layout_below="@id/agenda"
         android:text="Back" />
 </LinearLayout>
