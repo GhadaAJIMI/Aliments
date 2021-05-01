@@ -98,7 +98,7 @@ public class Lancement extends AppCompatActivity {
 
         // initialiser les valeurs du contrôleur MagasinControler
         MagasinControler.add(magasin);
-        MagasinControler.add(new Magasin("Fruit&Vegetables", "2", "0600000000"));
+        MagasinControler.add(new Magasin("Sweet Food", "1", "0600000000"));
         MagasinControler.add(new Magasin("ChocViandes", "3", "0611111111"));
         MagasinControler.add(new Magasin("Hal'shop", "4", "0622222222"));
         MagasinControler.add(new Magasin("BIO COMPANY", "5", "0600000000"));
