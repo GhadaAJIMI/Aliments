@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -50,7 +51,7 @@ public class PanierDetailActivity extends AppCompatActivity{
 
                 HashMap<Aliment, Double> listBasket = UserControler.get(0).getBasket().getListeProduit2();
 
-                intent.putExtra(CalendarContract.Events.DESCRIPTION, "Mon panier contient: \n" + convertWithIteration(listBasket) );
+                intent.putExtra(CalendarContract.Events.DESCRIPTION, "Mon panier contient: \n" + convertWithIteration(listBasket) + "\n" + "J'ai payé " + UserControler.get(0).getBasket().getPrixTotal() + "€");
                 intent.putExtra(CalendarContract.Events.DTSTART, Calendar.getInstance().getTimeInMillis());
                 intent.putExtra(CalendarContract.Events.DTEND, Calendar.getInstance().getTimeInMillis() +48*60*60*1000);
                 intent.putExtra(CalendarContract.Events.ALL_DAY, true);
