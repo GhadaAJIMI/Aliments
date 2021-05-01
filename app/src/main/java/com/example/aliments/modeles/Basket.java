@@ -43,16 +43,11 @@ public class Basket implements Parcelable {
     public void setListeProduit(HashMap<Aliment, Double> listeProduit) {
         this.listeProduit = listeProduit;
     }
-    public double getPrixTotal() {
-        return prixTotal;
-    }
-    public void setPrixTotal(double prixTotal) {
-        this.prixTotal = prixTotal;
-    }
 
     // constructeur
     public Basket() {
         listeProduit = new HashMap<Aliment, Double>();
+        this.prixTotal = 0;
     }
 
     public Basket(HashMap<Aliment, Double> listeProduit, double prixTotal) {
@@ -104,5 +99,13 @@ public class Basket implements Parcelable {
 
     public void remove(String alimentName){
         listeProduit.remove(find(alimentName));
+    }
+
+    public double getPrixTotal(){
+        double total=0.0;
+        for(Aliment aliment: listeProduit.keySet()){
+            total = total + aliment.getPrix();
+        }
+        return total;
     }
 }

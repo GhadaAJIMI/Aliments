@@ -27,6 +27,7 @@ import java.util.stream.Collectors;
 
 public class PanierActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +44,8 @@ public class PanierActivity extends AppCompatActivity {
         ListView panierListView = findViewById(R.id.p_list_view);
         panierListView.setAdapter(new MyPanierAdapter(this, UserControler.get(0).getBasket().getListeProduit2()));
 
-        //TextView prixTotal = findViewById(R.id.prixTotal);
-        //prixTotal.setText(new MyPanierAdapter(this, UserControler.get(0).getBasket().getPrixTotal()));
+        TextView prixTotal = findViewById(R.id.prixTotal);
+        prixTotal.setText("Prix Total = " + (double) UserControler.get(0).getBasket().getPrixTotal() + "€");
 
        findViewById(R.id.valider).setOnClickListener(new View.OnClickListener() {
            @Override

@@ -23,18 +23,29 @@
         android:layout_margin="10dp" />
 
 
+    <TextView
+        android:id="@+id/prixTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:layout_marginLeft="100dp"
+        ></TextView>
+
     <Button
         android:id="@+id/valider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/panierList"
         android:text="Valider"
-        android:textSize="20dp"></Button>
+        android:textSize="25dp"></Button>
 
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/valider"
-        android:text="Back" />
+        android:text="Back"
+        android:layout_marginRight="165dp"/>
 </LinearLayout>
