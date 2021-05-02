@@ -103,7 +103,8 @@ public class MyPanierAdapter  extends BaseAdapter {
         convertView.findViewById(R.id.boutonAjoutePanier2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserControler.get(0).getBasket().add(currectAliment);
+                UserControler.get(0).getBasket().getListeProduit2().put(currectAliment, UserControler.get(0).getBasket().getListeProduit2().get(currectAliment) + 1.0);
+                notifyDataSetChanged();
             }
         });
 
