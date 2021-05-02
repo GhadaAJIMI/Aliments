@@ -40,7 +40,7 @@ public class Lancement extends AppCompatActivity {
         vendeurB.setName("Floriane");
 
         // La liste des aliments
-        String[] name = {"Banane" , "Pomme" , "Kiwi", "Orange", "Fraise", "Mango", "Citron", "Cerise" , "Raison rouge","raisin jaune","grenade","pastèque"};
+        String[] name = {"Banane" , "Pomme" , "Kiwi", "Orange", "Fraise", "Mango", "Citron", "Cerise" , "raisin rouge","raisin jaune","grenade","pastèque"};
         String [] imgs = {"banane", "pomme" , "kiwi", "orange", "fraise", "mango", "lemon", "cherry" , "grape", "grape1", "grenade", "pasteque"};
         Double prix[] = {5.0, 4.0, 3.0, 2.0, 1.0, 1.0, 1.0, 3.0, 2.0, 3.0, 3.0, 3.0};
 
@@ -104,6 +104,10 @@ public class Lancement extends AppCompatActivity {
         MagasinControler.add(new Magasin("BIO COMPANY", "5", "0600000000"));
         MagasinControler.add(new Magasin("OLIVIERS&CO", "6", "0611111111"));
         MagasinControler.add(new Magasin("Natural House", "7", "0622222222"));
+
+        for(int i = 1; i < 6; i++){
+            MagasinControler.getListeMagasins().get(i).setListeProduits(listeProduits);
+        }
 
         acheteurA.getBasket().put(AlimentControler.get(6), 5.0);
         acheteurA.getBasket().put(AlimentControler.get(11), 4.0);

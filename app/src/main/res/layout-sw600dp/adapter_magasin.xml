@@ -21,7 +21,7 @@
 
         <RelativeLayout
             android:layout_width="352dp"
-            android:layout_height="205dp"
+            android:layout_height="224dp"
 
             android:layout_margin="10dp">
 

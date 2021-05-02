@@ -7,11 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.aliments.R;
 import com.example.aliments.controleurs.AlimentControler;
+import com.example.aliments.controleurs.UserControler;
 
 public class ConsulterAlimentActivity extends AppCompatActivity {
+
+    String tx;String tx1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +40,28 @@ public class ConsulterAlimentActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        findViewById( R.id.ajoutPanier1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tx = name.getText().toString();
+                UserControler.get(0).getBasket().add(AlimentControler.get(tx));
+                UserControler.get(0).getTousLesAliments().add(AlimentControler.get(tx));
+                Toast.makeText(ConsulterAlimentActivity.this, "Vous avez ajouter 1kg de " + tx + " dans le panier", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        findViewById( R.id.ajout1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 tx1 = name.getText().toString();
+                AlimentControler.aliment = AlimentControler.get(tx1);
+                Intent intent = new Intent(ConsulterAlimentActivity.this, ListeCoursesPrefereesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

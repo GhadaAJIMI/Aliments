@@ -1,86 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+ <!--<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     android:padding="2dp">
+
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+
+         <ImageView
+             android:id="@+id/imageView"
+             android:layout_width="100dp"
+             android:layout_height="100dp"
+             android:src="@drawable/banane"
+             android:layout_centerHorizontal="true"/>
+
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="15dp"
+             android:orientation="vertical">
+
+             <TextView
+                 android:id="@+id/nameview"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/imageView"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginTop="5dp"
+                 android:text="name"
+                 android:textSize="20sp" />
+
+             <TextView
+                 android:id="@+id/priceview"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/nameview"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginTop="5dp"
+                 android:text="prix"
+                 android:textSize="20sp" />
+
+         </LinearLayout>
+
+         <LinearLayout
+             android:orientation="vertical"
+             android:layout_marginLeft="10dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+
+             <Button
+                 android:id="@+id/ajoutPanier"
+                 android:textSize="15sp"
+                 android:textAllCaps="false"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/priceview"
+                 android:layout_centerHorizontal="true"
+                 android:text="Ajouter au panier"/>
+
+             <Button
+                 android:id="@+id/ajout"
+                 android:textSize="15sp"
+                 android:textAllCaps="false"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/ajoutPanier"
+                 android:layout_centerHorizontal="true"
+                 android:text="Ajouter aux courses préf"/>
+
+         </LinearLayout>
+
+     </LinearLayout>
+
+     <View
+         android:layout_marginTop="5dp"
+         android:layout_width="fill_parent"
+         android:layout_height="1px"
+         android:background="#FF909090" />
+
+ </LinearLayout> -->
+
+<RelativeLayout
+
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="2dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/banane"
+       />
+<RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="2dp">
+    android:layout_marginLeft="100dp">
 
-    <LinearLayout
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:id="@+id/nameview"
+        android:text="name"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/priceview"
+        android:layout_below="@+id/nameview"
+        android:text="prix"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"/>
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/banane"
-            android:layout_centerHorizontal="true"/>
+</RelativeLayout>
 
-        <LinearLayout
+ <!--   <Button
+        android:id="@+id/ajoutPanier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:text="Ajouter au panier"/>
+    <Button
+        android:id="@+id/ajout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ajoutPanier"
 
-            android:orientation="vertical"
-            android:layout_marginTop="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        android:text="Ajouter aux courses préférées"/> -->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/nameview"
-                android:layout_below="@+id/imageView"
-                android:layout_centerHorizontal="true"
-                android:text="name"
-                android:textSize="20sp"
-                android:layout_marginTop="5dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/priceview"
-                android:layout_below="@+id/nameview"
-                android:layout_centerHorizontal="true"
-                android:text="prix"
-                android:textSize="20sp"
-                android:layout_marginTop="5dp"/>
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/ajoutPanier"
-                android:textSize="15sp"
-                android:textAllCaps="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/priceview"
-                android:layout_centerHorizontal="true"
-                android:text="Ajouter au panier"/>
-
-            <Button
-                android:id="@+id/ajout"
-                android:textSize="15sp"
-                android:textAllCaps="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ajoutPanier"
-                android:layout_centerHorizontal="true"
-                android:text="Ajouter aux courses préf"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <View
-        android:layout_marginTop="5dp"
-        android:layout_width="fill_parent"
-        android:layout_height="1px"
-        android:background="#FF909090" />
-
-</LinearLayout>
+</RelativeLayout>
 
