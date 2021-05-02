@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal_200"
@@ -7,19 +8,16 @@
     tools:context=".adapters.PanierFragment">
 
     <TextView
-        android:layout_marginTop="150dp"
         android:id="@+id/panier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Mon Panier Contient "/>
+        android:text="Mon Panier :"/>
 
     <ListView
         android:layout_below="@id/panier"
         android:id="@+id/ListePanier"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    </ListView>
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

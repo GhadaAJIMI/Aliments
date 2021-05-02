@@ -27,8 +27,6 @@ public class PanierFragmentAdapter extends BaseAdapter {
         this.layoutInflater = LayoutInflater.from(context);
     }
 
-
-
         @Override
     public int getCount() {
         return listeCoursesPanier1.size();
@@ -56,10 +54,10 @@ public class PanierFragmentAdapter extends BaseAdapter {
         Aliment currentAliment = (Aliment)getItem(position);
         String name = currentAliment.getName();
         Double prix = currentAliment.getPrix();
-
+        Double quantity = getItemQuantity(position);
 
         TextView listNameView = convertView.findViewById(R.id.nomf);
-        listNameView.setText(name);
+        listNameView.setText(quantity.intValue() + " * " + name);
 
         TextView prixAliment = convertView.findViewById(R.id.Prix);
         prixAliment.setText("Prix = " + prix + " €");

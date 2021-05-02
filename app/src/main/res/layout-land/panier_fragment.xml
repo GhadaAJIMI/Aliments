@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Mon Panier Contient "/>
+        android:text="Mon Panier :"/>
 
     <ListView
         android:layout_below="@id/panier"
