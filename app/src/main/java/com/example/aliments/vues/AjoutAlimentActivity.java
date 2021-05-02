@@ -71,7 +71,7 @@ public class AjoutAlimentActivity extends AppCompatActivity implements IPictureA
                     Toast toast = Toast.makeText(getApplicationContext(), "Write permission granted", Toast.LENGTH_LONG);
                     toast.show();
                 } else {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Write prmission NOT granted", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(), "Write permission NOT granted", Toast.LENGTH_LONG);
                     toast.show();
                 }
             } break;
@@ -81,7 +81,7 @@ public class AjoutAlimentActivity extends AppCompatActivity implements IPictureA
                     Toast toast = Toast.makeText(getApplicationContext(), "Read permission granted", Toast.LENGTH_LONG);
                     toast.show();
                 } else {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Read prmission NOT granted", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(), "Read permission NOT granted", Toast.LENGTH_LONG);
                     toast.show();
                 }
             } break;
