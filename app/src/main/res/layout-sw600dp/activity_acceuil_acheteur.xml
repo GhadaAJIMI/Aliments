@@ -8,6 +8,26 @@
     android:gravity="center"
     tools:context=".vues.AcceuilAcheteurActivity">
 
+    <fragment
+        android:name="com.example.aliments.adapters.FragmentContainer"
+        android:id="@+id/panierfrag"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/panier1"
+        android:src="@drawable/shopping_cart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+    <ImageView
+        android:id="@+id/panier2"
+        android:src="@drawable/shopping_cart"
+        android:visibility="invisible"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="300dp"/>
+
     <TextView
         android:id="@+id/acceuilAchteur"
         android:layout_width="wrap_content"

@@ -106,7 +106,7 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-       /* findViewById( R.id.panier1).setOnClickListener(new View.OnClickListener() {
+        findViewById( R.id.panier1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                fragmentPanierTransaction = getSupportFragmentManager().beginTransaction();
@@ -119,6 +119,7 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
                 findViewById( R.id.buttonListesPreferees).setVisibility(View.INVISIBLE);
                 findViewById( R.id.panier1).setVisibility(View.INVISIBLE);
                 findViewById( R.id.panier2).setVisibility(View.VISIBLE);
+
             }
         });
 
@@ -129,6 +130,7 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
                 FragmentContainer mF = new FragmentContainer();
                 fragmentPanierTransaction.replace(R.id.panierfrag , mF);
                 fragmentPanierTransaction.commit();
+
                 findViewById( R.id.buttonParAliment).setVisibility(View.VISIBLE);
                 findViewById( R.id.buttonParVendeur).setVisibility(View.VISIBLE);
                 findViewById( R.id.buttonPanier).setVisibility(View.VISIBLE);
@@ -138,6 +140,6 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
             }
         });
 
-        */
+
     }
 }
