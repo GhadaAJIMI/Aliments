@@ -6,6 +6,7 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Basket implements Parcelable {
     private HashMap<Aliment, Double> listeProduit = new HashMap<Aliment, Double>();
@@ -102,9 +103,9 @@ public class Basket implements Parcelable {
     }
 
     public double getPrixTotal(){
-        double total=0.0;
-        for(Aliment aliment: listeProduit.keySet()){
-            total = total + aliment.getPrix();
+        double total = 0.0;
+        for (Map.Entry aliment : listeProduit.entrySet()) {
+            total = total + ((Aliment) aliment.getKey()).getPrix() * ((double)aliment.getValue());
         }
         return total;
     }

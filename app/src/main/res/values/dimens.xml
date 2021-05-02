@@ -7,4 +7,5 @@
     <dimen name="textSize2">25dp</dimen>
     <dimen name="tailleBouton">50dp</dimen>
     <dimen name="tailleImage2">55dp</dimen>
+    <dimen name="tailleBtnBACK">25dp</dimen>
 </resources>

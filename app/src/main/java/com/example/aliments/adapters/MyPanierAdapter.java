@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.aliments.R;
 import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.Aliment;
+import com.example.aliments.vues.PanierActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -97,6 +98,7 @@ public class MyPanierAdapter  extends BaseAdapter {
                     MyPanierAdapter.remove(currectAliment.getName());
                 }
                 notifyDataSetChanged();
+                PanierActivity.actualiserPrix();
             }
         });
 
@@ -105,6 +107,7 @@ public class MyPanierAdapter  extends BaseAdapter {
             public void onClick(View v) {
                 UserControler.get(0).getBasket().getListeProduit2().put(currectAliment, UserControler.get(0).getBasket().getListeProduit2().get(currectAliment) + 1.0);
                 notifyDataSetChanged();
+                PanierActivity.actualiserPrix();
             }
         });
 

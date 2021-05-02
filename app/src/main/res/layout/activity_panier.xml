@@ -19,10 +19,9 @@
     <GridView
         android:id="@+id/p_list_view"
         android:layout_width="wrap_content"
-        android:layout_height="393dp"
+        android:layout_height="350dp"
         android:layout_margin="10dp"
         android:numColumns="1"/>
-
 
     <TextView
         android:id="@+id/prixTotal"
@@ -37,7 +36,7 @@
         android:id="@+id/valider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/panierList"
+        android:layout_marginTop="20dp"
         android:text="Valider"
         android:textSize="25dp" />
 
@@ -45,7 +44,6 @@
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/valider"
         android:text="Back"
-        android:layout_marginRight="165dp"/>
+        android:textSize="@dimen/tailleBtnBACK"/>
 </LinearLayout>
