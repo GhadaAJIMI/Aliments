@@ -100,6 +100,13 @@ public class MyPanierAdapter  extends BaseAdapter {
             }
         });
 
+        convertView.findViewById(R.id.boutonAjoutePanier2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserControler.get(0).getBasket().add(currectAliment);
+            }
+        });
+
         TextView listNameView = convertView.findViewById(R.id.coursePanier2);
         listNameView.setText(name);
 
