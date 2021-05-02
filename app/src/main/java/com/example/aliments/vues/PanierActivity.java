@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +42,7 @@ public class PanierActivity extends AppCompatActivity {
             }
         });
 
-        ListView panierListView = findViewById(R.id.p_list_view);
+        GridView panierListView = findViewById(R.id.p_list_view);
         panierListView.setAdapter(new MyPanierAdapter(this, UserControler.get(0).getBasket().getListeProduit2()));
 
         TextView prixTotal = findViewById(R.id.prixTotal);
