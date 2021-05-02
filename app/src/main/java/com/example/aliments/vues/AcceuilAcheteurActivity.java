@@ -1,12 +1,16 @@
 package com.example.aliments.vues;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.aliments.R;
+import com.example.aliments.adapters.FragmentContainer;
+import com.example.aliments.adapters.MenuFragment;
+import com.example.aliments.adapters.PanierFragment;
 import com.example.aliments.controleurs.AlimentControler;
 import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.Aliment;
@@ -15,6 +19,8 @@ import com.example.aliments.modeles.ListAliment;
 import com.example.aliments.modeles.Notification;
 
 public class AcceuilAcheteurActivity extends AppCompatActivity {
+
+    FragmentTransaction fragmentPanierTransaction;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -100,5 +106,40 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        findViewById( R.id.panier1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               fragmentPanierTransaction = getSupportFragmentManager().beginTransaction();
+               PanierFragment mF = new PanierFragment();
+               fragmentPanierTransaction.replace(R.id.panierfrag , mF);
+                fragmentPanierTransaction.commit();
+                findViewById( R.id.buttonParAliment).setVisibility(View.INVISIBLE);
+                findViewById( R.id.buttonParVendeur).setVisibility(View.INVISIBLE);
+                findViewById( R.id.buttonPanier).setVisibility(View.INVISIBLE);
+                findViewById( R.id.buttonListesPreferees).setVisibility(View.INVISIBLE);
+                findViewById( R.id.panier1).setVisibility(View.INVISIBLE);
+                findViewById( R.id.panier2).setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        findViewById( R.id.panier2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentPanierTransaction = getSupportFragmentManager().beginTransaction();
+                FragmentContainer mF = new FragmentContainer();
+                fragmentPanierTransaction.replace(R.id.panierfrag , mF);
+                fragmentPanierTransaction.commit();
+
+                findViewById( R.id.buttonParAliment).setVisibility(View.VISIBLE);
+                findViewById( R.id.buttonParVendeur).setVisibility(View.VISIBLE);
+                findViewById( R.id.buttonPanier).setVisibility(View.VISIBLE);
+                findViewById( R.id.buttonListesPreferees).setVisibility(View.VISIBLE);
+                findViewById( R.id.panier1).setVisibility(View.VISIBLE);
+                findViewById( R.id.panier2).setVisibility(View.INVISIBLE);
+            }
+        });
+
+
     }
 }

@@ -1,4 +1,6 @@
+
 package com.example.aliments.adapters;
+
 
 import android.content.Context;
 import android.content.Intent;
@@ -102,12 +104,21 @@ public class PanierAdapter extends BaseAdapter {
         TextView quantiteAliment = convertView.findViewById(R.id.coursePanierQuantite);
         quantiteAliment.setText("Q: "+quantite+" kg");
 
-        TextView prixAliment = convertView.findViewById(R.id.coursePanierPrix);
+
+
+       TextView prixAliment = convertView.findViewById(R.id.coursePanierPrix);
         prixAliment.setText("Prix = " + prix + " €");
+
+
 
         ImageView itemIconView = convertView.findViewById(R.id.imageAlimentPanier);
         itemIconView.setImageResource(srcAliment);
 
+
+
+
         return convertView;
     }
 }
+
+
