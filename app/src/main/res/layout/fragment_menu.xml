@@ -47,7 +47,7 @@
         android:id="@+id/ListeCoursesPanier"
         android:layout_marginTop="15dp"
         android:layout_width="300dp"
-        android:layout_height="100dp">
+        android:layout_height="wrap_content">
     </ListView>
 
 </LinearLayout>
