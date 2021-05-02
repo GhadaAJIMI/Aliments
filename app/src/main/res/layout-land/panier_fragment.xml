@@ -3,12 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/teal_200"
     tools:context=".adapters.PanierFragment">
 
-    <ListView
+   <TextView
+        android:layout_marginTop="50dp"
+        android:id="@+id/panier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Mon Panier Contient "/>
 
+    <ListView
+        android:layout_below="@id/panier"
         android:id="@+id/ListePanier"
-        android:background="@color/teal_200"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
