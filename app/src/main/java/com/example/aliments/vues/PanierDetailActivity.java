@@ -11,6 +11,7 @@ import com.example.aliments.R;
 
 import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.Aliment;
+import com.example.aliments.modeles.Basket;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -34,15 +35,12 @@ public class PanierDetailActivity extends AppCompatActivity{
         });
 
         findViewById(R.id.agenda).setOnClickListener(new View.OnClickListener() {
-
             private String convertWithIteration(HashMap<Aliment, Double> map) {
                 String res = "";
-
                 ArrayList<Aliment> arrayList = new ArrayList(map.keySet());
                 for(Aliment item : arrayList) res += item.getName()+"\n";
                 return res;
             }
-
 
             @Override
             public void onClick(View v) {
@@ -58,11 +56,8 @@ public class PanierDetailActivity extends AppCompatActivity{
                 intent.putExtra("endTime", cal.getTimeInMillis()+60*60*60*1000);
                 intent.putExtra(CalendarContract.Events.ALL_DAY, false);
                 startActivity(intent);
-
+                UserControler.get(0).setBasket(new Basket());
             }
-
         });
-
-
     }
 }

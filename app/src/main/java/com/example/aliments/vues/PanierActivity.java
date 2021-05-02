@@ -55,7 +55,6 @@ public class PanierActivity extends AppCompatActivity {
                Intent intent = new Intent( PanierActivity.this, PanierDetailActivity.class);
                startActivity(intent);
                Toast.makeText(PanierActivity.this, " Le panier est validé", Toast.LENGTH_SHORT).show();
-               UserControler.get(0).setBasket(new Basket());
            }
        });
     }
