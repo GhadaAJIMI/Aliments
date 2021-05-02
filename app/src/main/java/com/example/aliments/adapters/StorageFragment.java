@@ -59,8 +59,8 @@ public class StorageFragment extends Fragment {
 
         buttonLoad = rootView.findViewById(R.id.buttonLoadPicture);
         buttonSave = rootView.findViewById(R.id.buttonSavePicture);
-        setDisableSaveButton();
-
+        this.setEnableSaveButton();
+        this.setEnableLoadButton();
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +72,6 @@ public class StorageFragment extends Fragment {
                                 IStorageActivity.REQUEST_MEDIA_WRITE);
                     } else { // Permission déjà obtenue
                         saveToInternalStorage(picture);
-                        setDisableLoadButton();
                     }
                 }
             }

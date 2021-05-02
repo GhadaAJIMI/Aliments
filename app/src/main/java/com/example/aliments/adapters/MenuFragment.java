@@ -33,6 +33,8 @@ public class MenuFragment extends Fragment {
 
         ListView listCoursePanier = v.findViewById(R.id.ListeCoursesPanier);
         listCoursePanier.setAdapter(new PanierAdapter(v.getContext(), UserControler.get(0).getBasket().getListeProduit2()));
+        
+
 
         cousesPrefs.setOnClickListener(new View.OnClickListener() {
             @Override

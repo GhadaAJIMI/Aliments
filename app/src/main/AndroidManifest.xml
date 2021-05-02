@@ -45,6 +45,7 @@
         <activity android:name=".vues.AcceuilAcheteurActivity" />
         <activity android:name=".vues.ListeAlimentVendeurActivity" />
         <activity android:name=".vues.MainActivity" />
+        <activity android:name=".vues.PanierDetailActivity"/>
 
         <receiver android:name=".modeles.NotificationReceiver" />
     </application>

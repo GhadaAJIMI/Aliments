@@ -17,14 +17,15 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MyPanierAdapter  extends BaseAdapter {
-    private double prixTotal = 0;
     private Context context;
     static private HashMap<Aliment, Double> listeCoursesPanier;
     private LayoutInflater layoutInflater;
 
-    public MyPanierAdapter(Context context, double prixTotal) {
+    // constructeurs
+    public MyPanierAdapter(Context context, HashMap<Aliment, Double> listeCoursesPanier) {
         this.context = context;
-        this.prixTotal = prixTotal;
+        this.listeCoursesPanier = listeCoursesPanier;
+        this.layoutInflater = LayoutInflater.from(context);
     }
 
     // getters and setters
@@ -47,14 +48,6 @@ public class MyPanierAdapter  extends BaseAdapter {
         this.listeCoursesPanier = listeCoursesPanier;
     }
 
-    // constructeurs
-    public MyPanierAdapter() {
-    }
-    public MyPanierAdapter(Context context, HashMap<Aliment, Double> listeCoursesPanier) {
-        this.context = context;
-        this.listeCoursesPanier = listeCoursesPanier;
-        this.layoutInflater = LayoutInflater.from(context);
-    }
 
     // méthodes
     static public void remove(String nameCoursesPanier){
@@ -104,6 +97,13 @@ public class MyPanierAdapter  extends BaseAdapter {
                     MyPanierAdapter.remove(currectAliment.getName());
                 }
                 notifyDataSetChanged();
+            }
+        });
+
+        convertView.findViewById(R.id.boutonAjoutePanier2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserControler.get(0).getBasket().add(currectAliment);
             }
         });
 

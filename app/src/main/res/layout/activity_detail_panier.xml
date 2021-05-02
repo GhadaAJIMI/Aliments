@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".vues.PanierDetailActivity">
+
+
+    <TextView
+        android:id="@+id/End"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Merci pour votre achat! Votre commande sera livrée dans 2 jours."
+        android:gravity="center"
+        android:layout_marginBottom="100dp"
+        android:textStyle="bold|italic" ></TextView>
+
+
+    <Button
+        android:id="@+id/agenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/panierList"
+        android:layout_marginBottom="200dp"
+        android:text="Ajouter à l'agenda"
+        android:textSize="20dp"></Button>
+
+    <Button
+        android:id="@+id/buttonBack2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/agenda"
+        android:text="Back" />
+</LinearLayout>
