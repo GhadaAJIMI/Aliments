@@ -13,9 +13,14 @@ import com.example.aliments.R;
 import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.Aliment;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.TimeZone;
 
 public class PanierDetailActivity extends AppCompatActivity{
 
@@ -45,17 +50,19 @@ public class PanierDetailActivity extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
                 Intent intent = new Intent(Intent.ACTION_INSERT);
                 intent.setData(CalendarContract.Events.CONTENT_URI);
                 intent.putExtra(CalendarContract.Events.TITLE, "MON PANIER");
 
                 HashMap<Aliment, Double> listBasket = UserControler.get(0).getBasket().getListeProduit2();
 
-                intent.putExtra(CalendarContract.Events.DESCRIPTION, "Mon panier contient: \n" + convertWithIteration(listBasket) + "\n" + "J'ai payé " + UserControler.get(0).getBasket().getPrixTotal() + "€");
-                intent.putExtra(CalendarContract.Events.DTSTART, Calendar.getInstance().getTimeInMillis());
-                intent.putExtra(CalendarContract.Events.DTEND, Calendar.getInstance().getTimeInMillis() +48*60*60*1000);
-                intent.putExtra(CalendarContract.Events.ALL_DAY, true);
+                intent.putExtra(CalendarContract.Events.DESCRIPTION, "Mon panier contient: \n" + convertWithIteration(listBasket) + "\n" + "J'ai payé " + UserControler.get(0).getBasket().getPrixTotal() + "€" + "\n");
+                intent.putExtra("beginTime", cal.getTimeInMillis());
+                intent.putExtra("endTime", cal.getTimeInMillis()+60*60*60*1000);
+                intent.putExtra(CalendarContract.Events.ALL_DAY, false);
                 startActivity(intent);
+
             }
 
         });
