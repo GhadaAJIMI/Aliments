@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--  <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background2"
+    android:layout_height="match_parent"
+    tools:context=".vues.AcceuilAcheteurActivity">
+
+    <fragment
+        android:id="@+id/panierfrag"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/panier1"
+        android:src="@drawable/shopping_cart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+    <ImageView
+        android:id="@+id/panier2"
+        android:src="@drawable/shopping_cart"
+        android:visibility="invisible"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="300dp"/> -->
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +34,8 @@
     android:gravity="center"
     android:orientation="vertical"
     android:background="@drawable/background3"
-    tools:context=".vues.AcceuilAcheteurActivity">
+    tools:context=".vues.AcceuilAcheteurActivity"
+>
 
     <TextView
         android:layout_width="wrap_content"
