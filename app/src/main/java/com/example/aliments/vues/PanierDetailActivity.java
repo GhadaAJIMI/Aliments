@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,14 +12,11 @@ import com.example.aliments.R;
 import com.example.aliments.controleurs.UserControler;
 import com.example.aliments.modeles.Aliment;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+
 import java.util.HashMap;
-import java.util.TimeZone;
+
 
 public class PanierDetailActivity extends AppCompatActivity{
 
@@ -53,7 +49,7 @@ public class PanierDetailActivity extends AppCompatActivity{
                 Calendar cal = Calendar.getInstance();
                 Intent intent = new Intent(Intent.ACTION_INSERT);
                 intent.setData(CalendarContract.Events.CONTENT_URI);
-                intent.putExtra(CalendarContract.Events.TITLE, "MON PANIER");
+                intent.putExtra(CalendarContract.Events.TITLE, "Ma commande chez ALIMENTS");
 
                 HashMap<Aliment, Double> listBasket = UserControler.get(0).getBasket().getListeProduit2();
 
