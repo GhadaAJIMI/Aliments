@@ -113,8 +113,8 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
                PanierFragment mF = new PanierFragment();
                fragmentPanierTransaction.replace(R.id.panierfrag , mF);
                 fragmentPanierTransaction.commit();
-                /*findViewById( R.id.buttonParAliment).setVisibility(View.INVISIBLE);
-                findViewById( R.id.buttonParVendeur).setVisibility(View.INVISIBLE);
+                findViewById( R.id.buttonParAliment).setVisibility(View.INVISIBLE);
+              /*  findViewById( R.id.buttonParVendeur).setVisibility(View.INVISIBLE);
                 findViewById( R.id.buttonPanier).setVisibility(View.INVISIBLE);
                 findViewById( R.id.buttonListesPreferees).setVisibility(View.INVISIBLE);*/
                 findViewById( R.id.panier1).setVisibility(View.INVISIBLE);
