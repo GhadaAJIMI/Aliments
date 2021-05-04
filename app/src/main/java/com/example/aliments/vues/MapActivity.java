@@ -11,14 +11,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.aliments.R;
@@ -31,6 +29,7 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
 import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
+import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.OverlayItem;
 
 import java.util.ArrayList;
@@ -41,6 +40,7 @@ public class MapActivity extends AppCompatActivity {
     private static final int REQUEST_LOCATION = 1;
     Button btnGetLocation;
     LocationManager locationManager;
+    OverlayItem actual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +59,6 @@ public class MapActivity extends AppCompatActivity {
 
         ArrayList<OverlayItem> magasins = new ArrayList<>();
         OverlayItem shop1 = new OverlayItem("shop1", "Magasin de légumes", new GeoPoint(43.65020, 7.00517));
-        Drawable m = shop1.getMarker(0);
         magasins.add(shop1);
         OverlayItem shop2 = new OverlayItem("shop2", "Boucherie", new GeoPoint(43.64950, 7.00515));
         magasins.add(shop2);
@@ -85,11 +84,12 @@ public class MapActivity extends AppCompatActivity {
         btnGetLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LocationManager nManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                     OnGPS();
                 } else {
                     getLocation();
+                    magasins.add(actual);
                 }
             }
         });
@@ -140,32 +140,26 @@ public class MapActivity extends AppCompatActivity {
             if (locationGPS != null) {
                 double lat = locationGPS.getLatitude();
                 double longi = locationGPS.getLongitude();
-                ArrayList<OverlayItem> magasins = new ArrayList<>();
-                OverlayItem shop1 = new OverlayItem("shop1", "Magasin de légumes", new GeoPoint(43.65020, 7.00517));
-                magasins.add(shop1);
-                OverlayItem shop2 = new OverlayItem("shop2", "Boucherie", new GeoPoint(43.64950, 7.00515));
-                magasins.add(shop2);
-                OverlayItem shop3 = new OverlayItem("shop3", "Test", new GeoPoint(lat, longi));
-                magasins.add(shop3);
 
-                ItemizedOverlayWithFocus<OverlayItem> mOverlay = new ItemizedOverlayWithFocus<OverlayItem>(getApplicationContext(),
-                        magasins, new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
-                    @Override
-                    public boolean onItemSingleTapUp(int index, OverlayItem item) {
-                        return true;
-                    }
-
-                    @Override
-                    public boolean onItemLongPress(int index, OverlayItem item) {
-                        return false;
-                    }
-                });
-                mOverlay.setFocusItemsOnTap(true);
-                map.getOverlays().add(mOverlay);
+                Toast.makeText(this, "long:"+longi+" lat:"+lat, Toast.LENGTH_SHORT).show();
+                createmarker();
             } else {
                 Toast.makeText(this, "Unable to find location.", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public void createmarker(){
+        if(map == null) {
+            return;
+        }
+        Marker my_marker = new Marker(map);
+        my_marker.setPosition(new GeoPoint(43.64750, 7.01515));
+        my_marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+        my_marker.setTitle("new Shop");
+        my_marker.setPanToView(true);
+        map.getOverlays().add(my_marker);
+        map.invalidate();
     }
 }
 
