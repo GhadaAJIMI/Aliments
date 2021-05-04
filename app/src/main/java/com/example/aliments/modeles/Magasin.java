@@ -60,14 +60,6 @@ public class Magasin implements Parcelable {
         mnemonic = "";
     }
 
-    public Magasin(User proprio, HashMap<Aliment, Double> listeProduits) {
-        this.proprio = proprio;
-        this.listeProduits = listeProduits;
-        name = this.proprio.getName();
-        numeroTelephone = "";
-        mnemonic = "";
-    }
-
     public Magasin(String name, String mnemonic, String numeroTelephone ){
         this.name = name;
         this.numeroTelephone = numeroTelephone;

@@ -53,7 +53,7 @@ public class PanierDetailActivity extends AppCompatActivity{
 
                 intent.putExtra(CalendarContract.Events.DESCRIPTION, "Mon panier contient: \n" + convertWithIteration(listBasket) + "\n" + "J'ai payé " + UserControler.get(0).getBasket().getPrixTotal() + "€" + "\n");
                 intent.putExtra("beginTime", cal.getTimeInMillis());
-                intent.putExtra("endTime", cal.getTimeInMillis()+60*60*60*1000);
+                intent.putExtra("endTime", cal.getTimeInMillis()+30*60*60*1000);
                 intent.putExtra(CalendarContract.Events.ALL_DAY, false);
                 startActivity(intent);
                 UserControler.get(0).setBasket(new Basket());
