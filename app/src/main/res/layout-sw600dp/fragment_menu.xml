@@ -40,14 +40,14 @@
         android:layout_height="wrap_content">
     </ListView>
 
-    <TextView
+  <!--  <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mon panier contient : "
         android:textSize="50sp"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"/> -->
 
-    <ListView
+   <ListView
         android:id="@+id/ListeCoursesPanier"
         android:layout_marginTop="25dp"
         android:layout_width="wrap_content"

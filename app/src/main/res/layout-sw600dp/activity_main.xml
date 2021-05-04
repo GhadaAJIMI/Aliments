@@ -11,9 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="280dp"
         android:text="Acheteur"
-        android:textSize="70sp"/>
+        android:textSize="50sp"/>
 
     <Button
         android:id="@+id/buttonVendeur"
@@ -23,7 +23,7 @@
         android:layout_below="@+id/buttonAcheteur"
         android:layout_marginTop="400dp"
         android:text="Vendeur"
-        android:textSize="70sp"/>
+        android:textSize="50sp"/>
 
     <fragment
         android:name="com.example.aliments.adapters.FragmentContainer"
