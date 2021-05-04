@@ -96,7 +96,7 @@ public class StorageFragment extends Fragment {
     public Bitmap loadImageFromStorage() {
         try{
             File file = new File(directoryName, pictureName);
-            Toast toast = Toast.makeText(getContext(), "Image téléchargée", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getContext(), "Dernière image récupérée", Toast.LENGTH_LONG);
             toast.show();
             return BitmapFactory.decodeStream(new FileInputStream(file));
         } catch (FileNotFoundException e) {
@@ -117,6 +117,8 @@ public class StorageFragment extends Fragment {
         try{
             fos = new FileOutputStream(file);
             picture.compress(Bitmap.CompressFormat.PNG, 90, fos);
+            Toast toast = Toast.makeText(getContext(), "Image sauvegardée", Toast.LENGTH_LONG);
+            toast.show();
         } catch (FileNotFoundException e){
             e.printStackTrace();
         }

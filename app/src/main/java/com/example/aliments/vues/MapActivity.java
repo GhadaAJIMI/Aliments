@@ -24,7 +24,7 @@ import org.osmdroid.views.overlay.OverlayItem;
 
 import java.util.ArrayList;
 
-//43.65000, 7.01000
+//43.65000, 7.00700
 public class MapActivity extends AppCompatActivity {
     private MapView  map;
 

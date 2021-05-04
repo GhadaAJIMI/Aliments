@@ -12,24 +12,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Choisis une image !"
+        android:text="Choisir nom, prix et photo"
         android:gravity="center"
         android:textSize="20dp"/>
 
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nomNouveauAliment"
+            android:layout_alignParentTop="true"
+            android:text="Orange" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/prixNouveauAliment"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="4.0" />
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="341dp"
+        android:layout_height="388dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="50"
-        android:src="@drawable/orange"
-        android:layout_marginTop="10dp"/>
+        android:src="@drawable/orange" />
 
     <Button
         android:id="@+id/buttonImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Prendre une photo"
+        android:text="Prendre une nouvelle photo"
         style="?android:attr/buttonStyleSmall"
         android:layout_marginTop="30dp"/>
 
