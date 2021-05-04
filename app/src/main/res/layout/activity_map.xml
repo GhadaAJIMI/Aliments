@@ -12,10 +12,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Localisation"
+        android:text="Carte de mes magasins:"
         android:textSize="24sp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"/>
+    <Button
+        android:id="@+id/btnGetLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajouter Mon Magasin" />
 
     <org.osmdroid.views.MapView
         android:id="@+id/mapVendeur"
