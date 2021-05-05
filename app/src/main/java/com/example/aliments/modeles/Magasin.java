@@ -83,6 +83,15 @@ public class Magasin implements Parcelable {
         listeProduits.put(aliment, quantite);
     }
 
+    public void ajouterAliment(String name, double price, int src, double quantite, int type) throws Throwable{
+        Aliment aliment = AlimentFactory.build(type);
+        aliment.setPrix(price);
+        aliment.setName(name);
+        aliment.setRsc(src);
+
+        listeProduits.put(aliment, quantite);
+    }
+
     public Aliment getAliment(int i){
         List<Aliment> listeTmp = new ArrayList<>(listeProduits.keySet());
         return listeTmp.get(i);

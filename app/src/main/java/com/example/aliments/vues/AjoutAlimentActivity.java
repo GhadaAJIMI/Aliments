@@ -44,7 +44,8 @@ public class AjoutAlimentActivity extends AppCompatActivity implements IPictureA
                 String nom = nomText.getText().toString();
                 String prix = prixText.getText().toString();
                 try {
-                    UserControler.get(1).getMagasin().ajouterAliment(nom, Double.valueOf(prix),"banane", 4.0, 1);
+                    int src = AjoutAlimentActivity.this.getResources().getIdentifier("newaliment", "drawable", AjoutAlimentActivity.this.getPackageName());
+                    UserControler.get(1).getMagasin().ajouterAliment(nom, Double.valueOf(prix),src, 4.0, 1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                 }
