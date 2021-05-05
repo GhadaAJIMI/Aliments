@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".vues.PanierActivity">
+
+
+    <TextView
+        android:id="@+id/panierList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSize"
+        android:text="Mon Panier"
+        android:gravity="center"></TextView>
+
+    <GridView
+        android:id="@+id/p_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="629dp"
+        android:layout_margin="10dp"
+        android:numColumns="2" />
+
+    <TextView
+        android:id="@+id/prixTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:layout_marginLeft="100dp" />
+
+    <Button
+        android:id="@+id/valider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Valider"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textSize="@dimen/tailleBtnBACK"/>
+</LinearLayout>

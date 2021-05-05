@@ -12,16 +12,17 @@
         android:id="@+id/nameListe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/textSize"
+        android:gravity="center"
         android:text="Nom liste"
-        android:gravity="center"></TextView>
+        android:textSize="@dimen/textSize"></TextView>
 
     <GridView
         android:id="@+id/listeAliments"
-        android:layout_width="683dp"
-        android:layout_height="197dp"
+        android:layout_width="734dp"
+        android:layout_height="515dp"
         android:numColumns="2"></GridView>
 <LinearLayout
+    android:layout_marginTop="20dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -30,13 +31,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
+        android:textSize="30sp"
         android:text="Ajouter au panier" />
 
     <Button
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="40dp"
         android:id="@+id/boutonRetouner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="30sp"
         android:text="Back"></Button>
 </LinearLayout>
 </LinearLayout>
