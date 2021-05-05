@@ -116,7 +116,7 @@ public class StorageFragment extends Fragment {
         try{
             fos = new FileOutputStream(file);
             picture.compress(Bitmap.CompressFormat.PNG, 90, fos);
-            Toast toast = Toast.makeText(getContext(), "Photo enregistrée", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getContext(), "Photo sauvegardée", Toast.LENGTH_LONG);
             toast.show();
         } catch (FileNotFoundException e){
             e.printStackTrace();

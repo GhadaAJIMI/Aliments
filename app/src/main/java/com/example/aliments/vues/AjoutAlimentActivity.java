@@ -8,11 +8,13 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.aliments.R;
 import com.example.aliments.adapters.PictureFragment;
 import com.example.aliments.adapters.StorageFragment;
+import com.example.aliments.controleurs.UserControler;
 
 public class AjoutAlimentActivity extends AppCompatActivity implements IPictureActivity, IStorageActivity {
 
@@ -37,7 +39,16 @@ public class AjoutAlimentActivity extends AppCompatActivity implements IPictureA
         findViewById( R.id.buttonAjoutAliment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Cet aliment a bien été ajouté", Toast.LENGTH_LONG).show();
+                TextView prixText = (TextView) findViewById(R.id.prixNouveauAliment);
+                TextView nomText = (TextView) findViewById(R.id.nomNouveauAliment);
+                String nom = nomText.getText().toString();
+                String prix = prixText.getText().toString();
+                try {
+                    UserControler.get(1).getMagasin().ajouterAliment(nom, Double.valueOf(prix),"banane", 4.0, 1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+                Toast.makeText(getApplicationContext(), "Aliment "+nom+" de prix "+prix+"€ ajouté !", Toast.LENGTH_LONG).show();
             }
         });
 
