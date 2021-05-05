@@ -12,17 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Choisir nom, prix et photo"
         android:gravity="center"
-        android:textSize="20dp"/>
+        android:text="Choisir nom, prix et photo"
+        android:textSize="20dp" />
 
 
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/nomNouveauAliment"
-            android:layout_alignParentTop="true"
-            android:text="Orange" />
+    <EditText
+        android:id="@+id/nomNouveauAliment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Orange" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -34,20 +34,20 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="341dp"
-        android:layout_height="388dp"
+        android:layout_width="wrap_content"
+        android:layout_height="405dp"
         android:layout_marginTop="10dp"
         android:layout_weight="50"
         android:src="@drawable/orange" />
 
     <Button
         android:id="@+id/buttonImage"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
-        android:text="Prendre une nouvelle photo"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_marginTop="30dp"/>
+        android:text="Prendre une nouvelle photo" />
 
 
 </LinearLayout>

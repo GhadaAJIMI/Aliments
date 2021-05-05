@@ -34,6 +34,13 @@ public class AjoutAlimentActivity extends AppCompatActivity implements IPictureA
             }
         });
 
+        findViewById( R.id.buttonAjoutAliment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Cet aliment a bien été ajouté", Toast.LENGTH_LONG).show();
+            }
+        });
+
         pictureFragment = (PictureFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentPicture);
         if(pictureFragment == null){
             pictureFragment = new PictureFragment();

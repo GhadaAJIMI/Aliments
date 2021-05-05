@@ -12,13 +12,7 @@
         android:id="@+id/buttonSavePicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Garder cette photo"
+        android:text="Sauvegarder cette photo"
         />
-
-    <Button
-        android:id="@+id/buttonLoadPicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Voir dernière photo"/>
 
 </LinearLayout>

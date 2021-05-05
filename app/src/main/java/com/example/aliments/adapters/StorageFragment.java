@@ -37,7 +37,7 @@ public class StorageFragment extends Fragment {
     private IStorageActivity activity;
     private Button buttonSave;
 
-    private Button buttonLoad;
+   // private Button buttonLoad;
     private String pictureName;
 
     private String directoryName;
@@ -57,10 +57,9 @@ public class StorageFragment extends Fragment {
         ContextWrapper contextWrapper = new ContextWrapper(getContext());
         directoryName = contextWrapper.getDir("imageDir", ContextWrapper.MODE_PRIVATE).getPath();
 
-        buttonLoad = rootView.findViewById(R.id.buttonLoadPicture);
+        //buttonLoad = rootView.findViewById(R.id.buttonLoadPicture);
         buttonSave = rootView.findViewById(R.id.buttonSavePicture);
         this.setEnableSaveButton();
-        this.setEnableLoadButton();
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +76,7 @@ public class StorageFragment extends Fragment {
             }
         });
 
-        buttonLoad.setOnClickListener(new View.OnClickListener() {
+      /*  buttonLoad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                     if(ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
@@ -88,7 +87,7 @@ public class StorageFragment extends Fragment {
                         activity.onPictureLoad(loadImageFromStorage());
                     }
             }
-        });
+        });*/
 
         return rootView;
     }
@@ -117,7 +116,7 @@ public class StorageFragment extends Fragment {
         try{
             fos = new FileOutputStream(file);
             picture.compress(Bitmap.CompressFormat.PNG, 90, fos);
-            Toast toast = Toast.makeText(getContext(), "Image sauvegardée", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getContext(), "Photo enregistrée", Toast.LENGTH_LONG);
             toast.show();
         } catch (FileNotFoundException e){
             e.printStackTrace();
@@ -129,12 +128,5 @@ public class StorageFragment extends Fragment {
     }
     public void setEnableSaveButton(){
         buttonSave.setEnabled(true);
-    }
-
-    public void setDisableLoadButton(){
-        buttonLoad.setEnabled(false);
-    }
-    public void setEnableLoadButton(){
-        buttonLoad.setEnabled(true);
     }
 }
