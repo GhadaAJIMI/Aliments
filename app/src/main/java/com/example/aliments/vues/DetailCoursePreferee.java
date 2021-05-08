@@ -29,7 +29,7 @@ public class DetailCoursePreferee extends AppCompatActivity {
         if(AlimentControler.aliment != null && !currectList.contains(AlimentControler.aliment)){
             currectList.getListeAliment().add(AlimentControler.aliment);
             UserControler.get(0).getListeCoursesPreferees().get(currectList.getName()).add(AlimentControler.aliment);
-            UserControler.get(0).getTousLesAliments().add(AlimentControler.aliment);
+            UserControler.get(0).getTousLesAliments().add(new Aliment(AlimentControler.aliment));
             Toast.makeText(DetailCoursePreferee.this, "Vous avez ajouter le " + AlimentControler.aliment.getName() + " dans la liste '"+currectList.getName()+"'", Toast.LENGTH_SHORT).show();
             AlimentControler.aliment = null;
         }
