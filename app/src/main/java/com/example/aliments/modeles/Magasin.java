@@ -122,7 +122,7 @@ public class Magasin implements Parcelable {
         listeProduits.put(aliment, quantite);
     }
 
-    public void ajouterAliment(String name, double price, int src, double quantite, int type) throws Throwable{
+    public void ajouterAliment2(String name, double price, int src, double quantite, int type) throws Throwable{
         Aliment aliment = AlimentFactory.build(type);
         aliment.setPrix(price);
         aliment.setName(name);

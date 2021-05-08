@@ -62,6 +62,7 @@ public class Notification {
                 new NotificationCompat.Builder( this.context.getApplicationContext(), App.CHANNEL_2_ID)
                         .setSmallIcon(this.srcImg)
                         .setContentTitle(this.title)
+                        .setTimeoutAfter(5000)          // 5 secondes
                         .setContentText(this.message)
                         .setPriority(NotificationCompat.PRIORITY_HIGH)
                         .setAutoCancel(true);
