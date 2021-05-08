@@ -13,6 +13,7 @@ public class User implements Seller, Buyer, Parcelable {
     private Basket basket;
     private ListCoursePreferees listeCoursesPreferees;
     private ListAliment tousLesAliments;
+    public CoursePreferee currentList;
 
     protected User(Parcel in) {
         name = in.readString();
@@ -123,16 +124,32 @@ public class User implements Seller, Buyer, Parcelable {
     public void remplirListeTotaleDAliment(){
         for(CoursePreferee coursePref: getListeCoursesPreferees3()){
             for(Aliment aliment: coursePref.getListeAliment()){
-                if(!this.tousLesAliments.contains(aliment.getName())){
+                if(!this.tousLesAliments.contains(aliment)){
                     this.tousLesAliments.add(new Aliment(aliment));
                 }
             }
         }
 
         for(Aliment aliment: this.basket.getListeProduit()){
-            if(!this.tousLesAliments.contains(aliment.getName())){
+            if(!this.tousLesAliments.contains(aliment)){
                 this.tousLesAliments.add(aliment);
             }
         }
+    }
+
+    // a revoir (contains(aliment.getName()))
+    public void viderListeTotaleDAliment(){
+        this.tousLesAliments= new ListAliment();
+    }
+
+    public void removeListeTotaleDAliment(Aliment aliment){
+        Aliment tmp = aliment;
+        for(Aliment ali: this.getTousLesAliments()){
+            if(ali.getId() == aliment.getId()){
+                tmp = ali;
+            }
+        }
+
+        this.getTousLesAliments().remove(tmp);
     }
 }

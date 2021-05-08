@@ -3,12 +3,15 @@ package com.example.aliments.modeles;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.aliments.controleurs.MagasinControler;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 
 public class Magasin implements Parcelable {
+    private int id;
     private User proprio;
     private HashMap<Aliment, Double> listeProduits;
     private String name;
@@ -16,10 +19,25 @@ public class Magasin implements Parcelable {
     private String mnemonic;
 
     protected Magasin(Parcel in) {
+        id = in.readInt();
         proprio = in.readParcelable(User.class.getClassLoader());
         name = in.readString();
         numeroTelephone = in.readString();
         mnemonic = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeParcelable(proprio, flags);
+        dest.writeString(name);
+        dest.writeString(numeroTelephone);
+        dest.writeString(mnemonic);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Magasin> CREATOR = new Creator<Magasin>() {
@@ -58,12 +76,23 @@ public class Magasin implements Parcelable {
         name = "";
         numeroTelephone = "";
         mnemonic = "";
+        id = MagasinControler.MagasinID++;
+    }
+
+    public Magasin(User proprio, HashMap<Aliment, Double> listeProduits) {
+        id = MagasinControler.MagasinID++;
+        this.proprio = proprio;
+        this.listeProduits = listeProduits;
+        name = this.proprio.getName();
+        numeroTelephone = "";
+        mnemonic = "";
     }
 
     public Magasin(String name, String mnemonic, String numeroTelephone ){
         this.name = name;
         this.numeroTelephone = numeroTelephone;
         this.mnemonic = mnemonic;
+        id = MagasinControler.MagasinID++;
     }
 
     // méthodes
@@ -71,6 +100,16 @@ public class Magasin implements Parcelable {
         Aliment aliment = AlimentFactory.build(type);
         aliment.setPrix(price);
         aliment.setName(name);
+        aliment.setMnemonic(imageMemic);
+
+        listeProduits.put(aliment, quantite);
+    }
+
+    public void ajouterAliment(String name, double price, int src, double quantite, int type) throws Throwable{
+        Aliment aliment = AlimentFactory.build(type);
+        aliment.setPrix(price);
+        aliment.setName(name);
+        aliment.setRsc(src);
 
         listeProduits.put(aliment, quantite);
     }
@@ -86,17 +125,5 @@ public class Magasin implements Parcelable {
     public Aliment getAliment(int i){
         List<Aliment> listeTmp = new ArrayList<>(listeProduits.keySet());
         return listeTmp.get(i);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(name);
-        dest.writeString(numeroTelephone);
-        dest.writeString(mnemonic);
     }
 }

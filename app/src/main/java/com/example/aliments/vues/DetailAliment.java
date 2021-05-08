@@ -26,7 +26,7 @@ import com.example.aliments.modeles.Notification;
 import java.util.Objects;
 
 public class DetailAliment extends AppCompatActivity {
-    public static final String CHANNEL_1_ID = "channel LOW";
+    int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,20 +42,19 @@ public class DetailAliment extends AppCompatActivity {
         ImageView img = findViewById(R.id.aliment_icon);
         img.setImageResource(AlimentControler.aliment.getRsc());
 
+        id = AlimentControler.aliment.getId();
+
         Button btnModif = findViewById(R.id.valider);
         btnModif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DetailAliment.this, ListeAlimentVendeurActivity.class);
-                String name = editName.getText().toString();
 
-                // tester si le prix a changé
                 double prix = Double.valueOf(editPrix.getText().toString()).doubleValue();
-                if(AlimentControler.getListeAliment().get(name).getPrix() != prix){
-                    AlimentControler.getListeAliment().get(name).setPrix(prix);
+                if(AlimentControler.getListeAliment().get(id).getPrix() != prix){
+                    AlimentControler.getListeAliment().get(id).setPrix(prix);
                     AlimentControler.addListeAlimentModifies(new Aliment(AlimentControler.aliment));
                 }
-
                 AlimentControler.aliment = null;
                 startActivity(intent);
             }

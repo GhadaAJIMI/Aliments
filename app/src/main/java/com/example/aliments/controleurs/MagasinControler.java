@@ -6,6 +6,7 @@ import com.example.aliments.modeles.Magasin;
 import java.util.List;
 
 public class MagasinControler {
+    public static int MagasinID = 0;
     public static ListMagasin listeMagasins;
 
     // getters and setters

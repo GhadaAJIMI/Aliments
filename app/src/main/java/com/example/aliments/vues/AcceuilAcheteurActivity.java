@@ -31,20 +31,20 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
         // Vérifier la liste des aliments modifiés
         for(Aliment aliment2: UserControler.get(0).getTousLesAliments()){
             for(Aliment aliment: AlimentControler.getListeAlimentModifies()){
-                if(aliment.getName().equals(aliment2.getName())){
+                if(aliment.equals(aliment2)){
 
                     // notifier l'utilisateur d'un changement dans le prix
                     if(aliment.getPrix() < aliment2.getPrix()){
                         // on envoie une notification pour tous aliment modifié
                         String titre = "Nouveau Solde pour l'aliment "+aliment.getName();
                         String msg = "Le prix de l'aliment "+aliment.getName()+" est moins chére de " + (aliment2.getPrix()-aliment.getPrix())+" €";
-                        new Notification(titre, msg, aliment.getRsc(), AcceuilAcheteurActivity.this, "");
+                        new Notification(titre, msg, aliment, AcceuilAcheteurActivity.this, "");
                     }
                     else if(aliment.getPrix() > aliment2.getPrix()){
                         // on envoie une notification pour tous aliment modifié
                         String titre = "Le vendeur a augmenté le prix des "+aliment.getName()+"s";
                         String msg = "Le prix de l'aliment "+aliment.getName()+" est plus chére de " + (aliment.getPrix()-aliment2.getPrix())+" €";
-                        new Notification(titre, msg, aliment.getRsc(), AcceuilAcheteurActivity.this, "");
+                        new Notification(titre, msg, aliment, AcceuilAcheteurActivity.this, "");
                     }
                     tmp.add(aliment);
                 }
@@ -113,10 +113,6 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
                PanierFragment mF = new PanierFragment();
                fragmentPanierTransaction.replace(R.id.panierfrag , mF);
                 fragmentPanierTransaction.commit();
-                findViewById( R.id.buttonParAliment).setVisibility(View.INVISIBLE);
-              /*  findViewById( R.id.buttonParVendeur).setVisibility(View.INVISIBLE);
-                findViewById( R.id.buttonPanier).setVisibility(View.INVISIBLE);
-                findViewById( R.id.buttonListesPreferees).setVisibility(View.INVISIBLE);*/
                 findViewById( R.id.panier1).setVisibility(View.INVISIBLE);
                 findViewById( R.id.panier2).setVisibility(View.VISIBLE);
             }
@@ -129,16 +125,9 @@ public class AcceuilAcheteurActivity extends AppCompatActivity {
                 FragmentContainer mF = new FragmentContainer();
                 fragmentPanierTransaction.replace(R.id.panierfrag , mF);
                 fragmentPanierTransaction.commit();
-
-                findViewById( R.id.buttonParAliment).setVisibility(View.VISIBLE);
-                findViewById( R.id.buttonParVendeur).setVisibility(View.VISIBLE);
-                findViewById( R.id.buttonPanier).setVisibility(View.VISIBLE);
-                findViewById( R.id.buttonListesPreferees).setVisibility(View.VISIBLE);
                 findViewById( R.id.panier1).setVisibility(View.VISIBLE);
                 findViewById( R.id.panier2).setVisibility(View.INVISIBLE);
             }
         });
-
-
     }
 }

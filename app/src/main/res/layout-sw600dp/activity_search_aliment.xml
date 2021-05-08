@@ -13,13 +13,14 @@
         android:id="@+id/gridview"
         android:layout_width="wrap_content"
         android:gravity="center"
-        android:layout_height="1050dp"
+        android:layout_height="1025dp"
         android:layout_marginTop="10dp"
         android:numColumns="4" />
 
     <Button
         android:id="@+id/buttonBack"
         android:text="Back"
+        android:textSize="50dp"
         android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

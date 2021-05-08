@@ -6,16 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".vues.SearchSellerActivity"
-
-    android:background="@color/white">
-
+    tools:context=".vues.SearchSellerActivity">
 
     <GridView
         android:id="@+id/shop_list_view"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_gravity="center_horizontal"
-        android:layout_height="520dp"
+        android:layout_height="530dp"
         android:numColumns="1"/>
 
     <Button

@@ -106,13 +106,31 @@ public class ListAliment implements Parcelable {
         return null;
     }
 
-    public boolean contains(Aliment aliment){
-        return this.listeAliments.contains(aliment);
+    public int size(){
+        return listeAliments.size();
     }
 
-    public boolean contains(String name){
+    public boolean contains(Aliment aliment){
+        for (int i = 0; i < listeAliments.size(); i++){
+            if(listeAliments.get(i).getId() == aliment.getId()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /*public boolean contains(String name){
         for (int i = 0; i < listeAliments.size(); i++){
             if(listeAliments.get(i).getName().equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }*/
+
+    public boolean contains(int id){
+        for (int i = 0; i < listeAliments.size(); i++){
+            if(listeAliments.get(i).getId() == id){
                 return true;
             }
         }

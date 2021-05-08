@@ -3,8 +3,12 @@ package com.example.aliments.modeles;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Aliment implements Parcelable {
+import androidx.annotation.Nullable;
 
+import com.example.aliments.controleurs.AlimentControler;
+
+public class Aliment implements Parcelable {
+    private int id;
     private String name;
     private double prix;
     private int rsc;
@@ -32,9 +36,19 @@ public class Aliment implements Parcelable {
     public void setRsc(int rsc) {
         this.rsc = rsc;
     }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setMnemonic(String mnemonic) {
+        this.mnemonic = mnemonic;
+    }
 
     // constructeur
     public Aliment() {
+        id = AlimentControler.AlimentID++;
         name = "Banane";
         prix = 0;
         rsc = 0;
@@ -42,12 +56,14 @@ public class Aliment implements Parcelable {
     }
 
     public Aliment(String name, double prix) {
+        id = AlimentControler.AlimentID++;
         this.name = name;
         this.prix = prix;
         this.rsc = 0;
     }
 
     public Aliment(String name, String mnemonic, double prix) {
+        id = AlimentControler.AlimentID++;
         this.name = name;
         this.prix = prix;
         this.rsc = 0;
@@ -55,12 +71,14 @@ public class Aliment implements Parcelable {
     }
 
     public Aliment(String name, double prix, int rsc) {
+        id = AlimentControler.AlimentID++;
         this.name = name;
         this.prix = prix;
         this.rsc = rsc;
     }
 
     public Aliment(String name, String mnemonic, int rsc, double prix) {
+        id = AlimentControler.AlimentID++;
         this.name = name;
         this.prix = prix;
         this.rsc = rsc;
@@ -68,6 +86,7 @@ public class Aliment implements Parcelable {
     }
 
     public Aliment(Aliment aliment){
+        id = aliment.getId();
         this.name = aliment.getName();
         this.prix = aliment.getPrix();
         this.rsc = aliment.getRsc();
@@ -75,9 +94,11 @@ public class Aliment implements Parcelable {
     }
 
     protected Aliment(Parcel in) {
+        id = in.readInt();
         name = in.readString();
         prix = in.readDouble();
         rsc = in.readInt();
+        mnemonic = in.readString();
     }
 
     public static final Creator<Aliment> CREATOR = new Creator<Aliment>() {
@@ -99,8 +120,17 @@ public class Aliment implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
         dest.writeString(name);
         dest.writeDouble(prix);
         dest.writeInt(rsc);
+        dest.writeString(mnemonic);
+    }
+
+    public boolean equals(Aliment obj) {
+        if(this.id == obj.id)
+            return true;
+        else
+            return false;
     }
 }

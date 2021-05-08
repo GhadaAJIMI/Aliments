@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class AlimentControler {
+    public static int AlimentID = 0;
     public static ListAliment listeAliment;
     public static ListAliment listeAlimentModifies;
     public static Aliment aliment;

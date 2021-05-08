@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/aliment_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="@dimen/marginFragment"
+        android:src="@drawable/orange"/>
+
+    <RelativeLayout
+        android:layout_margin="@dimen/marginFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/aliment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginFragment"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="@string/aliment_default_name"></TextView>
+
+        <TextView
+            android:id="@+id/aliment_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginFragment"
+            android:text="@string/aliment_default_price"
+            android:layout_below="@+id/aliment_name"></TextView>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/modifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:text="Modifier" />
+</LinearLayout>

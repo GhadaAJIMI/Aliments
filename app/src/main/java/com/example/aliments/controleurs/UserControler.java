@@ -4,6 +4,8 @@ import com.example.aliments.modeles.ListUser;
 import com.example.aliments.modeles.User;
 
 public class UserControler {
+    public static int CoursePrefID = 0;
+
     public static ListUser listeUsers;
 
     // getters and setters

@@ -62,8 +62,8 @@ public class Basket implements Parcelable {
     }
 
     public void add(Aliment aliment, Double i){
-        if(find(aliment.getName()) != null)
-            listeProduit.put(find(aliment.getName()), listeProduit.get(find(aliment.getName())) + i);
+        if(find(aliment.getId()) != null)
+            listeProduit.put(find(aliment.getId()), listeProduit.get(find(aliment.getId())) + i);
         else
             listeProduit.put(aliment, 1.0);
     }
@@ -86,9 +86,9 @@ public class Basket implements Parcelable {
         return false;
     }
 
-    public Aliment find(String name){
+    public Aliment find(int id){
         for(Aliment aliment: listeProduit.keySet()){
-            if(aliment.getName().equals(name))
+            if(aliment.getId() == id)
                 return aliment;
         }
         return null;
@@ -98,8 +98,11 @@ public class Basket implements Parcelable {
         listeProduit.put(aliment, i);
     }
 
-    public void remove(String alimentName){
-        listeProduit.remove(find(alimentName));
+    public void remove(int id){
+        listeProduit.remove(find(id));
+    }
+    public void remove(Aliment aliment){
+        listeProduit.remove(find(aliment.getId()));
     }
 
     public double getPrixTotal(){

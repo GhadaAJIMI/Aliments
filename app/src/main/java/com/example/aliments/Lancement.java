@@ -72,8 +72,8 @@ public class Lancement extends AppCompatActivity {
         listeAliment3.add(AlimentControler.get(4));
         listeAliment3.add(AlimentControler.get(5));
 
-        listCoursesPreferees.put("Liste quotidienne", new CoursePreferee(listeAliment1, "Liste quotidienne"));
-        listCoursesPreferees.put("Weekly list", new CoursePreferee(listeAliment2, "Weekly list"));
+        // listCoursesPreferees.put("Liste quotidienne", new CoursePreferee(listeAliment1, "Liste quotidienne"));
+        // listCoursesPreferees.put("Weekly list", new CoursePreferee(listeAliment2, "Weekly list"));
         listCoursesPreferees.put("Liste de Noel", new CoursePreferee(listeAliment3, "Liste de Noel"));
 
         // ajouter la liste de courses preférées au utilisateurA
@@ -109,8 +109,8 @@ public class Lancement extends AppCompatActivity {
             MagasinControler.getListeMagasins().get(i).setListeProduits(listeProduits);
         }
 
-        acheteurA.getBasket().put(AlimentControler.get(6), 5.0);
-        acheteurA.getBasket().put(AlimentControler.get(11), 4.0);
+        // acheteurA.getBasket().put(AlimentControler.get(6), 5.0);
+        // acheteurA.getBasket().put(AlimentControler.get(11), 4.0);
 
         // initialiser les valeurs du contrôleur UserControler
         UserControler.listeUsers.add(acheteurA);

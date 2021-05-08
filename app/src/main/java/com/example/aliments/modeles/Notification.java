@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.example.aliments.App;
 import com.example.aliments.R;
 import com.example.aliments.vues.CreerUneListeCoursePreferee;
 import com.example.aliments.vues.ListeCoursesPrefereesActivity;
@@ -21,17 +22,33 @@ import java.util.Objects;
 public class Notification {
     public static int notif_Id = 0;
     public static final String SIMPLE = "simple";
-    public static final String CHANNEL_1_ID = "channel LOW";
     private String title;
+    private Aliment aliment;
     private String message;
     private int srcImg;
     private AppCompatActivity context;
+    Intent intent;
+    PendingIntent pendingIntent;
+    int id = 0;
 
     // constructeur
-    public Notification(String title, String message, int srcImg, AppCompatActivity context, String type) {
+    public Notification(String title, String message, Aliment aliment, AppCompatActivity context, String type) {
         this.title = title;
         this.message = message;
-        this.srcImg = srcImg;
+        this.aliment = aliment;
+        this.srcImg = aliment.getRsc();
+        this.context = context;
+        if(type.equals(SIMPLE))
+            sendNotificationOnChannel();
+        else
+            showNotification();
+    }
+
+    // constructeur
+    public Notification(String title, String message, int src, AppCompatActivity context, String type) {
+        this.title = title;
+        this.message = message;
+        this.srcImg = src;
         this.context = context;
         if(type.equals(SIMPLE))
             sendNotificationOnChannel();
@@ -42,7 +59,7 @@ public class Notification {
     // méthodes
     public void sendNotificationOnChannel() {
         NotificationCompat.Builder notification =
-                new NotificationCompat.Builder( this.context.getApplicationContext(), CHANNEL_1_ID)
+                new NotificationCompat.Builder( this.context.getApplicationContext(), App.CHANNEL_2_ID)
                         .setSmallIcon(this.srcImg)
                         .setContentTitle(this.title)
                         .setContentText(this.message)
@@ -61,13 +78,14 @@ public class Notification {
         expendedView.setImageViewResource(R.id.image_notif, this.srcImg);
         expendedView.setTextViewText(R.id.text_titre_expended, this.title);
 
-        Intent intent = new Intent(this.context, NotificationReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this.context, 0, intent, 0);
-
+        intent = new Intent(this.context, NotificationReceiver.class);
+        intent.putExtra("aliment", this.aliment);
+        pendingIntent = PendingIntent.getBroadcast(this.context, notif_Id, intent, PendingIntent.FLAG_ONE_SHOT);
+        id = notif_Id;
         expendedView.setOnClickPendingIntent(R.id.image_notif, pendingIntent);
 
         NotificationCompat.Builder notification =
-                new NotificationCompat.Builder( this.context.getApplicationContext(), CHANNEL_1_ID)
+                new NotificationCompat.Builder( this.context.getApplicationContext(), App.CHANNEL_1_ID)
                         .setSmallIcon(R.drawable.shopping_cart)
                         .setCustomContentView(collapsedView)
                         .setCustomBigContentView(expendedView)
@@ -75,5 +93,6 @@ public class Notification {
                         .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
                         .setAutoCancel(true);
         NotificationManagerCompat.from(this.context).notify(notif_Id++ , notification.build());
+        App.listNotif.add(this);
     }
 }

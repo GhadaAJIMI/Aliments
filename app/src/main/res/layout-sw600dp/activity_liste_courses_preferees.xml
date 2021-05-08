@@ -11,21 +11,21 @@
     <ListView
         android:id="@+id/listeCourse"
         android:layout_width="match_parent"
-        android:layout_height="842dp" />
+        android:layout_height="925dp" />
 
     <Button
         android:id="@+id/boutonAjoute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:textSize="30sp"
+        android:textSize="50dp"
         android:text="Ajouter une nouvelle liste"></Button>
 
     <Button
         android:id="@+id/boutonRetouner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:textSize="50dp"
         android:text="Back" />
 
 </LinearLayout>

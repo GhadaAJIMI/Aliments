@@ -5,13 +5,20 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 
+import com.example.aliments.modeles.Notification;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class App extends Application {
     public static final String CHANNEL_1_ID = "channel1";
     public static final String CHANNEL_2_ID = "channel2";
+    public static List<Notification> listNotif;
 
     @Override
     public void onCreate(){
         super.onCreate();
+        listNotif = new ArrayList<>();
         createNotificationChannels();
     }
 

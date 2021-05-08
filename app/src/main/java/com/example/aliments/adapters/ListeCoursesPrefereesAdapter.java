@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.example.aliments.R;
 import com.example.aliments.controleurs.AlimentControler;
+import com.example.aliments.controleurs.UserControler;
+import com.example.aliments.modeles.Aliment;
 import com.example.aliments.modeles.CoursePreferee;
 import com.example.aliments.vues.DetailCoursePreferee;
 
@@ -103,6 +105,12 @@ public class ListeCoursesPrefereesAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 // supprimer la liste
+                if(currectList.size() > 0){
+                    for(Aliment aliment: currectList.getListeAliment()){
+                        UserControler.get(0).removeListeTotaleDAliment(aliment);
+                    }
+                }
+
                 ListeCoursesPrefereesAdapter.remove(currectList.getName());
                 notifyDataSetChanged();
             }

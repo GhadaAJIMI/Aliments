@@ -14,9 +14,7 @@ import com.example.aliments.controleurs.AlimentControler;
 import com.example.aliments.controleurs.UserControler;
 
 public class ConsulterAlimentActivity extends AppCompatActivity {
-
-    String tx;String tx1;
-
+    int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +29,8 @@ public class ConsulterAlimentActivity extends AppCompatActivity {
         name.setText(AlimentControler.aliment.getName());
         price.setText(AlimentControler.aliment.getPrix()+" €");
 
+        id = AlimentControler.aliment.getId();
+
         AlimentControler.aliment = null;
 
         findViewById(R.id.buttonBack).setOnClickListener(new View.OnClickListener() {
@@ -41,27 +41,23 @@ public class ConsulterAlimentActivity extends AppCompatActivity {
             }
         });
 
-
         findViewById( R.id.ajoutPanier1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tx = name.getText().toString();
-                UserControler.get(0).getBasket().add(AlimentControler.get(tx));
-                UserControler.get(0).getTousLesAliments().add(AlimentControler.get(tx));
-                Toast.makeText(ConsulterAlimentActivity.this, "Vous avez ajouter 1kg de " + tx + " dans le panier", Toast.LENGTH_SHORT).show();
+                String nameAliment = name.getText().toString();
+                UserControler.get(0).getBasket().add(AlimentControler.get(id));
+                UserControler.get(0).getTousLesAliments().add(AlimentControler.get(id));
+                Toast.makeText(ConsulterAlimentActivity.this, "Vous avez ajouter 1kg de " + nameAliment + " dans le panier", Toast.LENGTH_SHORT).show();
             }
         });
 
         findViewById( R.id.ajout1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 tx1 = name.getText().toString();
-                AlimentControler.aliment = AlimentControler.get(tx1);
+                AlimentControler.aliment = AlimentControler.get(id);
                 Intent intent = new Intent(ConsulterAlimentActivity.this, ListeCoursesPrefereesActivity.class);
                 startActivity(intent);
             }
         });
-
-
     }
 }

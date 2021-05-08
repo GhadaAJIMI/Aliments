@@ -22,8 +22,8 @@
 
         <Button
             android:id="@+id/boutonSupprime"
-            android:layout_width="@dimen/tailleBouton"
-            android:layout_height="@dimen/tailleBouton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/marginFragment"
             android:text="-"></Button>
 
@@ -39,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/marginFragment"
+
             android:visibility="invisible"
             android:text="Ajouter l'aliment"></Button>
 

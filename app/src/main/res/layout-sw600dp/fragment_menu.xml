@@ -35,23 +35,9 @@
     <ListView
         android:id="@+id/ListeCoursesPref"
         android:layout_marginTop="25dp"
-        android:layout_width="wrap_content"
+        android:layout_width="400dp"
         android:textSize="50sp"
-        android:layout_height="wrap_content">
-    </ListView>
-
-  <!--  <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mon panier contient : "
-        android:textSize="50sp"
-        android:layout_marginTop="25dp"/> -->
-
-   <ListView
-        android:id="@+id/ListeCoursesPanier"
-        android:layout_marginTop="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="700dp">
     </ListView>
 
 </LinearLayout>

@@ -22,7 +22,6 @@ public class AjoutAlimentActivity extends AppCompatActivity implements IPictureA
     private PictureFragment pictureFragment;
     private StorageFragment storageFragment;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +43,8 @@ public class AjoutAlimentActivity extends AppCompatActivity implements IPictureA
                 String nom = nomText.getText().toString();
                 String prix = prixText.getText().toString();
                 try {
-                    UserControler.get(1).getMagasin().ajouterAliment(nom, Double.valueOf(prix),"banane", 4.0, 1);
+                    int src = AjoutAlimentActivity.this.getResources().getIdentifier("banane", "drawable", AjoutAlimentActivity.this.getPackageName());
+                    UserControler.get(1).getMagasin().ajouterAliment(nom, Double.valueOf(prix),src, 4.0, 1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                 }
@@ -135,7 +135,6 @@ public class AjoutAlimentActivity extends AppCompatActivity implements IPictureA
                 Toast toast = Toast.makeText(getApplicationContext(), "Action failed", Toast.LENGTH_LONG);
                 toast.show();
             }
-
         }
     }
 
