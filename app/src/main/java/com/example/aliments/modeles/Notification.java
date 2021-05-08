@@ -81,6 +81,7 @@ public class Notification {
 
         intent = new Intent(this.context, NotificationReceiver.class);
         intent.putExtra("aliment", this.aliment);
+        intent.putExtra("id", this.notif_Id);
         pendingIntent = PendingIntent.getBroadcast(this.context, notif_Id, intent, PendingIntent.FLAG_ONE_SHOT);
         id = notif_Id;
         expendedView.setOnClickPendingIntent(R.id.image_notif, pendingIntent);

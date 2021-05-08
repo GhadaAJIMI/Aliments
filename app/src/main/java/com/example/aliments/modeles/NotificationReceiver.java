@@ -14,12 +14,15 @@ import com.example.aliments.vues.ListeCoursesPrefereesActivity;
 import com.example.aliments.vues.SearchAlimentActivity;
 
 public class NotificationReceiver extends BroadcastReceiver {
-    private int id = Notification.notif_Id - 1;
 
     @Override
     public void onReceive(Context context, Intent intent) {
         Aliment aliment = intent.getParcelableExtra("aliment");
         AlimentControler.aliment = aliment;
+        int id = intent.getIntExtra("id", Notification.notif_Id);
+
+        NotificationManagerCompat nM = NotificationManagerCompat.from(context);
+        nM.cancel(id);
 
         Intent intent1 = new Intent(context, ConsulterAlimentActivity.class);
         context.startActivity(intent1);
